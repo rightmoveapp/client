@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "../Login/Login"
-import Logout from "../Logout/Logout"
+import Login from "../Login"
+import Logout from "../Logout"
 import "./style.css";
 
 class Nav extends React.Component {
