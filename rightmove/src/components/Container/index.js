@@ -1,8 +1,8 @@
 import React from "react";
 import './style.css';
 
-const Container = (props) => {
-  return <div className="Content-Container">{props.children}</div>;
+const Container = ({children}) => {
+  return <div className="Content-Container">{children}</div>;
 }
 
 export default Container;
