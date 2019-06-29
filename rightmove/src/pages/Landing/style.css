@@ -6,8 +6,8 @@ html { font-family: 'Inter', sans-serif; }
 
 .Catchy-Tagline {
     padding-top: 199px;
-    width: 612px;
-    height: 36px;
+    /* width: 612px;
+    height: 36px; */
     font-family: 'Inter';
     font-size: 28px;
     font-weight: bold;
@@ -20,8 +20,8 @@ html { font-family: 'Inter', sans-serif; }
 
 .Body-Copy {
     padding-top: 32px;
-    width: 621px;
-    height: 120px;
+    /* width: 621px;
+    height: 120px; */
     font-family: 'Inter';
     font-size: 20px;
     font-weight: normal;
@@ -34,16 +34,16 @@ html { font-family: 'Inter', sans-serif; }
 
 .Button {
     margin-top: 73px;
-    width: 256px;
-    height: 32px;
+    /* width: 256px;
+    height: 32px; */
     border-radius: 8px;
     background-color: #0091ff;
     padding: 10px 0px 23px;
 }
 
 .-Button-Text {
-  width: 236px;
-  height: 14px;
+  /* width: 236px;
+  height: 14px; */
   font-family: 'Inter';
   font-size: 14px;
   font-weight: bold;
