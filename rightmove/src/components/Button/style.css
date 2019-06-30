@@ -1,15 +1,15 @@
 .Button {
-    margin-top: 73px;
+    /* margin-top: 73px;
     width: 256px;
-    height: 32px;
+    height: 32px; */
     border-radius: 8px;
     background-color: #0091ff;
     padding: 10px 0px 23px;
 }
 
 .-Button-Text {
-  width: 236px;
-  height: 14px;
+  /* width: 236px;
+  height: 14px; */
   font-family: 'Inter';
   font-size: 14px;
   font-weight: bold;

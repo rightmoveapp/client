@@ -5,9 +5,9 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .Catchy-Tagline {
-    padding-top: 199px;
+    /* padding-top: 199px;
     width: 612px;
-    height: 36px;
+    height: 36px; */
     font-family: 'Inter';
     font-size: 28px;
     font-weight: bold;
@@ -19,9 +19,9 @@ html { font-family: 'Inter', sans-serif; }
 }
 
 .Body-Copy {
-    padding-top: 32px;
+    /* padding-top: 32px;
     width: 621px;
-    height: 120px;
+    height: 120px; */
     font-family: 'Inter';
     font-size: 20px;
     font-weight: normal;

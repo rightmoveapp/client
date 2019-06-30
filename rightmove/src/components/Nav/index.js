@@ -13,7 +13,7 @@ class Nav extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo">Logo</a>
+          <a href="/" id="brandLogo" className="brand-logo">Logo</a>
           <ul id="nav-mobile" className="right">
             {!this.state.isLoggedIn ? (
             <Login />

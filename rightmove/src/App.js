@@ -13,15 +13,15 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <Nav name="Steve"/>
       <Container>
-        <Nav name="Steve"/>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route component={Landing} />
-          <Route exact path="/account" component={Account} />
+          {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />
-          <Route exact path="/current_state" component={CurrentState} />
+          <Route exact path="/current_state" component={CurrentState} /> */}
         </Switch>
       </Container>
     </Router>
