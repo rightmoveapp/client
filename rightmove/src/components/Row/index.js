@@ -1,8 +1,8 @@
 import React from "react";
 
-const Row = () => {
+const Row = props => {
   return (
-  <div className="row" />
+  <div className="row">{props.children}</div>
   )
 }
 
