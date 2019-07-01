@@ -3,33 +3,37 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const Login = () => {
+  var callbackUri = "http://localhost:3000/linkedin_auth"
+  var callbackState = "dovdvdsoibusobus"
+  var clientId = "86cmhugfwi4259"
+
   return (
     <span>
-    <li>
-      <Link
-        to="/"
-        className={
-        window.location.pathname === "/" || window.location.pathname === "/createaccount"
-          ? "nav-link active"
-          : "nav-link"
-        }
-      >
-      Create Account
-      </Link>
-    </li>
+      <li>
+        <a
+          href={`https://linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${escape(callbackUri)}&state=${callbackState}&scope=r_liteprofile%20r_emailaddress`}
+          className={
+            window.location.pathname === "/" || window.location.pathname === "/createaccount"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Sign In With Linkedin
+      </a>
+      </li>
 
-    <li>
-      <Link
-        to="/"
-        className={
-          window.location.pathname === "/" || window.location.pathname === "/login"
-            ? "nav-link active"
-            : "nav-link"
-        }
-      >
-      Login
+      <li>
+        <Link
+          to="/"
+          className={
+            window.location.pathname === "/" || window.location.pathname === "/login"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Login
       </Link>
-    </li>
+      </li>
     </span>
   )
 }
