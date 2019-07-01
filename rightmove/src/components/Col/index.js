@@ -1,9 +1,9 @@
 import React from "react";
 
 const Col = props => {
-  const { size, colNum } = props.col;
+  const size =  props.size;
   return (
-  <div className={ `col ${size}${colNum}` } />
+  <div className={ `col ${size}` }>{props.children}</div>
   )
 }
 

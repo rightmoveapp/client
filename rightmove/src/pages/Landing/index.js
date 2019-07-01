@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import Container from '../../components/Container';
+import API from '../../utils/API'
+import Col from '../../components/Col';
+import Row from '../../components/Row';
 import Button from '../../components/Button';
 import './style.css';
 
@@ -26,11 +28,13 @@ class Landing extends Component {
 
     render() {
         return (
-            <Container>
-                <div className="Catchy-Tagline">{this.state.landingPage_tagLine}</div>
-                <p className="Body-Copy">{this.state.landingPage_description}</p>
+            <Row>
+                <Col size="s12">
+                    <div className="Catchy-Tagline">{this.state.landingPage_tagLine}</div>
+                    <p className="Body-Copy">{this.state.landingPage_description}</p>
                 <Button />
-            </Container>
+                </Col>
+            </Row>
         )
     }
 }
