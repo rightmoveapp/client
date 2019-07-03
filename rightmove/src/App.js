@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
 import Landing from './pages/Landing';
 import LinkedinAuth from './pages/LinkedinAuth';
-/* import Account from './pages/Account';
-import Questions from './pages/Questions';
+import Account from './pages/Account';
+/*import Questions from './pages/Questions';
 import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
 import './App.css';
@@ -15,9 +15,9 @@ function App() {
     <Router>
       <Nav name="Steve"/>
         <Switch>
+          <Route exact path="/v1/login" render={props => <Account {...props}/>} />
           <Route exact path="/linkedin_auth" component={LinkedinAuth} />
-          <Route exact path="/" component={Landing} />
-          <Route component={Landing} />
+          <Route exact path="/" component={Landing}  />
           {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />

@@ -1,20 +1,35 @@
 import React, { Component } from "react";
-import Container from '../../components/Container';
+import { Redirect } from 'react-router-dom'
+import queryString from 'query-string'
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 class LinkedinAuth extends Component {
+
+
     componentDidMount() {
-        this.checkResponse();
+        const values = queryString.parse(this.props.location.search)
+        console.log(`value code ${values.code}`)
+        const token = values.code
+        cookies.set("token", token, {path:"/"})
+        console.log(`my cookie is ${cookies.get('token')}`);
+        this.renderRedirect();
     }
 
-    checkResponse = () => {
-        return true;
-    };
+
+
+      renderRedirect = () => {
+          return <Redirect to='/v1/login'/>
+      }
+
 
     render() {
         return (
-            <Container>
-                <div>Auth Code: {this.props.location.search}</div>
-            </Container>
+            <>
+                {/* // <div>Auth Code: {this.props.location.search}</div> */}
+                {this.renderRedirect()}
+              </>
         )
     }
 }
