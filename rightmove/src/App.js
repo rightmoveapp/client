@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { CookiesProvider } from 'react-cookie';
 import Nav from "./components/Nav";
 import Landing from './pages/Landing';
 import LinkedinAuth from './pages/LinkedinAuth';
