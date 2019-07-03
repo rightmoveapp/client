@@ -4,7 +4,8 @@ import Nav from "./components/Nav";
 import Landing from './pages/Landing';
 import LinkedinAuth from './pages/LinkedinAuth';
 import Account from './pages/Account';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import Page404 from './pages/Page404';
 /*import Questions from './pages/Questions';
 import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/v1/login" render={props => <Account {...props}/>} />
           <Route exact path="/linkedin_auth" component={LinkedinAuth} />
+          <Route exact path="/404" component={Page404} />
           <Route exact path="/" component={Landing}  />
           {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
