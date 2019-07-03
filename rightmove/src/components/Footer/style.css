@@ -1,6 +1,7 @@
 .Footer-Area {
     width: 100%;
     height: 128px;
+    bottom: 0px;
     background-color: #f2f2f2;
 }
 

@@ -1,7 +1,5 @@
 .Take-control-of-your {
-  width: 328px;
-  height: 86px;
-  font-family: Inter;
+  font-family: 'Inter';
   font-size: 32px;
   font-weight: bold;
   font-style: normal;
@@ -12,9 +10,7 @@
 }
 
 .Body-Copy {
-  width: 328px;
-  height: 178px;
-  font-family: Inter;
+  font-family: 'Inter';
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
