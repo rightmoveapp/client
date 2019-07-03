@@ -19,7 +19,6 @@ nav ul a{
 
 @media only screen and (max-width: 992px){
 nav #brandLogo {
-    left: 15%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }

@@ -16,7 +16,7 @@ const Login = () => {
             window.location.pathname === "/" || window.location.pathname === "/createaccount"
               ? "nav-link active"
               : "nav-link"
-          }
+          } 
         >
           Sign In With Linkedin
       </a>

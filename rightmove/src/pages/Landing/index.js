@@ -8,8 +8,8 @@ import './style.css';
 
 class Landing extends Component {
     state = {
-        landingPage_tagLine: "",
-        landingPage_description: "",
+        /* landingPage_tagLine: "", */
+        /* landingPage_description: "", */
         landingPage_howItWorks: "",
     }
 
@@ -20,7 +20,7 @@ class Landing extends Component {
     loadLandingPage = () => {
         API.getLandingPage()
             .then(res =>
-                this.setState({ landingPage_tagLine: "", landingPage_description: "", landingPage_howItWorks: "" })
+                this.setState({ /* landingPage_tagLine: "", */ /* landingPage_description: "", */ landingPage_howItWorks: "" })
             )
             .catch(err => console.log(err));
     };
@@ -29,8 +29,9 @@ class Landing extends Component {
         return (
             <Row>
                 <Col size="s12">
-                    <div className="Catchy-Tagline">{this.state.landingPage_tagLine}</div>
-                    <p className="Body-Copy">{this.state.landingPage_description}</p>
+                    <div className="Take-control-of-your">Take control of your career.</div>
+                    <p className="Body-Copy">Finding the work-life balance that’s right for you shouldn’t be this hard, but sometimes the choices can be overwhelming. Cut through the bullshit and illuminate the right path for you & your career. 
+You shouldn’t have to settle for less.</p>
                 <Button />
                 </Col>
             </Row>
