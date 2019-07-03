@@ -17,7 +17,6 @@ class Landing extends Component {
         this.loadLandingPage();
     }
 
-    // Loads all books  and sets them to this.state.books
     loadLandingPage = () => {
         API.getLandingPage()
             .then(res =>

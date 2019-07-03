@@ -2,7 +2,7 @@ import React from "react";
 import './style.css'
 
 const Button = () => {
-    return <button className="Button -Button-Text">Create account with LinkedIn</button>;
+    return <button className="Button -Button-Text">Sign Up →</button>;
 }
 
 export default Button;

@@ -2,9 +2,10 @@
     /* margin-top: 73px;
     width: 256px;
     height: 32px; */
-    border-radius: 8px;
-    background-color: #0091ff;
-    padding: 10px 0px 23px;
+  width: 171px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #ff4038;
 }
 
 .-Button-Text {

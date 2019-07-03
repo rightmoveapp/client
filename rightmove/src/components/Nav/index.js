@@ -1,6 +1,7 @@
 import React from "react";
-import Login from "../Login"
-import Logout from "../Logout"
+import Login from "../Login";
+import Logout from "../Logout";
+import { ReactComponent as Logo } from './logo.svg';
 import "./style.css";
 
 class Nav extends React.Component {
@@ -13,7 +14,7 @@ class Nav extends React.Component {
     return (
       <nav>
         <div className="nav-wrapper">
-          <a href="/" id="brandLogo" className="brand-logo">Logo</a>
+          <Logo />
           <ul id="nav-mobile" className="right">
             {!this.state.isLoggedIn ? (
             <Login />
