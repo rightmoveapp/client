@@ -6,10 +6,7 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class LinkedinAuth extends Component {
-    state = {
-        redirect: false,
 
-      }
 
     componentDidMount() {
         const values = queryString.parse(this.props.location.search)
@@ -17,21 +14,13 @@ class LinkedinAuth extends Component {
         const token = values.code
         cookies.set("token", token, {path:"/"})
         console.log(`my cookie is ${cookies.get('token')}`);
-        this.setRedirect();
         this.renderRedirect();
     }
 
-      setRedirect = () => {
-        this.setState({
-          redirect: true
-        })
-      }
+
 
       renderRedirect = () => {
-        if (this.state.redirect) {
-          return <Redirect to={{
-            pathname: '/v1/login',}} />
-        }
+          return <Redirect to='/v1/login'/>
       }
 
 
@@ -39,7 +28,7 @@ class LinkedinAuth extends Component {
         return (
             <>
                 {/* // <div>Auth Code: {this.props.location.search}</div> */}
-
+                {this.renderRedirect()}
               </>
         )
     }

@@ -15,9 +15,9 @@ function App() {
     <Router>
       <Nav name="Steve"/>
         <Switch>
+          <Route exact path="/v1/login" render={props => <Account {...props}/>} />
           <Route exact path="/linkedin_auth" component={LinkedinAuth} />
           <Route exact path="/" component={Landing}  />
-          <Route exact path="/v1/login" component={Account} />
           {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />
