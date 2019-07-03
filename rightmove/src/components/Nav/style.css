@@ -1,6 +1,7 @@
 nav{
   background: none;
   box-shadow: none;
+  line-height: 20px;
 }
 
 nav ul a{
@@ -17,10 +18,18 @@ nav ul a{
 
 }
 
+
 @media only screen and (max-width: 992px){
 nav #brandLogo {
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+}
+
+.Underline {
+  width: 47px;
+  height: 7px;
+  background-color: #fee07d;
+  position: relative;
 }
 

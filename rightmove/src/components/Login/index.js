@@ -17,8 +17,9 @@ const Login = () => {
               ? "nav-link active"
               : "nav-link"
           } 
-        >
+        ><span className="Underline">
           Create Account
+          </span>
       </a>
       </li>
 
@@ -30,8 +31,9 @@ const Login = () => {
               ? "nav-link active"
               : "nav-link"
           }
-        >
+        ><span className="Underline">
           Log In
+          </span>
       </Link>
       </li>
     </span>
