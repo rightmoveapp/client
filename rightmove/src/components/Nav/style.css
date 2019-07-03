@@ -18,6 +18,10 @@ nav ul a{
 
 }
 
+a {
+  line-height: 45px;
+}
+
 
 @media only screen and (max-width: 992px){
 nav #brandLogo {

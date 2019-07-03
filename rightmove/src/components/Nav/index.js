@@ -17,7 +17,7 @@ class Nav extends React.Component {
         <nav>
           <div className="nav-wrapper">
             <Logo />
-            <ul id="nav-mobile" className="right">
+            <ul id="nav-mobile valign-wrapper" className="right">
               {!this.state.isLoggedIn ? (
                 <Login />
               ) : (
