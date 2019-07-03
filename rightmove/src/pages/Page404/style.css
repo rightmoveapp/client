@@ -19,3 +19,9 @@
     letter-spacing: normal;
     color: #0a2f51;
 }
+
+.gif {
+    margin-bottom: 64px;
+    width: 100%;
+    max-width: 328px;
+}

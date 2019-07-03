@@ -6,6 +6,7 @@ import LinkedinAuth from './pages/LinkedinAuth';
 import Account from './pages/Account';
 import Footer from './components/Footer';
 import Page404 from './pages/Page404';
+import Container from './components/Container';
 /*import Questions from './pages/Questions';
 import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
@@ -16,17 +17,20 @@ function App() {
   return (
     <Router>
       <Nav name="Steve"/>
+      <Container>
         <Switch>
           <Route exact path="/v1/login" render={props => <Account {...props}/>} />
           <Route exact path="/linkedin_auth" component={LinkedinAuth} />
-          <Route exact path="/*" component={Page404} />
           <Route exact path="/" component={Landing} />
+          <Route exact path="/*" component={Page404} />
           {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />
           <Route exact path="/current_state" component={CurrentState} /> */}
         </Switch>
-      <Footer />  
+        </Container>
+      <Footer /> 
+
     </Router>
   );
 }

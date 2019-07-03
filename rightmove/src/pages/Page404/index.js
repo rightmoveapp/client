@@ -12,7 +12,8 @@ const Page404 = () => {
         <Col size="s12 m12 l12">
           <div className="Ooh-yeah-about-tha">Ooh, yeah, about that…</div>
           <p className="Looks-like-someone-s">Looks like someone set the page on fire. We’re going to have to go ahead and take you back home for now.</p>
-          <video src="office-space.gif" alt="office space"/>
+          {/* <video src="office-space.gif" alt="office space"/> */}
+          <img className="gif" src={require('./office-space.gif')} alt="office space" />
           <Button />
         </Col>
       </Row>
