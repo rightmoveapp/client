@@ -3,9 +3,12 @@ nav{
   box-shadow: none;
 }
 
-
 nav ul a{
   color:#0a2f51;
+}
+
+.nav-wrapper {
+  margin-top: 32px;
 }
 
 .userName{

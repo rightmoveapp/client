@@ -4,6 +4,10 @@ html { font-family: 'Inter', sans-serif; }
 html { font-family: 'Inter var', sans-serif; }
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -12,8 +16,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  height: 100%;
 }
 
 code {
@@ -21,11 +25,8 @@ code {
     monospace;
 }
 
-div {
-  width: 100%;
-}
-
-main {
+.content {
   flex: 1 0 auto;
 }
+
 

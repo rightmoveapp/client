@@ -7,7 +7,7 @@ import {CookiesProvider} from 'react-cookie';
 
 ReactDOM.render(
 <CookiesProvider>
-<App />
+<App className='content'/>
 </CookiesProvider>,
 document.getElementById('root'));
 
