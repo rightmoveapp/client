@@ -18,7 +18,7 @@ const Login = () => {
               : "nav-link"
           } 
         >
-          Sign In With Linkedin
+          Create Account
       </a>
       </li>
 
@@ -31,7 +31,7 @@ const Login = () => {
               : "nav-link"
           }
         >
-          Login
+          Log In
       </Link>
       </li>
     </span>

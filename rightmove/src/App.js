@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Landing from './pages/Landing';
 import LinkedinAuth from './pages/LinkedinAuth';
 import Account from './pages/Account';
+import Footer from './components/Footer'
 /*import Questions from './pages/Questions';
 import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/job_detail" component={Job} />
           <Route exact path="/current_state" component={CurrentState} /> */}
         </Switch>
+      <Footer />  
     </Router>
   );
 }
