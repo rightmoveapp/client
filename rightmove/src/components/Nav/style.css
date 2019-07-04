@@ -29,20 +29,13 @@ nav ul a:hover {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-/* .Underline {
-  width: 47px;
-  height: 7px;
-  background-color: #fee07d;
-  position: relative;
-} */
-
 a:link{
   text-decoration: none;
   box-shadow: inset 0 -7px 0 0 #fee07d;
 }
 
 a:hover:link {
-background-color: #fee07d;
+background-color: #fee07d !important;
 }
 
 li {
