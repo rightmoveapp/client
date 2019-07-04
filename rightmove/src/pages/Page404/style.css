@@ -25,3 +25,8 @@
     width: 100%;
     max-width: 328px;
 }
+
+.align-left {
+    display: flex;
+    justify-content: center;
+}
