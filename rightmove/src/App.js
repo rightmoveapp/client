@@ -16,20 +16,25 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Nav name="Steve"/>
-      <Container>
-        <Switch>
-          <Route exact path="/v1/login" render={props => <Account {...props}/>} />
-          <Route exact path="/linkedin_auth" component={LinkedinAuth} />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/*" component={Page404} />
-          {/* <Route exact path="/account" component={Account} />
+
+      <div className="Site">
+        <Nav name="Steve" />
+
+        <Container>
+          <Switch>
+            <Route exact path="/v1/login" render={props => <Account {...props} />} />
+            <Route exact path="/linkedin_auth" component={LinkedinAuth} />
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/*" component={Page404} />
+            {/* <Route exact path="/account" component={Account} />
           <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />
           <Route exact path="/current_state" component={CurrentState} /> */}
-        </Switch>
+          </Switch>
         </Container>
-      <Footer /> 
+        <div className="Site-content"></div>
+        <Footer />
+      </div>
 
     </Router>
   );
