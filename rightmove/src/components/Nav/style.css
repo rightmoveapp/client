@@ -1,11 +1,11 @@
 nav{
   background: none;
   box-shadow: none;
-  /* line-height: 20px; */
 }
 
 nav ul a{
   color:#0a2f51;
+  transition: none;
 }
 
 .nav-wrapper {
@@ -22,12 +22,8 @@ a {
   line-height: 45px;
 }
 
-
-@media only screen and (max-width: 992px){
-nav #brandLogo {
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
+nav ul a:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
 .Underline {

@@ -12,11 +12,6 @@ const Login = () => {
       <li className="hide-on-small-only">
         <a
           href={`https://linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${escape(callbackUri)}&state=${callbackState}&scope=r_liteprofile%20r_emailaddress`}
-          /* className={
-            window.location.pathname === "/" || window.location.pathname === "/createaccount"
-              ? "nav-link active"
-              : "nav-link"
-          }  */
         ><span className="Underline">
           Create Account
           </span>
@@ -26,11 +21,6 @@ const Login = () => {
       <li>
         <Link
           to="/"
-          className={
-            window.location.pathname === "/" || window.location.pathname === "/login"
-              ? "nav-link active"
-              : "nav-link"
-          }
         ><span className="Underline">
           Log In
           </span>

@@ -19,7 +19,6 @@ function App() {
 
       <div className="Site">
         <Nav name="Steve" />
-
         <Container>
           <Switch>
             <Route exact path="/v1/login" render={props => <Account {...props} />} />
