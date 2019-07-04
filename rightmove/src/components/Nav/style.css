@@ -6,6 +6,8 @@ nav{
 nav ul a{
   color:#0a2f51;
   transition: none;
+  padding: 0px;
+  margin: 0px 15px;
 }
 
 .nav-wrapper {
@@ -20,16 +22,30 @@ nav ul a{
 
 a {
   line-height: 45px;
+  display: initial !important;
 }
 
 nav ul a:hover {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-.Underline {
+/* .Underline {
   width: 47px;
   height: 7px;
   background-color: #fee07d;
   position: relative;
+} */
+
+a:link{
+  text-decoration: none;
+  box-shadow: inset 0 -7px 0 0 #fee07d;
+}
+
+a:hover:link {
+background-color: #fee07d;
+}
+
+li {
+  line-height: initial;
 }
 
