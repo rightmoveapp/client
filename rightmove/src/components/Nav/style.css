@@ -35,8 +35,10 @@ a:link{
 }
 
 a:hover:link {
-background-color: #fee07d !important;
+  background-color: #fee07d !important;
+  transition: background-color 500ms linear;
 }
+
 
 li {
   line-height: initial;
