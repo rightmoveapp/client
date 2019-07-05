@@ -25,18 +25,19 @@ a {
   display: initial !important;
 }
 
+
 nav ul a:hover {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
-a:link{
+a:link {
   text-decoration: none;
   box-shadow: inset 0 -7px 0 0 #fee07d;
 }
 
 a:hover:link {
   background-color: #fee07d !important;
-  transition: background-color 500ms linear;
+  transition: background-color 300ms linear;
 }
 
 
