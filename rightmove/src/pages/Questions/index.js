@@ -1,35 +1,89 @@
-import React from "react";
+import React, { Component } from "react";
+import questionsChoices from '../../questionsChoices.json';
+import CheckboxQuestion from '../../components/CheckboxQuestion';
+import DateQuestion from '../../components/DateQuestion';
+import RadioQuestion from '../../components/RadioQuestion';
+import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-import YellowButton from "../../components/YellowButton";
-import WhiteButton from "../../components/WhiteButton";
+import YellowUnderline from '../../components/YellowUnderline';
+import YellowButton from '../../components/YellowButton';
 import "./style.css";
-import YellowUnderline from "../../components/YellowUnderline";
+
+class Questions extends Component {
+    state = {
+        questionsChoices: questionsChoices.questionsAndChoices
+    };
+    /* get random question in the database
+        evaluate the question to see if it has been asked before (after very first question)
+        evaluate the input type of the question
+        render input type that matches
+        then on click or on enter check if the question has been answered
+        post the answer to /v1/useranswers
+        push to array of answered questions
+        then get random questions from the database
+        check if question has been answered from array of answered questions
+         */
+
+    getRandomQuestion() {
+        const questionsChoices = this.state.questionsChoices;
+        const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
+        console.log(randomQuestion.question[0].input_type);
+        if (randomQuestion.question[0].input_type === "radio") {
+            return <RadioQuestion />;}
+        else if (randomQuestion.question[0].input_type === "date") {
+                return <DateQuestion />;
+            }
+    }
+    renderPage = () => {
+        const array = this.state.questionsChoices
+        console.log(`is this first ${array}`);
 
 
-const Questions = () => {
-    return (
-        <>
-            <Row>
-                <Col size="s12 m12 l12">
-                    <h4 className="heading">Here we go!
-                        Tell us a little about yourself.
+
+
+
+        array.forEach(element => {
+            console.log(element.question[0].input_type);
+            if (element.question[0].input_type === "date") {
+                return console.log('hello!!!');
+            }
+            /* if (question.question[0].input_type === "checkbox") {
+                return <CheckboxQuestion />;
+            } else if (question.question[0].input_type === "date") {
+                return <DateQuestion />;
+            } else if (question.question[0].input_type === "radio") {
+                return <RadioQuestion />;
+            } else {
+                return <TextQuestion />;
+            } */
+        })
+
+
+    }
+
+
+    render() {
+        /* this.getRandomQuestion();  */
+        return (
+            <>
+                <Row>
+                    <Col size="s12 m12 l12">
+                        <h4 className="heading">Here we go!
+                            Tell us a little about yourself.
                     </h4>
-                    <form size="col s12 m12 l12">
-                        <label for="birthday" className="question">When is your birthday?</label>
-                        <input id="birthday" type="date" class="validate" placeholder="10 / 18 / 1992" className="Rectangle" />
-                    </form>
-                    <h5 className="explainer">Why do we need this?</h5>
-                    <div className="right-align">
-                        <YellowUnderline to="" text="Skip" space="32"/>
-                        <YellowButton text="Continue  →" size="139"/>
-                    </div>
-                </Col>
-            </Row>
-
-
-        </>
-    )
+                        {this.getRandomQuestion()}
+                        
+                        <h5 className="explainer">Why do we need this?</h5>
+                        <div className="right-align">
+                            <YellowUnderline to="/" text="Skip" space="32" />
+                            <YellowButton to="/" text="Continue  →" size="139" />
+                        </div>
+                    </Col>
+                </Row>
+            </>
+        );
+    }
 }
 
 export default Questions;

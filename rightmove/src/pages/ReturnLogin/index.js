@@ -4,8 +4,8 @@ import Col from '../../components/Col';
 import YellowButton from "../../components/YellowButton";
 import WhiteButton from "../../components/WhiteButton";
 import "./style.css";
-import YellowUnderline from "../../components/YellowUnderline";
-
+/* import YellowUnderline from "../../components/YellowUnderline";
+ */
 
 const ReturnLogin = () => {
   var callbackUri = "http://localhost:3000/linkedin_auth"
