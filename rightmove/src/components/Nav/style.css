@@ -3,12 +3,15 @@ nav{
   box-shadow: none;
 }
 
-a.brand-logo{
-  color: black;
+nav ul a{
+  color:#0a2f51;
+  transition: none;
+  padding: 0px;
+  margin: 0px 15px;
 }
 
-nav ul a{
-  color: black;
+.nav-wrapper {
+  margin-top: 32px;
 }
 
 .userName{
@@ -17,11 +20,28 @@ nav ul a{
 
 }
 
-@media only screen and (max-width: 992px){
-nav #brandLogo {
-    left: 15%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
+a {
+  line-height: 45px;
+  /* display: initial !important; */
 }
+
+
+/* nav ul a:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+a:link {
+  text-decoration: none;
+  box-shadow: inset 0 -7px 0 0 #fee07d;
+}
+
+a:hover:link {
+  background-color: #fee07d !important;
+  transition: background-color 300ms linear;
+}
+ */
+
+li {
+  line-height: initial;
 }
 

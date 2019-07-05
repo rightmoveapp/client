@@ -7,16 +7,9 @@ const Logout = props => {
     <>
       <li className="userName">Hi, {props.name}</li>
       <li>
-        <Link
-          to="/"
-          className={
-            window.location.pathname === "/" || window.location.pathname === "/login"
-              ? "nav-link active"
-              : "nav-link"
-          }
-        >
+        <Link to="/">
           Logout
-              </Link>
+        </Link>
       </li>
     </>
   )

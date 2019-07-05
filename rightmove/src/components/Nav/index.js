@@ -1,31 +1,35 @@
 import React from "react";
-import Login from "../Login"
-import Logout from "../Logout"
+import Container from "../Container";
+import Login from "../Login";
+import Logout from "../Logout";
+import Logo from "../Logo"
 import "./style.css";
 
 class Nav extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {isLoggedIn: false};
+    this.state = { isLoggedIn: false };
   }
 
   render() {
     return (
-      <nav>
-        <div className="nav-wrapper">
-          <a href="/" id="brandLogo" className="brand-logo">Logo</a>
-          <ul id="nav-mobile" className="right">
-            {!this.state.isLoggedIn ? (
-            <Login />
-            ) : (
-            <Logout name={this.props.name}/>
-            )
-            }
-          </ul>
-        </div>
-      </nav>
+      <Container>
+        <nav>
+          <div className="nav-wrapper">
+            <Logo />
+            <ul id="valign-wrapper" className="right">
+              {!this.state.isLoggedIn ? (
+                <Login />
+              ) : (
+                  <Logout name={this.props.name} />
+                )
+              }
+            </ul>
+          </div>
+        </nav>
+      </Container>
     )
   }
 };
 
-  export default Nav;
+export default Nav;

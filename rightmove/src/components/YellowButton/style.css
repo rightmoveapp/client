@@ -1,0 +1,35 @@
+.YellowButton {
+    width: 328px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #fee07d;
+    border-style: none;
+}
+
+.YellowButton:link {
+    background-color: #fee07d;
+}
+  
+.YellowButton:visited {
+    background-color: #fee07d;
+}
+  
+.YellowButton:hover {
+    background-color: #fee07d;
+}
+  
+.YellowButton:active {
+    background-color: #fee07d;
+}
+
+.-YellowButton-Text {
+    /* font-family: 'Inter'; */
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #0a2f51;
+  }

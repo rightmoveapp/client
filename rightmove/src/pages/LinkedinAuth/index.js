@@ -14,7 +14,6 @@ class LinkedinAuth extends Component {
         const token = values.code
         cookies.set("token", token, {path:"/"})
         console.log(`my cookie is ${cookies.get('token')}`);
-        this.renderRedirect();
     }
 
 
