@@ -5,13 +5,16 @@ import Cookies from 'universal-cookie';
 import axios from "axios";
 
 const cookies = new Cookies();
-const apihost = "http://localhost:8000/api/v1/login"
+const apihost = "http://localhost:8000/v1/login"
 
 class LinkedinAuth extends Component {
 
+    updateLogin = () =>{
+        this.props.updateLogin()
+    }
+
     componentDidMount() {
         const values = queryString.parse(this.props.location.search)
-        console.log(`value code ${values.code}`)
         const authCode = values.code
         this.getToken(authCode)
     }
@@ -20,11 +23,12 @@ class LinkedinAuth extends Component {
         axios.post(apihost, {Authorization: `Bearer ${authCode}`})
           .then(res => {
             cookies.set("token", res.data.token, {path:"/"})
-            this.renderRedirect();
           })
           .catch((error) => {
             cookies.remove("token", {path:"/"})
         })
+        this.updateLogin();
+        this.renderRedirect();
       }
 
       renderRedirect = () => {
