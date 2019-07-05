@@ -1,6 +1,8 @@
 import React from "react";
-import Login from "../Login"
-import Logout from "../Logout"
+import Container from "../Container";
+import Login from "../Login";
+import Logout from "../Logout";
+import Logo from "../Logo"
 import "./style.css";
 
 class Nav extends React.Component {
@@ -10,7 +12,7 @@ class Nav extends React.Component {
       <nav>
         <div className="nav-wrapper">
           <a href="/" id="brandLogo" className="brand-logo">Logo</a>
-          <ul id="nav-mobile" className="right">
+          <ul id="valign-wrapper" className="right">
             {this.props.loggedIn ? (
               <Logout name={this.props.name}/>
               ) : (
@@ -24,4 +26,4 @@ class Nav extends React.Component {
   }
 };
 
-  export default Nav;
+export default Nav;
