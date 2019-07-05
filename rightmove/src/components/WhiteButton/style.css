@@ -1,0 +1,19 @@
+.WhiteButton {
+    width: 328px;
+    height: 40px;
+    border-radius: 4px;
+    border: solid 1px #0a2f51;
+    background-color: #ffffff;
+}
+
+.-WhiteButton-Text {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: center;
+    color: #0a2f51;
+}
