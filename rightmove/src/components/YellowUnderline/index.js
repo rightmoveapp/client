@@ -4,7 +4,7 @@ import './style.css';
 
 const YellowUnderline = props => {
     return (
-        <Link to={props.to}>
+        <Link to={props.to} style={{ marginRight: props.space + 'px' }}>
             {props.text}
         </Link>
 
