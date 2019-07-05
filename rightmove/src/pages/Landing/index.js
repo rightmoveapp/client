@@ -7,9 +7,9 @@ import './style.css';
 
 
 class Landing extends Component {
-    state = {
-        /* landingPage_tagLine: "", */
-        /* landingPage_description: "", */
+    /* state = {
+        landingPage_tagLine: "",
+        landingPage_description: "",
         landingPage_howItWorks: "",
     }
 
@@ -20,10 +20,10 @@ class Landing extends Component {
     loadLandingPage = () => {
         API.getLandingPage()
             .then(res =>
-                this.setState({ /* landingPage_tagLine: "", */ /* landingPage_description: "", */ landingPage_howItWorks: "" })
+                this.setState({ landingPage_tagLine: "", landingPage_description: "", landingPage_howItWorks: "" })
             )
             .catch(err => console.log(err));
-    };
+    }; */
 
     render() {
         return (
