@@ -9,12 +9,13 @@ const ReturnLogin = () => {
   return (
     <>
       <Row>
-        <Col size="s12 m12 l12" className="align-left">
+        <Col size="s12 m12 l12">
+
         </Col>
       </Row>
       <Row>
         <Col>
-          <YellowButton/>
+          <YellowButton text="Log In"/>
         </Col>
       </Row>
     </>
