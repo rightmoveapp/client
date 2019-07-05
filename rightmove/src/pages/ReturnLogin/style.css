@@ -1,6 +1,4 @@
 .Welcome-back {
-    width: 152px;
-    height: 28px;
     font-family: 'Inter';
     font-size: 20px;
     font-weight: bold;
@@ -10,4 +8,37 @@
     letter-spacing: normal;
     text-align: center;
     color: #0a2f51;
+    margin-bottom: 16px;
+  }
+
+  .Label {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.71px;
+    color: #0a2f51;
+    display: block;
+  }
+
+  .Rectangle {
+    max-width: 360px;
+    height: 48px;
+    background-color: #ffffff !important;
+    border-bottom: dotted 2px #637c92 !important;
+  }
+
+  input {
+    width: 312px;
+    height: 24px;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #637c92;
   }
