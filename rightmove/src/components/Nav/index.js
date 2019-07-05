@@ -2,7 +2,8 @@ import React from "react";
 import Container from "../Container";
 import Login from "../Login";
 import Logout from "../Logout";
-import { ReactComponent as Logo } from './logo.svg';
+/* import { ReactComponent as Logo } from './logo.svg'; */
+import Logo from "../Logo"
 import "./style.css";
 
 class Nav extends React.Component {

@@ -1,5 +1,4 @@
 import React from "react";
-import Landing from "../../pages/Landing";
 import { Link } from "react-router-dom";
 import './style.css'
 
