@@ -1,6 +1,4 @@
 .Welcome-back {
-    width: 152px;
-    height: 28px;
     font-family: 'Inter';
     font-size: 20px;
     font-weight: bold;
@@ -10,11 +8,10 @@
     letter-spacing: normal;
     text-align: center;
     color: #0a2f51;
+    margin-bottom: 16px;
   }
 
   .Label {
-    width: 45px;
-    height: 15px;
     font-family: 'Inter';
     font-size: 12px;
     font-weight: normal;
@@ -22,12 +19,12 @@
     font-stretch: normal;
     line-height: normal;
     letter-spacing: 1.71px;
-    text-align: center;
     color: #0a2f51;
+    display: block;
   }
 
   .Rectangle {
-    width: 328px;
+    max-width: 360px;
     height: 48px;
     background-color: #ffffff !important;
     border-bottom: dotted 2px #637c92 !important;
