@@ -17,7 +17,7 @@ const Page404 = () => {
       </Row>
       <Row>
         <Col>
-          <RedButton text='Go Home →'/>
+          <RedButton text='Go Home →' to="/"/>
         </Col>
       </Row>
     </>

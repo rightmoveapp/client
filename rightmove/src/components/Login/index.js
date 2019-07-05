@@ -11,20 +11,15 @@ const Login = () => {
     <span>
       <li className="hide-on-small-only">
         <a
-          href={`https://linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${escape(callbackUri)}&state=${callbackState}&scope=r_liteprofile%20r_emailaddress`}
-        ><span className="Underline">
+          href={`https://linkedin.com/oauth/v2/authorization?response_type=code&client_id=${clientId}&redirect_uri=${escape(callbackUri)}&state=${callbackState}&scope=r_liteprofile%20r_emailaddress`}>
           Create Account
-          </span>
-      </a>
+        </a>
       </li>
 
       <li>
-        <Link
-          to="/"
-        ><span className="Underline">
+        <Link to="/login" className={window.location.pathname === "/login"}>
           Log In
-          </span>
-      </Link>
+        </Link>
       </li>
     </span>
   )
