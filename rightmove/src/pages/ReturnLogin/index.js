@@ -16,16 +16,16 @@ const ReturnLogin = () => {
       <Row>
         <Col size="s12">
           <div>
-              <label for="email">EMAIL</label>
-              <input id="email" type="email" class="validate" placeholder="johndoe@email.com"/>
+              <label for="email" className="Label">EMAIL</label>
+              <input id="email" type="email" class="validate" placeholder="johndoe@email.com" className="Rectangle"/>
           </div>
         </Col>
       </Row>
       <Row>
         <Col size="s12">
           <div>
-            <label for="password">PASSWORD</label>
-            <input id="password" type="password" class="validate" placeholder="•••••••••••••••" />
+            <label for="password" className="Label">PASSWORD</label>
+            <input id="password" type="password" class="validate" placeholder="•••••••••••••••" className="Rectangle" />
           </div>
         </Col>
       </Row>
