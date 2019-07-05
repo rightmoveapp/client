@@ -22,11 +22,11 @@ nav ul a{
 
 a {
   line-height: 45px;
-  display: initial !important;
+  /* display: initial !important; */
 }
 
 
-nav ul a:hover {
+/* nav ul a:hover {
   background-color: rgba(0, 0, 0, 0) !important;
 }
 
@@ -39,7 +39,7 @@ a:hover:link {
   background-color: #fee07d !important;
   transition: background-color 300ms linear;
 }
-
+ */
 
 li {
   line-height: initial;
