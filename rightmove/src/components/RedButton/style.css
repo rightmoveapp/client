@@ -22,7 +22,9 @@
   background-color: #ff4038;
 }
 
-
+.Button:focus {
+  background-color: #ff4038;;
+}
 
 .-Button-Text {
   font-family: 'Inter';

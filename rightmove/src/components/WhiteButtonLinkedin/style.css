@@ -21,6 +21,10 @@
   .WhiteButtonLinkedin:active {
     background-color:  #ffffff;;
   }
+
+  .WhiteButtonLinkedin:focus {
+    background-color:  #ffffff;;
+  }
   
 
 .-WhiteButtonLinkedin-Text {
