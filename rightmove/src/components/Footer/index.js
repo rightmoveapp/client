@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className="footer Footer-Area Placeholder page-footer">
             <p>Made with ❤ by Team RedStapler</p>
-            <Link to="/privacy_policy">Privacy Policy</Link>
+            <Link to="/privacy_policy" target="_blank">Privacy Policy</Link>
         </footer>
     )
 }
