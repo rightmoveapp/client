@@ -39,8 +39,11 @@ class Questions extends Component {
             return <TextQuestion />;}
     }
 
-    getNextQuestion() {
-        console.log("CLICK!!!!");
+    getNextQuestion(event) {
+        /* console.log("CLICK!!!!"); */
+        event.preventDefault();
+        
+
     }
     
 

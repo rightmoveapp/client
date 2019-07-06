@@ -9,6 +9,7 @@ import Account from './pages/Account';
 import Page404 from './pages/Page404';
 import ReturnLogin from './pages/ReturnLogin';
 import Questions from './pages/Questions';
+import PrivacyPage from './pages/PrivacyPolicy';
 /*
 import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
@@ -23,6 +24,7 @@ function App() {
         <Nav name="Steve" />
         <Container>
           <Switch>
+            <Route exact path="/privacy_policy" component={PrivacyPage} />
             <Route exact path="/questions" component={Questions} />
             <Route exact path="/login" component={ReturnLogin} />
             <Route exact path="/v1/login" render={props => <Account {...props} />} />
