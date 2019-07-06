@@ -13,7 +13,9 @@ import "./style.css";
 
 class Questions extends Component {
     state = {
-        questionsChoices: questionsChoices.questionsAndChoices
+        questionsChoices: questionsChoices.questionsAndChoices,
+        answeredQuestions: [],
+        skippedQuestions: [],
     };
     /* get random question in the database
         evaluate the question to see if it has been asked before (after very first question)
@@ -40,11 +42,25 @@ class Questions extends Component {
             return <TextQuestion />;}
     }
 
+    handleInputChange = event => {
+        // Getting the value and name of the input which triggered the change
+        let value = event.target.value;
+        const name = event.target.name;
+    
+        if (name === "password") {
+          value = value.substring(0, 15);
+        }
+        // Updating the input's state
+        this.setState({
+          [name]: value
+        });
+    };
+
     getNextQuestion(event) {
         /* console.log("CLICK!!!!"); */
         event.preventDefault();
         
-
+    
     }
     
 
