@@ -10,14 +10,14 @@
 }
 
 [type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after {
-    border: dotted 2px #637c92;
+    border: dotted 2px  #0a2f51;
 }
 
 [type="radio"]:checked + span:after,
  
 [type="radio"].with-gap:checked + span:after {
  
-  background-color:#637c92;
-  border: dotted 2px #637c92;
+  background-color: #0a2f51;
+  border: dotted 2px  #0a2f51;
  
 }
