@@ -2,34 +2,62 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom'
 import queryString from 'query-string'
 import Cookies from 'universal-cookie';
+import axios from 'axios';
 
 const cookies = new Cookies();
+const apiUrl = "http://localhost:8000/v1/login"
 
 class LinkedinAuth extends Component {
-
-
-    componentDidMount() {
-        const values = queryString.parse(this.props.location.search)
-        console.log(`value code ${values.code}`)
-        const token = values.code
-        cookies.set("token", token, {path:"/"})
-        console.log(`my cookie is ${cookies.get('token')}`);
+    state = {
+        loading:true
     }
 
+    loadData = () => {
+      const values = queryString.parse(this.props.location.search)
+      const authToken = values.code
+    //   this.setState({ loading: true });
+      axios({
+            method: 'post',
+            url: apiUrl,
+            headers: {
+            Authorization: 'Bearer ' + authToken
+           }
+      })
+      .then(response => {
+        cookies.set("token", response.data.token, {path:"/"})
+        this.props.updateLogin(true)
+        axios.defaults.headers.post['Authorization'] = 'Bearer ' + response.data.token
+        this.setState({
+          loading: false
+        });
+      })
+      .catch(error => {
+        cookies.remove("token", {path:"/"})
+        this.props.updateLogin(false)
+        this.setState({
+        error: `${error}`,
+          loading: false
+        });
+      });
+  };
 
-
-      renderRedirect = () => {
-          return <Redirect to='/v1/login'/>
-      }
+  componentDidMount() {
+    this.loadData();
+  }
 
 
     render() {
-        return (
-            <>
-                {/* // <div>Auth Code: {this.props.location.search}</div> */}
-                {this.renderRedirect()}
-              </>
+        const loading = this.state.loading
+
+        if(loading){
+            return ( <p>Processing Authentication...</p>)
+        }
+        else{
+
+            return (
+                <Redirect to ="/job_detail"/>
         )
+        }
     }
 }
 

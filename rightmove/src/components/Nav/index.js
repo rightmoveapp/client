@@ -6,27 +6,23 @@ import Logo from "../Logo"
 import "./style.css";
 
 class Nav extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isLoggedIn: false };
-  }
 
   render() {
     return (
       <Container>
-        <nav>
-          <div className="nav-wrapper">
-            <Logo />
-            <ul id="valign-wrapper" className="right">
-              {!this.state.isLoggedIn ? (
-                <Login />
+      <nav>
+        <div className="nav-wrapper">
+          <Logo />
+          <ul id="valign-wrapper" className="right">
+            {this.props.loggedIn ? (
+              <Logout name={this.props.name}/>
               ) : (
-                  <Logout name={this.props.name} />
-                )
-              }
-            </ul>
-          </div>
-        </nav>
+            <Login />
+            )
+            }
+          </ul>
+        </div>
+      </nav>
       </Container>
     )
   }

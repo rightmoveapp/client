@@ -7,7 +7,7 @@ const Logout = props => {
     <>
       <li className="userName">Hi, {props.name}</li>
       <li>
-        <Link to="/">
+        <Link to="/logout">
           Logout
         </Link>
       </li>
