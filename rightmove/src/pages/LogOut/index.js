@@ -5,14 +5,10 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class LogOut extends Component {
-  
-  updateLogin = () =>{
-    this.props.updateLogin()
-  }
 
     componentDidMount() {
         cookies.remove("token", {path:"/"})
-        this.updateLogin();
+        this.props.updateLogin(false);
     }
 
       renderRedirect = () => {

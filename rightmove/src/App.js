@@ -9,6 +9,7 @@ import Account from './pages/Account';
 import PrivateRoute from './PrivateRoute';
 import LogOut from './pages/LogOut'
 import Page404 from './pages/Page404';
+import Job from './pages/Job';
 import ReturnLogin from './pages/ReturnLogin';
 /*import Questions from './pages/Questions';
 import Job from './pages/Job';
@@ -19,13 +20,19 @@ import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 class App extends React.Component {
-  state = {
-    loggenIn:(typeof (cookies.get('token', {path:"/"})) !== "undefined" && cookies.get("token",{path:"/"}) !=="")
-  }
+  state ={
+    loggedIn:false}
 
-  updateLogin = () =>{
-    this.setState({loggedIn:!this.state.loggedIn})
-  }
+updateLogin = (force=null) =>{
+if(force !== null){
+    this.setState({loggedIn:force})
+}
+else{
+this.setState({loggedIn:(typeof (cookies.get("token",{path:"/"})) !== "undefined" && cookies.get("token",{path:"/"}) !=='') 
+ })
+}
+console.log(`app is ${(this.state.loggedIn)? "logged in" : "not logged in"}`)
+}
 
   render(){
   return (
@@ -34,10 +41,11 @@ class App extends React.Component {
       <Nav name="Steve" loggedIn={this.state.loggedIn}/>
       <Container>
         <Switch>
-      <Route exact path="/logout" render = {(props) => <LogOut updateLogin={this.updateLogin}/>} />
-      <Route exact path="/linkedin_auth" render = {(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin}/>}  />
-      <PrivateRoute path="/account" component={Account} />
-      <Route exact path="/" component={Landing}  />
+        <Route exact path="/logout" render = {(props) => <LogOut updateLogin={this.updateLogin}/>} />
+          <Route exact path="/linkedin_auth"  render = { (props) => <LinkedinAuth {...props}  updateLogin={this.updateLogin}/>}/>
+          <PrivateRoute path="/account" loggedIn={this.state.loggedIn} render = { (props) => <Account {...props} /> }/>
+          <PrivateRoute path="/job_detail" loggedIn={this.state.loggedIn} render = { (props) => <Job {...props} /> }/>
+          <Route exact path="/" component={Landing}  />
       <Route exact path="/*" component={Page404} />
           {/* <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />

@@ -18,10 +18,10 @@ const Login = () => {
       </li>
 
       <li>
-        <YellowUnderline to="/login" text="Log In"/>
-        {/* <Link to="/login">
+        {/* <YellowUnderline to="/login" text="Log In"/> */}
+        <Link to="/login">
           Log In
-        </Link> */}
+        </Link>
       </li>
     </span>
   )

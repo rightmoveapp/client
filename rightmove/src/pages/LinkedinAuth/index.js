@@ -2,46 +2,64 @@ import React, { Component } from "react";
 import { Redirect } from 'react-router-dom'
 import queryString from 'query-string'
 import Cookies from 'universal-cookie';
-import axios from "axios";
+import axios from 'axios';
 
 const cookies = new Cookies();
-const apihost = "http://localhost:8000/v1/login"
+const apiUrl = "http://localhost:8000/v1/login"
 
 class LinkedinAuth extends Component {
-
-    updateLogin = () =>{
-        this.props.updateLogin()
+    state = {
+        loading:true
     }
 
-    componentDidMount() {
-        const values = queryString.parse(this.props.location.search)
-        const authCode = values.code
-        this.getToken(authCode)
-    }
+    loadData = () => {
+      const values = queryString.parse(this.props.location.search)
+      const authToken = values.code
+      this.setState({ loading: true });
+      axios({
+            method: 'post',
+            url: apiUrl,
+            headers: {
+            Authorization: 'Bearer ' + authToken
+           }
+      })
+      .then(response => {
+        console.log(response);
+        cookies.set("token", response.data.token, {path:"/"})
+        this.props.updateLogin(true)
+        axios.defaults.headers.post['Authorization'] = 'Bearer ' + response.data.token
+        this.setState({
+          loading: false,
+        });
+      })
+      .catch(error => {
+        console.log("error: ", error);
+        cookies.remove("token", {path:"/"})
+        this.props.updateLogin(true)
+        this.setState({
+          error: `${error}`,
+          loading: false
+        });
+      });
+  };
 
-    getToken = authCode =>{
-        axios.post(apihost, {Authorization: `Bearer ${authCode}`})
-          .then(res => {
-            cookies.set("token", res.data.token, {path:"/"})
-          })
-          .catch((error) => {
-            cookies.remove("token", {path:"/"})
-        })
-        this.updateLogin();
-        this.renderRedirect();
-      }
-
-      renderRedirect = () => {
-          return <Redirect to='/account'/>
-      }
+  componentDidMount() {
+    this.loadData();
+  }
 
 
     render() {
-        return (
-            <>
-                {this.renderRedirect()}
-              </>
+        const loading = this.state.loading
+
+        if(loading){
+            return ( <p>Processing Authentication...</p>)
+        }
+        else{
+
+            return (
+                <Redirect to ="/job_detail"/>
         )
+        }
     }
 }
 
