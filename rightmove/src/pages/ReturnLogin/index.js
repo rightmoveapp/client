@@ -2,7 +2,7 @@ import React from "react";
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 import YellowButton from "../../components/YellowButton";
-import WhiteButton from "../../components/WhiteButton";
+import WhiteButtonLinkedin from "../../components/WhiteButtonLinkedin";
 import "./style.css";
 /* import YellowUnderline from "../../components/YellowUnderline";
  */
@@ -37,7 +37,7 @@ const ReturnLogin = () => {
       </Row>
       <Row>
         <Col size="s12">
-          <WhiteButton text="Log in with LinkedIn" />
+          <WhiteButtonLinkedin text="Log in with LinkedIn" />
         </Col>
       </Row>
       <Row>

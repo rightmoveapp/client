@@ -1,4 +1,4 @@
-.WhiteButton {
+.WhiteButtonLinkedin {
     width: 328px;
     height: 40px;
     border-radius: 4px;
@@ -6,7 +6,24 @@
     background-color: #ffffff;
 }
 
-.-WhiteButton-Text {
+.WhiteButtonLinkedin:link {
+    background-color:  #ffffff;;
+  }
+  
+  .WhiteButtonLinkedin:visited {
+    background-color:  #ffffff;;
+  }
+  
+  .WhiteButtonLinkedin:hover {
+    background-color:  #ffffff;;
+  }
+  
+  .WhiteButtonLinkedin:active {
+    background-color:  #ffffff;;
+  }
+  
+
+.-WhiteButtonLinkedin-Text {
     font-family: 'Inter';
     font-size: 16px;
     font-weight: normal;
