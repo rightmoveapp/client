@@ -30,37 +30,19 @@ class Questions extends Component {
         const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
         console.log(randomQuestion.question[0].input_type);
         if (randomQuestion.question[0].input_type === "radio") {
-            return <RadioQuestion />;}
+            return <RadioQuestion />}
         else if (randomQuestion.question[0].input_type === "date") {
-                return <DateQuestion />;
-            }
+                return <DateQuestion />}
+        else if  (randomQuestion.question[0].input_type === "checkbox") {
+                return <CheckboxQuestion />;}
+        else {
+            return <TextQuestion />;}
     }
-    renderPage = () => {
-        const array = this.state.questionsChoices
-        console.log(`is this first ${array}`);
 
-
-
-
-
-        array.forEach(element => {
-            console.log(element.question[0].input_type);
-            if (element.question[0].input_type === "date") {
-                return console.log('hello!!!');
-            }
-            /* if (question.question[0].input_type === "checkbox") {
-                return <CheckboxQuestion />;
-            } else if (question.question[0].input_type === "date") {
-                return <DateQuestion />;
-            } else if (question.question[0].input_type === "radio") {
-                return <RadioQuestion />;
-            } else {
-                return <TextQuestion />;
-            } */
-        })
-
-
+    getNextQuestion() {
+        console.log("CLICK!!!!");
     }
+    
 
 
     render() {
@@ -77,7 +59,7 @@ class Questions extends Component {
                         <h5 className="explainer">Why do we need this?</h5>
                         <div className="right-align">
                             <YellowUnderline to="/" text="Skip" space="32" />
-                            <YellowButton to="/" text="Continue  →" size="139" />
+                            <YellowButton /* to="/" */ text="Continue  →" size="139" getNextQuestion={this.getNextQuestion}/>
                         </div>
                     </Col>
                 </Row>

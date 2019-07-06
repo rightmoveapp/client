@@ -10,8 +10,6 @@
 }
 
 .question {
-    width: 174px;
-    height: 24px;
     font-family: 'Inter';
     font-size: 16px;
     font-weight: normal;
@@ -24,8 +22,6 @@
 }
 
 .explainer {
-    width: 126px;
-    height: 15px;
     font-family: 'Inter';
     font-size: 12px;
     font-weight: normal;
