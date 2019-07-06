@@ -8,6 +8,7 @@ import Row from '../../components/Row';
 import Col from '../../components/Col';
 import YellowUnderline from '../../components/YellowUnderline';
 import YellowButton from '../../components/YellowButton';
+import { Link } from "react-router-dom";
 import "./style.css";
 
 class Questions extends Component {
@@ -59,7 +60,7 @@ class Questions extends Component {
                     </h4>
                         {this.getRandomQuestion()}
                         
-                        <h5 className="explainer">Why do we need this?</h5>
+                        <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
                         <div className="right-align">
                             <YellowUnderline to="/" text="Skip" space="32" />
                             <YellowButton /* to="/" */ text="Continue  →" size="139" getNextQuestion={this.getNextQuestion}/>

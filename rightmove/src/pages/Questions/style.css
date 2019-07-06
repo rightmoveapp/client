@@ -22,10 +22,9 @@
     color: #0a2f51;
     display: block;
 }
+*/
 
 .explainer {
-    width: 126px;
-    height: 15px;
     font-family: 'Inter';
     font-size: 12px;
     font-weight: normal;
@@ -34,5 +33,5 @@
     line-height: normal;
     letter-spacing: normal;
     color: #637c92;
+    text-decoration: underline;
 }
- */

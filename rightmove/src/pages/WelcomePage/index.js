@@ -19,7 +19,7 @@ const WelcomePage = () => {
 				</Col>
 			</Row>
 			<Row>
-				<Col size="s12 m12 l12">
+				<Col size="s12 m12 l12 right-align">
 					<SmallYellowButton text="Continue →"/>
 				</Col>
 			</Row>
