@@ -40,21 +40,51 @@ class App extends React.Component {
     console.log(`app is ${(this.state.loggedIn) ? "logged in" : "not logged in"}`)
   }
 
+  componentDidMount(){
+    this.updateLogin()
+  }
+
+
+
   render() {
+
     return (
       <Router>
         <div className="Site">
           <Nav name="Steve" loggedIn={this.state.loggedIn} />
           <Container>
             <Switch>
-              <Route exact path="/welcome" component={WelcomePage} />
+             <PrivateRoute
+                path="/welcome"
+                loggedIn={this.state.loggedIn}
+                component={WelcomePage}
+                render={(props) => <WelcomePage {...props} /> }
+              />
               <Route exact path="/privacy_policy" component={PrivacyPage} />
-              <Route exact path="/questions" component={Questions} />
+              <PrivateRoute
+                path="/questions"
+                loggedIn={this.state.loggedIn}
+                component={Questions}
+                render={(props) => <Questions {...props} /> }
+              />
               <Route exact path="/login" component={ReturnLogin} />
               <Route exact path="/logout" render={(props) => <LogOut updateLogin={this.updateLogin} />} />
-              <Route exact path="/linkedin_auth" render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} />} />
-              <PrivateRoute path="/account" loggedIn={this.state.loggedIn} component={Account} render={(props) => <Account {...props} />} />
-              <PrivateRoute path="/job_detail" loggedIn={this.state.loggedIn} component={Job} render={(props) => <Job {...props} />} />
+              <Route
+                exact path="/linkedin_auth"
+                render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} />}
+              />
+              <PrivateRoute
+                path="/account"
+                loggedIn={this.state.loggedIn}
+                component={Account}
+                render={(props) => <Account {...props} />}
+              />
+              <PrivateRoute
+                path="/job_detail"
+                loggedIn={this.state.loggedIn}
+                component={Job}
+                render={(props) => <Job {...props} />}
+              />
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
               {/* <Route exact path="/questions" component={Questions} />
