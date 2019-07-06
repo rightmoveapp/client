@@ -4,6 +4,7 @@ import Col from '../../components/Col';
 import Row from '../../components/Row';
 import RedButton from '../../components/RedButton';
 import './style.css';
+import RedButtonLinkedin from "../../components/RedButtonLinkedin";
 
 
 class Landing extends Component {
@@ -32,7 +33,7 @@ class Landing extends Component {
                     <div className="Take-control-of-your">Take control of your career.</div>
                     <p className="Body-Copy">Finding the work-life balance that’s right for you shouldn’t be this hard, but sometimes the choices can be overwhelming. Cut through the bullshit and illuminate the right path for you & your career. 
 You shouldn’t have to settle for less.</p>
-                <RedButton text="Sign Up →"/>
+                <RedButtonLinkedin text="Sign Up →"/>
                 </Col>
             </Row>
         )
