@@ -9,9 +9,9 @@
     text-align: center;
     color: #0a2f51;
     margin-bottom: 16px;
-  }
+}
 
-  .Label {
+.Label {
     font-family: 'Inter';
     font-size: 12px;
     font-weight: normal;
@@ -21,16 +21,16 @@
     letter-spacing: 1.71px;
     color: #0a2f51;
     display: block;
-  }
+}
 
-  .Rectangle {
+.Rectangle {
     max-width: 360px;
     height: 48px;
     background-color: #ffffff !important;
     border-bottom: dotted 2px #637c92 !important;
-  }
+}
 
-  input {
+input {
     width: 312px;
     height: 24px;
     font-family: 'Inter';
@@ -41,4 +41,12 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #637c92;
-  }
+}
+
+.Add-Spacing {
+    padding-top: 16px;
+}
+
+a {
+    color: #0a2f51;
+}

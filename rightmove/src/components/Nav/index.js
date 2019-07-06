@@ -9,9 +9,10 @@ class Nav extends React.Component {
 
   render() {
     return (
+      <Container>
       <nav>
         <div className="nav-wrapper">
-          <a href="/" id="brandLogo" className="brand-logo">Logo</a>
+          <Logo />
           <ul id="valign-wrapper" className="right">
             {this.props.loggedIn ? (
               <Logout name={this.props.name}/>
@@ -22,6 +23,7 @@ class Nav extends React.Component {
           </ul>
         </div>
       </nav>
+      </Container>
     )
   }
 };

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
@@ -18,10 +17,7 @@ const Login = () => {
       </li>
 
       <li>
-        {/* <YellowUnderline to="/login" text="Log In"/> */}
-        <Link to="/login">
-          Log In
-        </Link>
+        <YellowUnderline to="/login" text="Log In"/>
       </li>
     </span>
   )

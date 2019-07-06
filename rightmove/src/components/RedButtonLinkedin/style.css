@@ -1,0 +1,37 @@
+.RedButtonLinkedin {
+  width: 171px;
+  height: 56px;
+  border-radius: 28px;
+  background-color: #ff4038;
+  border-style: none;
+}
+
+.RedButtonLinkedin:link {
+  background-color: #ff4038;
+}
+
+.RedButtonLinkedin:visited {
+  background-color: #ff4038;
+}
+
+.RedButtonLinkedin:hover {
+  background-color: #ff4038;
+}
+
+.RedButtonLinkedin:active {
+  background-color: #ff4038;
+}
+
+
+
+.-RedButtonLinkedin-Text {
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
