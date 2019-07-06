@@ -2,17 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import './style.css'
 
-const YellowButton = props => {
+const SmallYellowButton = props => {
     return (
-       /*  <Link to={props.to}> */
+        <Link to={props.to}>
             <button 
-                className='YellowButton -YellowButton-Text' 
-                style={{ width: props.size + 'px'}} 
+                className='SmallYellowButton -SmallYellowButton-Text' 
                 onClick={props.getNextQuestion}>
                     {props.text}
             </button>
-        /* </Link> */
+        </Link>
     )
 }
 
-export default YellowButton;
+export default SmallYellowButton;

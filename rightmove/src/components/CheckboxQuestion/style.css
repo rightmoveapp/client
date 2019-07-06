@@ -1,0 +1,19 @@
+[type="checkbox"]+span:not(.lever):before {
+    border: 2px dotted  #0a2f51;
+}
+
+.-Input-Text {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #0a2f51;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #0a2f51;
+    border-bottom: 2px solid #0a2f51;
+}
