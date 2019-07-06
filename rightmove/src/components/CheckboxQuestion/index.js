@@ -9,7 +9,7 @@ const CheckboxQuestions = () => {
                 <label className="question">Where in the city would you be happy to work in?</label>
                 <p>
                     <label>
-                        <input type="checkbox" />
+                        <input type="checkbox" class="red"/>
                         <span className="-Input-Text">Center City</span>
                     </label>
                 </p>
