@@ -6,7 +6,8 @@ import Container from './components/Container';
 import Landing from './pages/Landing';
 import LinkedinAuth from './pages/LinkedinAuth';
 import Account from './pages/Account';
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from './components/PrivateRoute';
+// const {PrivateRoute} = require("./PrivateRoute")
 import LogOut from './pages/LogOut'
 import Page404 from './pages/Page404';
 import Job from './pages/Job';
@@ -43,10 +44,10 @@ console.log(`app is ${(this.state.loggedIn)? "logged in" : "not logged in"}`)
         <Switch>
         <Route exact path="/logout" render = {(props) => <LogOut updateLogin={this.updateLogin}/>} />
           <Route exact path="/linkedin_auth"  render = { (props) => <LinkedinAuth {...props}  updateLogin={this.updateLogin}/>}/>
-          <PrivateRoute path="/account" loggedIn={this.state.loggedIn} render = { (props) => <Account {...props} /> }/>
-          <PrivateRoute path="/job_detail" loggedIn={this.state.loggedIn} render = { (props) => <Job {...props} /> }/>
+          <PrivateRoute path="/account" loggedIn={this.state.loggedIn} component={Account} render = { (props) => <Account {...props} /> }/>
+          <PrivateRoute path="/job_detail" loggedIn={this.state.loggedIn} component={Job} render = { (props) => <Job {...props} /> }/>
           <Route exact path="/" component={Landing}  />
-      <Route exact path="/*" component={Page404} />
+          <Route exact path="/*" component={Page404} />
           {/* <Route exact path="/questions" component={Questions} />
           <Route exact path="/job_detail" component={Job} />
           <Route exact path="/current_state" component={CurrentState} /> */}

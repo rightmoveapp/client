@@ -15,7 +15,7 @@ class LinkedinAuth extends Component {
     loadData = () => {
       const values = queryString.parse(this.props.location.search)
       const authToken = values.code
-      this.setState({ loading: true });
+    //   this.setState({ loading: true });
       axios({
             method: 'post',
             url: apiUrl,
@@ -24,20 +24,18 @@ class LinkedinAuth extends Component {
            }
       })
       .then(response => {
-        console.log(response);
         cookies.set("token", response.data.token, {path:"/"})
         this.props.updateLogin(true)
         axios.defaults.headers.post['Authorization'] = 'Bearer ' + response.data.token
         this.setState({
-          loading: false,
+          loading: false
         });
       })
       .catch(error => {
-        console.log("error: ", error);
         cookies.remove("token", {path:"/"})
-        this.props.updateLogin(true)
+        this.props.updateLogin(false)
         this.setState({
-          error: `${error}`,
+        error: `${error}`,
           loading: false
         });
       });
