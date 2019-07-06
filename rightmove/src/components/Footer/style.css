@@ -1,8 +1,4 @@
 .footer {
-    /* flex-shrink: 0; */
-    /* position: fixed;
-    left: 0;
-    bottom: 0; */
     width: 100%;
     background-color: red;
     color: white;
@@ -27,4 +23,9 @@
     letter-spacing: 2px;
     text-align: center;
     color: #0a2f51;
+}
+
+footer p {
+    padding: 0px;
+    margin: 0px;
 }
