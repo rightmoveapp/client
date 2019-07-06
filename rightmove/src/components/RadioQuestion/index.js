@@ -11,25 +11,25 @@ const RadioQuestion = () => {
                 <p>
                     <label>
                         <input name="group1" type="radio" />
-                        <span>Red</span>
+                        <span className="-Input-Text">Red</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input name="group1" type="radio" />
-                        <span>Yellow</span>
+                        <span className="-Input-Text">Yellow</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input name="group1" type="radio" />
-                        <span>Green</span>
+                        <span className="-Input-Text">Green</span>
                     </label>
                 </p>
                 <p>
                     <label>
                         <input name="group1" type="radio" />
-                        <span>Brown</span>
+                        <span className="-Input-Text">Brown</span>
                     </label>
                 </p>
             </form>
