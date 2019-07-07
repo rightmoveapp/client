@@ -25,36 +25,81 @@ const cookies = new Cookies();
 
 class App extends React.Component {
   state = {
-    loggedIn: false
+    loggedIn: false,
+    stateHasUpdated: true
   }
 
   updateLogin = (force = null) => {
     if (force !== null) {
-      this.setState({ loggedIn: force })
+      this.setState({ loggedIn: force,  stateHasUpdated: true })
     }
     else {
+      const token_cookie = cookies.get("token", {path: "/"})
+      console.log(`token_cookie returned is ${token_cookie}`)
+    
+      const token_is_undefined = typeof(token_cookie) === "undefined"
+      console.log(`token_is_undefined is ${token_is_undefined}`)
+  
+      const token_is_empty = token_cookie === " " 
+      console.log(`token_is_empty is ${token_is_empty}`)
+
+      const loggedIn = !(token_is_undefined | token_is_empty)
+      console.log(`the loggedIn value will be set to ${loggedIn}`)
       this.setState({
-        loggedIn: (typeof (cookies.get("token", { path: "/" })) !== "undefined" && cookies.get("token", { path: "/" }) !== '')
+        loggedIn: loggedIn,
+        stateHasUpdated: true     
       })
     }
-    console.log(`app is ${(this.state.loggedIn) ? "logged in" : "not logged in"}`)
   }
 
+  componentWillMount(){
+    this.updateLogin()
+
+  }
+  componentDidMount(){
+    console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`)
+ }
+
+
   render() {
-    return (
-      <Router>
+    return (this.state.stateHasUpdated?
+      
+      (<Router>
         <div className="Site">
           <Nav name="Steve" loggedIn={this.state.loggedIn} />
           <Container>
             <Switch>
-              <Route exact path="/welcome" component={WelcomePage} />
+             <PrivateRoute
+                path="/welcome"
+                loggedIn={this.state.loggedIn}
+                component={WelcomePage}
+                render={(props) => <WelcomePage {...props} /> }
+              />
               <Route exact path="/privacy_policy" component={PrivacyPage} />
-              <Route exact path="/questions" component={Questions} />
+              <PrivateRoute
+                path="/questions"
+                loggedIn={this.state.loggedIn}
+                component={Questions}
+                render={(props) => <Questions {...props} /> }
+              />
               <Route exact path="/login" component={ReturnLogin} />
               <Route exact path="/logout" render={(props) => <LogOut updateLogin={this.updateLogin} />} />
-              <Route exact path="/linkedin_auth" render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} />} />
-              <PrivateRoute path="/account" loggedIn={this.state.loggedIn} component={Account} render={(props) => <Account {...props} />} />
-              <PrivateRoute path="/job_detail" loggedIn={this.state.loggedIn} component={Job} render={(props) => <Job {...props} />} />
+              <Route
+                exact path="/linkedin_auth"
+                render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} />}
+              />
+              <PrivateRoute
+                path="/account"
+                loggedIn={this.state.loggedIn}
+                component={Account}
+                render={(props) => <Account {...props} />}
+              />
+              <PrivateRoute
+                path="/job_detail"
+                loggedIn={this.state.loggedIn}
+                component={Job}
+                render={(props) => <Job {...props} />}
+              />
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
               {/* <Route exact path="/questions" component={Questions} />
@@ -66,7 +111,7 @@ class App extends React.Component {
           <Footer />
         </div>
 
-      </Router>
+      </Router>):(<p/>)
     );
   }
 }

@@ -12,6 +12,12 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 class Questions extends Component {
+    constructor(props) {
+        super(props)
+
+        this.handleInputChange = this.handleInputChange.bind(this)
+    }
+    
     state = {
         questionsChoices: questionsChoices.questionsAndChoices,
         answeredQuestions: [],
@@ -33,13 +39,13 @@ class Questions extends Component {
         const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
         console.log(randomQuestion.question[0].input_type);
         if (randomQuestion.question[0].input_type === "radio") {
-            return <RadioQuestion />}
+            return <RadioQuestion handleInputChange = {this.handleInputChange} />}
         else if (randomQuestion.question[0].input_type === "date") {
-                return <DateQuestion />}
+                return <DateQuestion handleInputChange = {this.handleInputChange} />}
         else if  (randomQuestion.question[0].input_type === "checkbox") {
-                return <CheckboxQuestion />;}
+                return <CheckboxQuestion handleInputChange = {this.handleInputChange} />;}
         else {
-            return <TextQuestion />;}
+            return <TextQuestion handleInputChange = {this.handleInputChange} />;}
     }
 
     handleInputChange = event => {
@@ -47,9 +53,6 @@ class Questions extends Component {
         let value = event.target.value;
         const name = event.target.name;
     
-        if (name === "password") {
-          value = value.substring(0, 15);
-        }
         // Updating the input's state
         this.setState({
           [name]: value
@@ -73,14 +76,14 @@ class Questions extends Component {
                     <Col size="s12 m12 l12">
                         <h4 className="heading">Here we go!
                             Tell us a little about yourself.
-                    </h4>
+                        </h4>
                         {this.getRandomQuestion()}
                         
-                        <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+                        {/* <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
                         <div className="right-align">
                             <YellowUnderline to="/" text="Skip" space="32" />
-                            <YellowButton /* to="/" */ text="Continue  →" size="139" getNextQuestion={this.getNextQuestion}/>
-                        </div>
+                            <YellowButton to="/" text="Continue  →" size="139" getNextQuestion={this.getNextQuestion}/>
+                        </div> */}
                     </Col>
                 </Row>
             </>

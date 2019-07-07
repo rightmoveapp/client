@@ -1,35 +1,27 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import YellowButton from "../YellowButton";
+import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
 class CheckboxQuestions extends Component {
-    state = {
-        questionAnswer: [],
-        checkboxes: ["centercity", "west", "north", "south"],
-        
-    };
-
-    /* handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        let value = event.target.value;
-        const name = event.target.name;
-
-        // Updating the input's state
+    /* state = {
+        active: false
+    }
+    onChange = event => {
+        // taken straight from the official React Docs
+        // https://reactjs.org/docs/forms.html#handling-multiple-inputs
+        const target = event.target;
+        const value = target.type === "checkbox"
+          ? target.checked
+          : target.value;
+        const name = target.name;
         this.setState({
-            [name]: value
+          [name]: value,
+          active:true
         });
-    }; */
-
-    handleCheckboxChange = changeEvent => {
-        const { name } = changeEvent.target;
-
-        this.setState(prevState => ({
-            checkboxes: {
-                ...prevState.checkboxes,
-                [name]: !prevState.checkboxes[name]
-            }
-        }));
-    };
+      }; */
 
     render() {
         return (
@@ -38,57 +30,38 @@ class CheckboxQuestions extends Component {
                     <label className="question">Where in the city would you be happy to work in?</label>
                     <p>
                         <label>
-                            <input
-                                type="checkbox"
-                                label="center city"
-                                is_selected={this.state.checkboxes["centercity"]}
-                                on_checkbox_change={this.handleCheckboxChange}
-                                key={"center city"}
-                            />
+                            <input name="active"
+                                type="checkbox" class="red" />
                             <span className="-Input-Text">Center City</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input
-                                type="checkbox"
-                                label="west"
-                                is_selected={this.state.checkboxes["west"]}
-                                on_checkbox_change={this.handleCheckboxChange}
-                                key={"west"}
-                            />
+                            <input type="checkbox" />
                             <span className="-Input-Text">West</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input
-                                type="checkbox"
-                                label="north"
-                                is_selected={this.state.checkboxes["north"]}
-                                on_checkbox_change={this.handleCheckboxChange}
-                                key={"north"}
-                            />
-                            <span className="-Input-Text" >North</span>
+                            <input type="checkbox" />
+                            <span className="-Input-Text">North</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input
-                                type="checkbox"
-                                label="south"
-                                is_selected={this.state.checkboxes["south"]}
-                                on_checkbox_change={this.handleCheckboxChange}
-                                key={"south"}
-                            />
-                            <span className="-Input-Text" >South</span>
+                            <input type="checkbox" />
+                            <span className="-Input-Text">South</span>
                         </label>
                     </p>
                 </form>
+                <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+                <div className="right-align">
+                    <YellowUnderline to="/" text="Skip" space="32" />
+                    <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion} */ />
+                </div>
             </>
         )
     }
-
 
 
 }

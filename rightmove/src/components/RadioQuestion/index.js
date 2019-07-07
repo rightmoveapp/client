@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import YellowButton from "../YellowButton";
+import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
@@ -33,6 +36,11 @@ const RadioQuestion = () => {
                     </label>
                 </p>
             </form>
+            <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+            <div className="right-align">
+                <YellowUnderline to="/" text="Skip" space="32" />
+                <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion}  *//>
+            </div>
         </>
     )
 }

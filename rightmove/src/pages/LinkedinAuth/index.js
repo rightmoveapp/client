@@ -55,7 +55,7 @@ class LinkedinAuth extends Component {
         else{
 
             return (
-                <Redirect to ="/job_detail"/>
+                <Redirect to ="/welcome"/>
         )
         }
     }
