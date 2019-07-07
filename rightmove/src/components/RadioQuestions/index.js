@@ -5,7 +5,7 @@ import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
-class RadioQuestions2 extends Component {
+class RadioQuestions extends Component {
 
     constructor() {
         super();
@@ -35,7 +35,7 @@ class RadioQuestions2 extends Component {
             <>
                 <form onSubmit={this.handleSubmit} size="col s12 m12 l12">
                     <label className="question">What are you pronouns?</label>
-                    {/* <input id="pronouns" type="radio" className="validate" className="Rectangle" /> */}
+                    <input id="pronouns" type="radio" className="validate" className="Rectangle" />
                     <p>
                         <label>
                             <input
@@ -93,4 +93,4 @@ class RadioQuestions2 extends Component {
 
 }
 
-export default RadioQuestions2;
+export default RadioQuestions;
