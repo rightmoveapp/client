@@ -6,24 +6,6 @@ import "./style.css";
 
 
 class CheckboxQuestions extends Component {
-    /* state = {
-        active: false
-    }
-
-    onChange = event => {
-        // taken straight from the official React Docs
-        // https://reactjs.org/docs/forms.html#handling-multiple-inputs
-        const target = event.target;
-        const value = target.type === "checkbox"
-            ? target.checked
-            : target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value,
-            active: true
-        });
-    }; */
-
     constructor(props) {
         super(props);
         this.state = {

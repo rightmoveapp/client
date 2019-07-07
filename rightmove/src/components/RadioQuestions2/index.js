@@ -5,40 +5,44 @@ import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
-class RadioQuestion extends Component {
-    constructor(props) {
-        super(props);
+class RadioQuestions2 extends Component {
+
+    constructor() {
+        super();
+
         this.state = {
-            active: false,
+            choice: ''
         };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+       /*  this.handleSubmit = this.handleSubmit.bind(this); */
     }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'radio' ? target.selected : target.value;
-        const name = target.name;
-
+    handleChange(event) {
         this.setState({
-            [name]: value
+            choice: event.target.value
         });
     }
 
+    /* handleFormSubmit = (formSubmitEvent) => {
+        formSubmitEvent.preventDefault();
+    
+        console.log('You have selected:', this.state.selectedOption);
+    } */
 
     render() {
         return (
             <>
-                <form size="col s12 m12 l12">
+                <form onSubmit={this.handleSubmit} size="col s12 m12 l12">
                     <label className="question">What are you pronouns?</label>
-                    <input id="pronouns" type="radio" className="validate" className="Rectangle" />
+                    {/* <input id="pronouns" type="radio" className="validate" className="Rectangle" /> */}
                     <p>
                         <label>
                             <input
-                                name="red"
+                                value="red"
                                 type="radio"
-                                selected={this.state.red}
-                                onChange={this.handleInputChange}
+                                checked={this.state.choice === "red"}
+                                onChange={this.handleChange}
                             />
                             <span className="-Input-Text">Red</span>
                         </label>
@@ -46,10 +50,10 @@ class RadioQuestion extends Component {
                     <p>
                         <label>
                             <input
-                                name="yellow"
+                                value="yellow"
                                 type="radio"
-                                selected={this.state.yellow}
-                                onChange={this.handleInputChange}
+                                checked={this.state.choice === "yellow"}
+                                onChange={this.handleChange}
                             />
                             <span className="-Input-Text">Yellow</span>
                         </label>
@@ -57,10 +61,10 @@ class RadioQuestion extends Component {
                     <p>
                         <label>
                             <input
-                                name="green"
+                                value="green"
                                 type="radio"
-                                selected={this.state.green}
-                                onChange={this.handleInputChange}
+                                checked={this.state.choice === "green"}
+                                onChange={this.handleChange}
                             />
                             <span className="-Input-Text">Green</span>
                         </label>
@@ -68,10 +72,10 @@ class RadioQuestion extends Component {
                     <p>
                         <label>
                             <input
-                                name="brown"
+                                value="brown"
                                 type="radio"
-                                selected={this.state.brown}
-                                onChange={this.handleInputChange}
+                                checked={this.state.choice === "brown"}
+                                onChange={this.handleChange}
                             />
                             <span className="-Input-Text">Brown</span>
                         </label>
@@ -83,8 +87,10 @@ class RadioQuestion extends Component {
                     <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion}  */ />
                 </div>
             </>
-        )
+        );
     }
+
+
 }
 
-export default RadioQuestion;
+export default RadioQuestions2;

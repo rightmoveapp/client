@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import questionsChoices from '../../questionsChoices.json';
 import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
-import RadioQuestion from '../../components/RadioQuestion';
+import RadioQuestions2 from '../../components/RadioQuestions2';
 import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
@@ -39,7 +39,7 @@ class Questions extends Component {
         const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
         console.log(randomQuestion.question[0].input_type);
         if (randomQuestion.question[0].input_type === "radio") {
-            return <RadioQuestion handleInputChange = {this.handleInputChange} />}
+            return <RadioQuestions2 handleInputChange = {this.handleInputChange} />}
         else if (randomQuestion.question[0].input_type === "date") {
                 return <DateQuestion handleInputChange = {this.handleInputChange} />}
         else if  (randomQuestion.question[0].input_type === "checkbox") {
