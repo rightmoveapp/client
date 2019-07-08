@@ -34,15 +34,50 @@ class Questions extends Component {
     getRandomQuestion() {
         const questionsChoices = this.state.questionsChoices;
         const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
-        console.log(randomQuestion.question[0].input_type);
-        if (randomQuestion.question[0].input_type === "radio") {
-            return <RadioQuestions handleInputChange = {this.handleInputChange} />}
-        else if (randomQuestion.question[0].input_type === "date") {
-                return <DateQuestion handleInputChange = {this.handleInputChange} />}
-        else if  (randomQuestion.question[0].input_type === "checkbox") {
-                return <CheckboxQuestion handleInputChange = {this.handleInputChange} />;}
+
+        if (randomQuestion.input_type === "radio") {
+            return (
+                <RadioQuestions 
+                    questionId={randomQuestion.id} 
+                    questionText={randomQuestion.question_text} 
+                    questionType={randomQuestion.input_type}
+                    questionChoices={[randomQuestion.choices]}
+                />
+            ) 
+        }
+        else if (randomQuestion.input_type === "date") {
+            return (
+                <DateQuestion 
+                    /* handleInputChange={this.handleInputChange} */
+                    questionId={randomQuestion.id} 
+                    questionText={randomQuestion.question_text} 
+                    questionType={randomQuestion.input_type}
+                    questionPlaceholder={randomQuestion.placeholder}
+                />
+            )
+        }
+        else if  (randomQuestion.input_type === "checkbox") {
+            return (
+                <CheckboxQuestion 
+                    /* handleInputChange={this.handleInputChange} */ 
+                    questionId={randomQuestion.id} 
+                    questionText={randomQuestion.question_text} 
+                    questionType={randomQuestion.input_type}
+                    questionChoices={[randomQuestion.choices]} 
+                />
+            )
+        }
         else {
-            return <TextQuestion handleInputChange = {this.handleInputChange} />;}
+            return (
+                <TextQuestion 
+                    /* handleInputChange={this.handleInputChange} */
+                    questionId={randomQuestion.id} 
+                    questionText={randomQuestion.question_text} 
+                    questionType={randomQuestion.input_type}
+                    questionPlaceholder={randomQuestion.placeholder}
+                />
+            )
+        }
     }
 
     handleInputChange = event => {

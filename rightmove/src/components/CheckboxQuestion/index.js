@@ -26,55 +26,25 @@ class CheckboxQuestions extends Component {
       }
 
 
-    render() {
+    render(props) {
         return (
             <>
                 <form size="col s12 m12 l12">
-                    <label className="question">Where in the city would you be happy to work in?</label>
-                    <p>
-                        <label>
-                            <input
-                                name="centerCity"
-                                type="checkbox"
-                                checked={this.state.centerCity}
-                                onChange={this.handleInputChange}
-                            />
-                            <span className="-Input-Text">Center City</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input
-                                name="west"
-                                type="checkbox"
-                                checked={this.state.west}
-                                onChange={this.handleInputChange}
-                            />
-                            <span className="-Input-Text">West</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input
-                                name="north"
-                                type="checkbox"
-                                checked={this.state.north}
-                                onChange={this.handleInputChange}
-                            />
-                            <span className="-Input-Text">North</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input
-                                name="south"
-                                type="checkbox"
-                                checked={this.state.south}
-                                onChange={this.handleInputChange}
-                            />
-                            <span className="-Input-Text">South</span>
-                        </label>
-                    </p>
+                    <label className="question">{this.props.questionText}</label>
+                    {this.props.questionChoices[0].map(questionChoice => (
+                        <p>
+                            <label>
+                                <input
+                                    name={questionChoice.choice_text}
+                                    type={questionChoice.input_type}
+                                    checked={this.state.centerCity}
+                                    onChange={this.handleInputChange}
+                                />
+                                <span className="-Input-Text">{questionChoice.choice_text}</span>
+                            </label>
+                        </p>
+
+                    ))}
                 </form>
                 <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
                 <div className="right-align">
