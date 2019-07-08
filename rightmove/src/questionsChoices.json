@@ -1,91 +1,81 @@
 {
     "questionsAndChoices": [
         {
-            "question": [
-                {
-                    "id": "1",
-                    "question_text": "What is your birthday?",
-                    "category": "Basic",
-                    "input_type": "date",
-                    "placeholder": "07/31/1980"
-                }
-            ],
-            "choices": []
+              "id": "1",
+              "question_text": "What is your birthday?",
+              "category": "Basic",
+              "input_type": "date",
+              "placeholder": "07/31/1980",
+          "choices": []
         },
         {
-            "question": [
-                {
-                    "id": "2",
-                    "question_text": "What are your preferred pronouns?",
-                    "category": "Basic",
-                    "input_type": "radio",
-                    "placeholder": "",
-                    "explanation": "Because we fucking asked"
-                }
-            ],
-            "choices": [
-                {
-                    "id": "1",
-                    "choice_text": "She/Her"
-                },
-                {
-                    "id": "2",
-                    "choice_text": "He/Him"
-                },
-                {
-                    "id": "3",
-                    "choice_text": "They/Them"
-                },
-                {
-                    "id": "4",
-                    "choice_text": "Ze/Zir"
-                },
-                {
-                    "id": "5",
-                    "choice_text": "I don't indentify with any of the above"
-                }
-            ]
+              "id": "2",
+              "question_text": "What are your preferred pronouns?",
+              "category": "Basic",
+              "input_type": "radio",
+              "placeholder":"",
+              "explanation":"Because we fucking asked",
+          "choices": [
+            {
+              "id": "1",
+              "choice_text": "She/Her",
+              "input_type": "radio"
+            },
+            {
+              "id": "2",
+              "choice_text": "He/Him",
+              "input_type": "radio"
+            },
+            {
+              "id": "3",
+              "choice_text": "They/Them",
+              "input_type": "radio"
+            },
+            {
+              "id": "4",
+              "choice_text": "Ze/Zir",
+              "input_type": "radio"
+            },
+            {
+              "id": "5",
+              "choice_text": "I don't indentify with any of the above",
+              "input_type": "radio"
+            }
+          ]
         },
         {
-            "question": [
-                {
-                    "id": "3",
-                    "question_text": "What your name?",
-                    "category": "Basic",
-                    "input_type": "text",
-                    "placeholder": "Jane Doe"
-                }
-            ],
-            "choices": []
+            "id": "3",
+            "question_text": "What your name?",
+            "category": "Basic",
+            "input_type": "text",
+            "placeholder": "Jane Doe",
+           "choices": []
         },
         {
-            "question": [
-                {
-                    "id": "3",
-                    "question_text": "Where in the city would you be happy to work in?",
-                    "category": "career",
-                    "input_type": "checkbox",
-                    "placeholder": ""
-                }
-            ],
-            "choices": [
-                {
-                    "id": "1",
-                    "choice_text": "Center City"
-                },
-                {
-                    "id": "2",
-                    "choice_text": "West Philly"
-                },
-                {
-                    "id": "3",
-                    "choice_text": "North Philly"
-                },
-                {
-                    "id": "4",
-                    "choice_text": "South Philly"
-                }
-            ]
-        }
+            "id": "4",
+            "question_text": "Where in the city would you be happy to work in?",
+            "category": "career",
+            "input_type": "checkbox",
+            "placeholder":"",
+            "explanation":"Because we fucking asked",
+        "choices": [
+          {
+            "id": "1",
+            "choice_text": "Center City"
+          },
+          {
+            "id": "2",
+            "choice_text": "West"
+          },
+          {
+            "id": "3",
+            "choice_text": "North"
+          },
+          {
+            "id": "4",
+            "choice_text": "South"
+          }
+        ]
+      }
     ]
 }
