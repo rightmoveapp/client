@@ -38,7 +38,6 @@ class Questions extends Component {
         if (randomQuestion.input_type === "radio") {
             return (
                 <RadioQuestions 
-                    /* handleInputChange={this.handleInputChange} */ 
                     questionId={randomQuestion.id} 
                     questionText={randomQuestion.question_text} 
                     questionType={randomQuestion.input_type}

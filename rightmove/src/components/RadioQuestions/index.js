@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import YellowButton from "../YellowButton";
 import YellowUnderline from "../YellowUnderline";
-/* import questionChoices from "../../questionsChoices.json" */
 import "./style.css";
 
 

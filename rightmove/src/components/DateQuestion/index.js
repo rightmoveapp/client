@@ -23,18 +23,18 @@ class DateQuestion extends Component {
       event.preventDefault();
     } */
 
-    render() {
+    render(props) {
         return (
             <>
                 <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
-                    <label className="question">When is your birthday?</label>
+                    <label className="question">{this.props.questionText}</label>
                     <input 
                         value={this.state.value} 
                         onChange={this.handleChange}
-                        id="birthday" 
-                        type="date" 
-                        className="validate" 
-                        placeholder="10 / 18 / 1992" 
+                        id={this.props.questionId} 
+                        type={this.props.questionType} 
+                        className="validate"
+                        placeholder={this.props.questionPlaceholder}  
                         className="Rectangle" 
                     />
                     {/* <input type="submit" value="Submit" /> */}
