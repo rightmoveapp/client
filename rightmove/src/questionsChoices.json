@@ -61,19 +61,23 @@
         "choices": [
           {
             "id": "1",
-            "choice_text": "Center City"
+            "choice_text": "Center City",
+            "input_type": "checkbox"
           },
           {
             "id": "2",
-            "choice_text": "West"
+            "choice_text": "West",
+            "input_type": "checkbox"
           },
           {
             "id": "3",
-            "choice_text": "North"
+            "choice_text": "North",
+            "input_type": "checkbox"
           },
           {
             "id": "4",
-            "choice_text": "South"
+            "choice_text": "South",
+            "input_type": "checkbox"
           }
         ]
       }
