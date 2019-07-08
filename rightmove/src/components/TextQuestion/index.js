@@ -22,27 +22,28 @@ class TextQuestion extends Component {
         event.preventDefault();
       } */
     
-      render() {
+      render(props) {
         return (
             <>
-          <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
-            <label className="question">What is your name?</label>
-                    <input
-                        value={this.state.value} onChange={this.handleChange}
-                        name="firstName"
-                        id="name"
-                        type="text"
-                        className="validate"
-                        placeholder="Jane Doe"
-                        className="Rectangle"
-            />
-            {/* <input type="submit" value="Submit" /> */}
-          </form>
-          <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-          <div className="right-align">
-              <YellowUnderline to="/" text="Skip" space="32" />
-              <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion} */ />
-          </div>
+              <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
+                <label className="question">{this.props.questionText}</label>
+                        <input
+                            value={this.state.value} 
+                            onChange={this.handleChange}
+                            /* name="firstName" */
+                            id={this.props.questionId}
+                            type={this.props.questionType} 
+                            className="validate"
+                            placeholder={this.props.questionPlaceholder}
+                            className="Rectangle"
+                />
+                {/* <input type="submit" value="Submit" /> */}
+              </form>
+              <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+              <div className="right-align">
+                  <YellowUnderline to="/" text="Skip" space="32" />
+                  <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion} */ />
+              </div>
           </>
         )
       }
