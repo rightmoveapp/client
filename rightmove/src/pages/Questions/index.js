@@ -132,11 +132,6 @@ class Questions extends Component {
                             Tell us a little about yourself.
                         </h4>
                         {this.state.questionType}
-                        {/* <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-                        <div className="right-align">
-                            <YellowUnderline to="/" text="Skip" space="32" />
-                            <YellowButton to="/" text="Continue  →" size="139" getNextQuestion={this.getNextQuestion}/>
-                        </div> */}
                     </Col>
                 </Row>
             </>
