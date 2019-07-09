@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 import questionsChoices from '../../questionsChoices.json';
 import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
@@ -13,12 +14,25 @@ class Questions extends Component {
         super(props)
 
         this.handleInputChange = this.handleInputChange.bind(this)
+
     }
     
     state = {
         questionsChoices: questionsChoices.questionsAndChoices,
+        currentQuestion:[],
         answeredQuestions: [],
         skippedQuestions: [],
+    };
+
+    componentDidMount() {
+        this.loadQuestions();
+    }
+
+    loadQuestions = () => {
+        API.getUserAttrQuestions()
+          .then(response => this.setState({ questionsChoices: response.data }))
+          /* console.log(response.data.questionsAndChoices) */
+          .catch(err => console.log(err));
     };
     /* get random question in the database
         evaluate the question to see if it has been asked before (after very first question)
@@ -33,10 +47,16 @@ class Questions extends Component {
 
     getRandomQuestion() {
         const questionsChoices = this.state.questionsChoices;
+        
         const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
 
+        /* this.setState({currentQuestion:randomQuestion}); */
+        /* console.log(randomQuestion.input_type); */
+
         if (randomQuestion.input_type === "radio") {
+
             return (
+
                 <RadioQuestions 
                     questionId={randomQuestion.id} 
                     questionText={randomQuestion.question_text} 
@@ -101,7 +121,9 @@ class Questions extends Component {
 
 
     render() {
-        
+        /* if(!this.state.currentQuestion.length){
+            return null;
+        }  */
         return (
             <>
                 <Row>
