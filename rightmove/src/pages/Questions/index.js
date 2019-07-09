@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../utils/API"
 import questionsChoices from '../../questionsChoices.json';
 import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
@@ -14,9 +15,9 @@ class Questions extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this)
     }
-    
+
     state = {
-        questionsChoices: questionsChoices.questionsAndChoices,
+        questionsChoices: [],
         answeredQuestions: [],
         skippedQuestions: [],
     };
@@ -30,6 +31,16 @@ class Questions extends Component {
         then get random questions from the database
         check if question has been answered from array of answered questions
          */
+        componentDidMount() {
+            this.loadQuestions();
+        }
+
+        loadQuestions = () => {
+            API.getUserAttrQuestions()
+              .then(response => this.setState({ questionsChoices: response.data }))
+              /* console.log(response.data.questionsAndChoices) */
+              .catch(err => console.log(err));
+        };
 
     getRandomQuestion() {
         const questionsChoices = this.state.questionsChoices;
@@ -109,7 +120,7 @@ class Questions extends Component {
                         <h4 className="heading">Here we go!
                             Tell us a little about yourself.
                         </h4>
-                        {this.getRandomQuestion()}
+                        {/* {this.getRandomQuestion()} */}
                         
                         {/* <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
                         <div className="right-align">
