@@ -11,8 +11,6 @@ getCookie();
 
 export default {
   // Gets all the landing page information
-
-
 getLandingPage: function() {
   return axios.get("localhost:8000/api/landingpage");
 },
@@ -20,4 +18,9 @@ getLandingPage: function() {
 getUserAttrQuestions: function() {
   return axios.get(`${process.env.REACT_APP_API_URL}/v1/userquestions`);
 },
-};
+//Posts to suer attributes answers
+postUserAttrAnswers: function(userAnswers) {
+  return axios.post(`${process.env.REACT_APP_API_URL}/v1/userattranswers`, userAnswers);
+
+}
+}
