@@ -36,18 +36,16 @@ class App extends React.Component {
     else {
       const token_cookie = cookies.get("token", {path: "/"})
       console.log(`token_cookie returned is ${token_cookie}`)
-    
       const token_is_undefined = typeof(token_cookie) === "undefined"
       console.log(`token_is_undefined is ${token_is_undefined}`)
-  
-      const token_is_empty = token_cookie === " " 
+      const token_is_empty = token_cookie === " "
       console.log(`token_is_empty is ${token_is_empty}`)
 
       const loggedIn = !(token_is_undefined | token_is_empty)
       console.log(`the loggedIn value will be set to ${loggedIn}`)
       this.setState({
         loggedIn: loggedIn,
-        stateHasUpdated: true     
+        stateHasUpdated: true
       })
     }
   }

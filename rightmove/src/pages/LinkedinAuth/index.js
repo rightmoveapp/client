@@ -26,7 +26,7 @@ class LinkedinAuth extends Component {
       .then(response => {
         cookies.set("token", response.data.token, {path:"/"})
         this.props.updateLogin(true)
-        axios.defaults.headers.post['Authorization'] = 'Bearer ' + response.data.token
+        axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.token
         this.setState({
           loading: false
         });
