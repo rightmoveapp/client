@@ -8,7 +8,7 @@ const YellowButton = props => {
             <button
                 className='YellowButton -YellowButton-Text'
                 style={{ width: props.size + 'px'}}
-                onClick={props.getNextQuestion}>
+                onClick={props.onClick}>
                     {props.text}
             </button>
         /* </Link> */
