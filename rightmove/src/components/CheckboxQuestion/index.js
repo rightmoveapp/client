@@ -41,6 +41,7 @@ class CheckboxQuestions extends Component {
                                     type={questionChoice.input_type}
                                     checked={this.state.centerCity}
                                     onChange={this.handleInputChange}
+                                    className="filled-in"
                                 />
                                 <span className="-Input-Text">{questionChoice.choice_text}</span>
                             </label>
