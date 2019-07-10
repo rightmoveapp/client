@@ -22,5 +22,10 @@ getUserAttrQuestions: function() {
 postUserAttrAnswers: function(userAnswers) {
   return axios.post(`http://localhost:8000/v1/userattranswers`, userAnswers);
 
-}
+},
+
+getUserAccount: function() {
+  return axios.get(`http://localhost:8000/v1/account`);
+},
+
 }

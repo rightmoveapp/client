@@ -71,7 +71,6 @@ class Questions extends Component {
         const filteredQuestions = questionsChoices.filter(question => {
             return !(this.state.currentQuestion.id === question.id)
         })
-        
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
         console.log(randomQuestion.input_type, "hi")
