@@ -8,7 +8,9 @@ const CurrentJob = () => {
             <div>
                 <h4 className="Current-Job-Title">UX Designer</h4>
                 <h2 className="Current-Job-Company">RevZilla</h2>
-                <YellowUnderline to="/job" text="Edit" />
+                <span className="Make-Font-Smaller">
+                    <YellowUnderline to="/job" text="Edit" />
+                </span>
             </div>
             <div className="Oval">
                 <h4 className="XX">XX%</h4>

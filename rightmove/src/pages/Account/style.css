@@ -30,63 +30,6 @@
     font-weight: normal;
 }
 
-.WhiteRectangle {
-    border-radius: 8px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
-    background-color: #ffffff;
-    max-width: 360px;
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-    margin-bottom: 6%;
-}
-
-.Current-Job-Title {
-    font-family: 'Inter';
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: 1.71px;
-    color: #0a2f51;
-    margin: 0px;
-}
-
-.Current-Job-Company {
-  font-family: 'Inter';
-  font-size: 20px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.4;
-  letter-spacing: normal;
-  color: #0a2f51;
-  margin: 0px 0px 10px;
-}
-
-.Oval {
-    width: 98px;
-    height: 98px;
-    border: solid 5px #979797;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.XX {
-    margin: 0px;
-    font-family: "Inter";
-    font-size: 20px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.4;
-    letter-spacing: normal;
-    color: #0a2f51;
-}
-
 .WhiteRectangle-Jobs {
     border-radius: 8px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
@@ -105,4 +48,5 @@
     letter-spacing: 2px;
     color: #0a2f51;
     margin: 0px;
+    padding-bottom: 10px;
   }
