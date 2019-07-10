@@ -3,7 +3,9 @@ import './style.css'
 
 const JobList = () => {
     return (
-        <h4>Job1</h4>
+        <div className="JobRectangle">
+            
+        </div>
     )
 }
 

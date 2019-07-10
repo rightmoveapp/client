@@ -4,6 +4,7 @@ import Row from '../../components/Row';
 import JobList from '../../components/JobList';
 import './style.css';
 import YellowUnderline from "../../components/YellowUnderline";
+import CurrentJob from "../../components/CurrentJob";
 
 
 class Account extends Component {
@@ -19,7 +20,7 @@ class Account extends Component {
                 <span className="Add-Space-Left Remove-Bold"><YellowUnderline to="/questions" text="Answer Questions" /></span>
               </p>
             </div>
-            <div className="WhiteRectangle">
+            {/* <div className="WhiteRectangle">
               <div>
                 <h4 className="Current-Job-Title">UX Designer</h4>
                 <h2 className="Current-Job-Company">RevZilla</h2>
@@ -28,9 +29,10 @@ class Account extends Component {
               <div className="Oval">
                 <h4 className="XX">XX%</h4>
               </div>
-            </div>
+            </div> */}
+            <CurrentJob />
             <div className="WhiteRectangle-Jobs">
-              <h4>Top Gigs</h4>
+              <h4 className="Top-Gigs">Top Gigs</h4>
               <JobList />
             </div>
           </Col>
