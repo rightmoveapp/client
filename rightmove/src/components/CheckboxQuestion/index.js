@@ -29,6 +29,7 @@ class CheckboxQuestions extends Component {
     render(props) {
         return (
             <>
+                <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
                 <form size="col s12 m12 l12">
                     <label id={this.props.questionId} className="question">{this.props.questionText}</label>
                     {this.props.questionChoices[0].map(questionChoice => (

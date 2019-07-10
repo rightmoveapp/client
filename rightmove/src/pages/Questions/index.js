@@ -6,6 +6,7 @@ import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
+import Finished from '../../components/Finished';
 import "./style.css";
 
 class Questions extends Component {
@@ -18,10 +19,11 @@ class Questions extends Component {
 
     state = {
         questionsChoices: [],
-        currentQuestion:[],
+        currentQuestion:{},
         answeredQuestions: [],
         skippedQuestions: [],
-        questionType:[]
+        questionType:[],
+        isFinished: false
     };
 
     componentDidMount() {
@@ -56,15 +58,26 @@ class Questions extends Component {
                 this.getRandomQuestion()
             }
             )
+            // TODO: Handle if user has answered all questions
             .catch(err => console.log(err));
     };
 
     getRandomQuestion = () => {
+        if (this.state.questionsChoices.length === 1) {
+            this.setState({ isFinished: true });
+        }
+
         const questionsChoices = this.state.questionsChoices;
+        const filteredQuestions = questionsChoices.filter(question => {
+            return !(this.state.currentQuestion.id === question.id)
+        })
         
-        const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
-        console.log(randomQuestion.input_type)
+        this.setState({questionsChoices:filteredQuestions})
+        const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
+        console.log(randomQuestion.input_type, "hi")
+        // TODO: figure out how to fix this
         if (randomQuestion.input_type === "radio") {
+            console.log("I am a radio question",randomQuestion)
             this.setState({
                 questionType:
                 <RadioQuestions
@@ -73,6 +86,8 @@ class Questions extends Component {
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
                     questionChoices={[randomQuestion.choices]}
+                    getRandomQuestion={this.getRandomQuestion}
+                    setAnsweredQuestion={this.setAnsweredQuestion}
                 />
             })
 
@@ -128,6 +143,10 @@ class Questions extends Component {
         });
     };
 
+    setAnsweredQuestion = question =>{
+        this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
+    }
+
     getNextQuestion(event) {
         /* console.log("CLICK!!!!"); */
         event.preventDefault();
@@ -143,10 +162,10 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                        <h4 className="heading">Here we go!
+                        {/* <h4 className="heading">Here we go!
                             Tell us a little about yourself.
-                        </h4>
-                        {this.state.questionType}
+                        </h4> */}
+                        { this.state.isFinished ? <Finished /> :  this.state.questionType }
                     </Col>
                 </Row>
             </>
