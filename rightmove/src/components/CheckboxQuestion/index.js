@@ -11,15 +11,15 @@ class CheckboxQuestions extends Component {
         this.state = {
           active: false,
         };
-    
+
         this.handleInputChange = this.handleInputChange.bind(this);
       }
-    
+
       handleInputChange(event) {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-    
+
         this.setState({
           [name]: value
         });
@@ -30,11 +30,12 @@ class CheckboxQuestions extends Component {
         return (
             <>
                 <form size="col s12 m12 l12">
-                    <label className="question">{this.props.questionText}</label>
+                    <label id={this.props.questionId} className="question">{this.props.questionText}</label>
                     {this.props.questionChoices[0].map(questionChoice => (
                         <p>
                             <label>
                                 <input
+                                    key={questionChoice.id}
                                     name={questionChoice.choice_text}
                                     type={questionChoice.input_type}
                                     checked={this.state.centerCity}
