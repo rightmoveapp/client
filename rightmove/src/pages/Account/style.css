@@ -35,7 +35,7 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     background-color: #ffffff;
     max-width: 360px;
-    padding: 16px;
+    padding: 16px 16px 2px;
 }
 
 .Top-Gigs {

@@ -23,6 +23,9 @@ class Account extends Component {
             <div className="WhiteRectangle-Jobs">
               <h4 className="Top-Gigs">Top Gigs</h4>
               <JobList />
+              <div className="right-align Make-Font-Smaller">
+              <YellowUnderline text="See All" to="/jobs"/>
+              </div>
             </div>
           </Col>
         </Row>
