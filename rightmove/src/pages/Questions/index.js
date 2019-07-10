@@ -32,26 +32,6 @@ class Questions extends Component {
 
     loadQuestions = () => {
         API.getUserAttrQuestions()
-          .then(response => this.setState({ questionsChoices: response.data }))
-          /* console.log(response.data.questionsAndChoices) */
-          .catch(err => console.log(err));
-    };
-    /* get random question in the database
-        evaluate the question to see if it has been asked before (after very first question)
-        evaluate the input type of the question
-        render input type that matches
-        then on click or on enter check if the question has been answered
-        post the answer to /v1/useranswers
-        push to array of answered questions
-        then get random questions from the database
-        check if question has been answered from array of answered questions
-         */
-    componentDidMount() {
-        this.loadQuestions();
-    }
-
-    loadQuestions = () => {
-        API.getUserAttrQuestions()
             .then(response => {
                 this.setState({ questionsChoices: response.data.questionsAndChoices })
                 console.log(response.data.questionsAndChoices)
@@ -71,7 +51,6 @@ class Questions extends Component {
         const filteredQuestions = questionsChoices.filter(question => {
             return !(this.state.currentQuestion.id === question.id)
         })
-        
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
         console.log(randomQuestion.input_type, "hi")

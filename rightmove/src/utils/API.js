@@ -22,5 +22,10 @@ getUserAttrQuestions: function() {
 postUserAttrAnswers: function(userAnswers) {
   return axios.post(`process.env.REACT_APP_API_URL/v1/userattranswers`, userAnswers);
 
-}
+},
+
+getUserAccount: function() {
+  return axios.get(`http://localhost:8000/v1/account`);
+},
+
 }
