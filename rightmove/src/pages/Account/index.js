@@ -6,57 +6,43 @@ import './style.css';
 import YellowUnderline from "../../components/YellowUnderline";
 import CurrentJob from "../../components/CurrentJob";
 import userProfile from '../../userProfile.json';
-
-
 class Account extends Component {
   state = {
     userProfile,
     currentJob: [],
     possibleJobs: []
   }
-
   componentDidMount() {
     this.dividJobs();
 }
-
   dividJobs = () => {
+    let jobs = [];
     for (let i = 0; i < this.state.userProfile.jobs.length; i++){
       if (this.state.userProfile.jobs[i].is_current) {
         this.setState({ currentJob: this.state.userProfile.jobs[i]})
       }
       else {
-        this.setState({ possibleJobs: [...this.state.possibleJobs, this.state.userProfile.jobs[i]] })
+        jobs.push(this.state.userProfile.jobs[i])
       }
     }
+    this.setState({ possibleJobs: jobs })
   }
-
   percentage = (number) => {
     let percentageFit = parseFloat(number) * 100
     return percentageFit
   }
 
-  /* getCurrentJob = () => {
-    if (this.state.userProfile.jobs[0].is_current) {
-      <CurrentJob
-        company_name={this.state.userProfile.jobs.company_name}
-        role={this.state.userProfile.jobs.role}
-        score={this.state.userProfile.jobs.score}
-      />
-    }
-  }
-
-  getPossibleJobs = () => {
-    if (!this.state.userProfile.jobs[0].is_current) {
-      <CurrentJob
-        company_name={this.state.userProfile.jobs.company_name}
-        role={this.state.userProfile.jobs.role}
-        score={this.state.userProfile.jobs.score}
-      />
-    }
-  } */
-
   render() {
-    /* {this.dividJobs()} */
+    const possibleJobsMap = this.state.possibleJobs.map((job) => {
+      return (
+        <JobList
+          key={job.id}
+          role={job.role}
+          company_name={job.company_name}
+          score={job.score}
+          />
+      );
+    });
     return (
       <>
         <Row>
@@ -67,13 +53,14 @@ class Account extends Component {
                 <span className="Add-Space-Left Remove-Bold"><YellowUnderline to="/questions" text="Answer Questions" /></span>
               </p>
             </div>
-            <CurrentJob 
+            <CurrentJob
               company_name={this.state.currentJob.company_name}
               role={this.state.currentJob.role}
               score={this.percentage(this.state.currentJob.score)}
             />
             <div className="WhiteRectangle-Jobs">
-              <JobList {...this.state.possibleJobs} />
+            <h4 className="Top-Gigs">Top Gigs</h4>
+              {possibleJobsMap}
               <div className="right-align Make-Font-Smaller">
                 <YellowUnderline text="See All" to="/jobs" />
               </div>
@@ -84,5 +71,4 @@ class Account extends Component {
     )
   }
 }
-
 export default Account;
