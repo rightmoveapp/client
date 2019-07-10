@@ -17,7 +17,7 @@ class Questions extends Component {
 
     state = {
         questionsChoices: [],
-        currentQuestion:[],
+        currentQuestion:{},
         answeredQuestions: [],
         skippedQuestions: [],
         questionType:[]
@@ -44,14 +44,21 @@ class Questions extends Component {
                 this.getRandomQuestion()
             }
             )
+            // TODO: Handle if user has answered all questions
             .catch(err => console.log(err));
     };
 
     getRandomQuestion = () => {
         const questionsChoices = this.state.questionsChoices;
-        const randomQuestion = questionsChoices[Math.floor(Math.random() * questionsChoices.length)];
-        console.log(randomQuestion.input_type)
+        const filteredQuestions = questionsChoices.filter(question => {
+            return !(this.state.currentQuestion.id === question.id)
+        })
+        this.setState({questionsChoices:filteredQuestions})
+        const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
+        console.log(randomQuestion.input_type, "hi")
+        // TODO: figure out how to fix this
         if (randomQuestion.input_type === "radio") {
+            console.log("I am a radio question",randomQuestion)
             this.setState({
                 questionType:
                 <RadioQuestions
@@ -59,6 +66,8 @@ class Questions extends Component {
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
                     questionChoices={[randomQuestion.choices]}
+                    getRandomQuestion={this.getRandomQuestion}
+                    setAnsweredQuestion={this.setAnsweredQuestion}
                 />
             })
 
@@ -112,6 +121,10 @@ class Questions extends Component {
             [name]: value
         });
     };
+
+    setAnsweredQuestion = question =>{
+        this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
+    }
 
     getNextQuestion(event) {
         /* console.log("CLICK!!!!"); */

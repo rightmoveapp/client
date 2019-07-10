@@ -35,8 +35,8 @@ class RadioQuestions extends Component {
             answer: this.state.choice,
         })
             .then(response => {
-                this.setState({ answeredQuestions: [...this.state.answeredQuestions, this.state.question] })
-                this.getRandomQuestion()
+                this.props.setAnsweredQuestion(this.state.question)
+                this.props.getRandomQuestion()
             }
             )
             .catch(err => console.log(err));
