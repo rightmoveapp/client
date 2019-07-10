@@ -1,5 +1,14 @@
-[type="checkbox"]+span:not(.lever):before {
+[type="checkbox"].filled-in:not(:checked)+span:not(.lever):after {
     border: 2px dotted  #0a2f51;
+}
+
+[type="checkbox"].filled-in:checked+span:not(.lever):after {
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px dotted #0a2f51;
+    background-color: #0a2f51;
+    z-index: 0;
 }
 
 .-Input-Text {
@@ -13,7 +22,3 @@
     color: #0a2f51;
 }
 
-[type="checkbox"]:checked+span:not(.lever):before {
-    border-right: 2px solid #0a2f51;
-    border-bottom: 2px solid #0a2f51;
-}

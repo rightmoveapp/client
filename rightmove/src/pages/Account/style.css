@@ -1,0 +1,52 @@
+.There-are-new-questi {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #8f6105;
+}
+
+.YellowRectangle {
+    max-width: 764px;
+    border-radius: 8px;
+    border: solid 1px #8f6105;
+    background-color: #fff7c7;
+    margin-bottom: 6%;
+}
+
+.Add-Overall-Padding {
+    padding: 8px;
+    margin: 0px;
+}
+
+.Add-Space-Left {
+    padding-left: 8px;
+}
+
+.Remove-Bold {
+    font-weight: normal;
+}
+
+.WhiteRectangle-Jobs {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    max-width: 360px;
+    padding: 16px 16px 2px;
+}
+
+.Top-Gigs {
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    color: #0a2f51;
+    margin: 0px;
+    padding-bottom: 10px;
+  }

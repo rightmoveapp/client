@@ -6,6 +6,7 @@ import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
+import Finished from '../../components/Finished';
 import "./style.css";
 
 class Questions extends Component {
@@ -13,6 +14,7 @@ class Questions extends Component {
         super(props)
 
         this.handleInputChange = this.handleInputChange.bind(this)
+
     }
 
     state = {
@@ -20,7 +22,19 @@ class Questions extends Component {
         currentQuestion:{},
         answeredQuestions: [],
         skippedQuestions: [],
-        questionType:[]
+        questionType:[],
+        isFinished: false
+    };
+
+    componentDidMount() {
+        this.loadQuestions();
+    }
+
+    loadQuestions = () => {
+        API.getUserAttrQuestions()
+          .then(response => this.setState({ questionsChoices: response.data }))
+          /* console.log(response.data.questionsAndChoices) */
+          .catch(err => console.log(err));
     };
     /* get random question in the database
         evaluate the question to see if it has been asked before (after very first question)
@@ -49,10 +63,15 @@ class Questions extends Component {
     };
 
     getRandomQuestion = () => {
+        if (this.state.questionsChoices.length === 1) {
+            this.setState({ isFinished: true });
+        }
+
         const questionsChoices = this.state.questionsChoices;
         const filteredQuestions = questionsChoices.filter(question => {
             return !(this.state.currentQuestion.id === question.id)
         })
+        
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
         console.log(randomQuestion.input_type, "hi")
@@ -62,6 +81,7 @@ class Questions extends Component {
             this.setState({
                 questionType:
                 <RadioQuestions
+                    key={randomQuestion.id}
                     questionId={randomQuestion.id}
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
@@ -89,6 +109,7 @@ class Questions extends Component {
                 questionType:
                 <CheckboxQuestion
                     /* handleInputChange={this.handleInputChange} */
+                    key={randomQuestion.id}
                     questionId={randomQuestion.id}
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
@@ -141,10 +162,7 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                        <h4 className="heading">Here we go!
-                            Tell us a little about yourself.
-                        </h4>
-                        {this.state.questionType}
+                        { this.state.isFinished ? <Finished /> :  this.state.questionType }
                     </Col>
                 </Row>
             </>

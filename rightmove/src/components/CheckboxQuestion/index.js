@@ -29,16 +29,19 @@ class CheckboxQuestions extends Component {
     render(props) {
         return (
             <>
+                <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
                 <form size="col s12 m12 l12">
                     <label id={this.props.questionId} className="question">{this.props.questionText}</label>
                     {this.props.questionChoices[0].map(questionChoice => (
                         <p>
                             <label>
                                 <input
+                                    key={questionChoice.id}
                                     name={questionChoice.choice_text}
                                     type={questionChoice.input_type}
                                     checked={this.state.centerCity}
                                     onChange={this.handleInputChange}
+                                    className="filled-in"
                                 />
                                 <span className="-Input-Text">{questionChoice.choice_text}</span>
                             </label>

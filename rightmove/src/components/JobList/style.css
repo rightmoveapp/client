@@ -1,0 +1,57 @@
+.JobRectangle {
+    background-color: #ffffff;
+    border-bottom: solid 2px #d8e1ea;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px;
+}
+
+.Possible-Job-Title {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.71px;
+    color: #637c92;
+    margin: 0px;
+}
+
+.Possible-Job-Company {
+  font-family: 'Inter';
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #0a2f51;
+  margin: 0px;
+}
+
+.Possible-XX {
+    font-family: 'Inter';
+    font-size: 32px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.34;
+    letter-spacing: normal;
+    text-align: right;
+    color: #0a2f51;
+    margin: 0px;
+}
+
+.Top-Gigs {
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 2px;
+    color: #0a2f51;
+    margin: 0px;
+    padding-bottom: 10px;
+}
