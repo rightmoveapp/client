@@ -80,6 +80,8 @@ class Questions extends Component {
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
                     questionPlaceholder={randomQuestion.placeholder}
+                    getRandomQuestion={this.getRandomQuestion}
+                    setAnsweredQuestion={this.setAnsweredQuestion}
                 />
             })
         }
@@ -93,6 +95,8 @@ class Questions extends Component {
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
                     questionChoices={[randomQuestion.choices]}
+                    getRandomQuestion={this.getRandomQuestion}
+                    setAnsweredQuestion={this.setAnsweredQuestion}
                 />
             })
         }
@@ -105,6 +109,8 @@ class Questions extends Component {
                     questionText={randomQuestion.question_text}
                     questionType={randomQuestion.input_type}
                     questionPlaceholder={randomQuestion.placeholder}
+                    getRandomQuestion={this.getRandomQuestion}
+                    setAnsweredQuestion={this.setAnsweredQuestion}
                 />
             })
         }
