@@ -31,74 +31,15 @@ class JobQuestions extends Component {
         this.setState({ jobQuestions: response.data.questionsAndChoices })
         console.log(this.state.jobQuestions);
         console.log(this.state.jobQuestions[0].input_type);
-        /* this.getQuestions() */
       }
       )
       .catch(err => console.log(err));
   };
 
-  /* getQuestions = () => {
-    for (let i = 0; i < this.state.jobQuestions.length; i++) {
-      console.log(this.state.jobQuestions[i].input_type)
-      // TODO: figure out how to fix this
-      if (this.state.jobQuestions[i].input_type === "radio") {
-        this.setState({
-          questionType:
-            <RadioQuestions
-              key={this.state.jobQuestions[i].id}
-              questionId={this.state.jobQuestions[i].id}
-              questionText={this.state.jobQuestions[i].question_text}
-              questionType={this.state.jobQuestions[i].input_type}
-              questionChoices={[this.state.jobQuestions[i].choices]}
-            />
-        })
-
-      }
-      else if (this.state.jobQuestions[i].input_type === "date") {
-        this.setState({
-          questionType:
-            <DateQuestion
-              questionId={this.state.jobQuestions[i].id}
-              questionText={this.state.jobQuestions[i].question_text}
-              questionType={this.state.jobQuestions[i].input_type}
-              questionPlaceholder={this.state.jobQuestions[i].placeholder}
-            />
-        })
-      }
-      else if (this.state.jobQuestions[i].input_type === "checkbox") {
-        this.setState({
-          questionType:
-            <CheckboxQuestion
-              key={this.state.jobQuestions[i].id}
-              questionId={this.state.jobQuestions[i].id}
-              questionText={this.state.jobQuestions[i].question_text}
-              questionType={this.state.jobQuestions[i].input_type}
-              questionChoices={[this.state.jobQuestions[i].choices]}
-            />
-        })
-      }
-      else {
-        this.setState({
-          questionType:
-            <TextQuestion
-              questionId={this.state.jobQuestions[i].id}
-              questionText={this.state.jobQuestions[i].question_text}
-              questionType={this.state.jobQuestions[i].input_type}
-              questionPlaceholder={this.state.jobQuestions[i].placeholder}
-            />
-        })
-      }
-      this.setState({currentQuestion:randomQuestion})
-
-    }
-
-  } */
-
 
   render() {
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
 
-      /* console.log(this.state.jobQuestions[i].input_type) */
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
         return (
