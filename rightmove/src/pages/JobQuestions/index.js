@@ -17,8 +17,7 @@ class JobQuestions extends Component {
   }
 
   state = {
-    jobQuestions: [],
-    questionType: []
+    jobQuestions: []
   };
 
   componentDidMount() {
@@ -39,7 +38,6 @@ class JobQuestions extends Component {
 
   render() {
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
-
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
         return (
