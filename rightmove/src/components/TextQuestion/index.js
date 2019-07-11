@@ -25,7 +25,7 @@ class TextQuestion extends Component {
       render(props) {
         return (
             <>
-              <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
+              {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 <label className="question">{this.props.questionText}</label>
                         <input

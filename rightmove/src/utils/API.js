@@ -12,15 +12,15 @@ getCookie();
 export default {
   // Gets all the landing page information
 getLandingPage: function() {
-  return axios.get("process.env.REACT_APP_API_URL/api/landingpage");
+  return axios.get("http://localhost:8000/api/landingpage");
 },
 // Gets all questions
 getUserAttrQuestions: function() {
-  return axios.get(`process.env.REACT_APP_API_URL/v1/userquestions`);
+  return axios.get(`http://localhost:8000/v1/userquestions`);
 },
 //Posts to suer attributes answers
 postUserAttrAnswers: function(userAnswers) {
-  return axios.post(`process.env.REACT_APP_API_URL/v1/userattranswers`, userAnswers);
+  return axios.post(`http://localhost:8000/v1/userattranswers`, userAnswers);
 
 },
 
