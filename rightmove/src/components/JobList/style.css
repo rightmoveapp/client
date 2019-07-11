@@ -28,7 +28,12 @@
   letter-spacing: normal;
   color: #0a2f51;
   margin: 0px;
+  overflow: ellipsis;
+  max-width: 75ch;
 }
+
+/* TODO: make any input that is cut off and has ellipsis have 
+a hover state or tooltip to show you the whole name */
 
 .Possible-XX {
     font-family: 'Inter';
