@@ -10,7 +10,7 @@ import PrivateRoute from './components/PrivateRoute';
 // const {PrivateRoute} = require("./PrivateRoute")
 import LogOut from './pages/LogOut'
 import Page404 from './pages/Page404';
-import Job from './pages/Job';
+import JobQuestions from './pages/JobQuestions';
 import ReturnLogin from './pages/ReturnLogin';
 import Questions from './pages/Questions';
 import PrivacyPage from './pages/PrivacyPolicy';
@@ -67,6 +67,12 @@ class App extends React.Component {
           <Nav name="Steve" loggedIn={this.state.loggedIn} />
           <Container>
             <Switch>
+              <PrivateRoute
+                path="/jobquestions"
+                loggedIn={this.state.loggedIn}
+                component={JobQuestions}
+                render={(props) => <JobQuestions {...props} /> }
+              />
              <PrivateRoute
                 path="/welcome"
                 loggedIn={this.state.loggedIn}
@@ -92,12 +98,12 @@ class App extends React.Component {
                 component={Account}
                 render={(props) => <Account {...props} />}
               />
-              <PrivateRoute
+              {/* <PrivateRoute
                 path="/job_detail"
                 loggedIn={this.state.loggedIn}
                 component={Job}
                 render={(props) => <Job {...props} />}
-              />
+              /> */}
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
               {/* <Route exact path="/questions" component={Questions} />
