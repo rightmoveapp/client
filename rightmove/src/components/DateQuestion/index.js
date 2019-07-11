@@ -11,7 +11,7 @@ class DateQuestion extends Component {
         super(props);
         this.state = {
             question:[],
-            value: ''
+            choice: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -20,7 +20,7 @@ class DateQuestion extends Component {
 
     handleChange(event) {
         this.setState({
-            value: event.target.value,
+            choice: event.target.value,
             question: this.props.questionId
         });
     }
@@ -30,7 +30,7 @@ class DateQuestion extends Component {
         console.log("clicked")
         API.postUserAttrAnswers({
             question: this.state.question,
-            answer: this.state.value,
+            answer: this.state.choice,
         })
             .then(response => {
                 this.props.setAnsweredQuestion(this.state.question)
@@ -49,7 +49,7 @@ class DateQuestion extends Component {
                 <form onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                     <label className="question">{this.props.questionText}</label>
                     <input
-                        value={this.state.value}
+                        value={this.state.choice}
                         onChange={this.handleChange}
                         id={this.props.questionId}
                         type={this.props.questionType}
