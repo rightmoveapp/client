@@ -185,6 +185,7 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
+                    {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
                         <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
 
