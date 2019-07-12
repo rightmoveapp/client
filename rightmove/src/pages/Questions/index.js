@@ -171,8 +171,8 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                    <h4 className="heading">Have fun, but answer honestly!</h4>
-                    <h5>The more information we have on you, the better our predictions will be <span role="img" aria-label="smile">😊</span></h5>
+                    <h4 className="heading-questions">Have fun, but answer honestly!</h4>
+                    <h5 className="subheading-questions">The more information we have on you, the better our predictions will be <span role="img" aria-label="smile">😊</span></h5>
                     <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
                         <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
