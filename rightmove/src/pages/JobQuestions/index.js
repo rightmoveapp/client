@@ -6,7 +6,9 @@ import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
+import YellowButton from '../../components/YellowButton';
 import "./style.css";
+
 class JobQuestions extends Component {
   state = {
     jobQuestions: []
@@ -109,8 +111,39 @@ class JobQuestions extends Component {
                   className="validate Rectangle"
                   placeholder="$80,000"
                 />
+                <label className="question">Is this your current job?</label>
+                <input id="25" type="radio" className="validate Rectangle" />
+                <p>
+                  <label>
+                    <input
+                      key="1"
+                      value="yes"
+                      type="radio"
+                      /* checked={this.props.choiceState === questionChoice.choice_text} */
+                      // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                      onChange={(event) => this.props.handleChange(event)}
+                    />
+                    <span className="-Input-Text">Yes</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input
+                      key="2"
+                      value="no"
+                      type="radio"
+                      /* checked={this.props.choiceState === questionChoice.choice_text} */
+                      // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                      onChange={(event) => this.props.handleChange(event)}
+                    />
+                    <span className="-Input-Text">No</span>
+                  </label>
+                </p>
                 {/* <input type="submit" value="Submit" /> */}
                 {jobQuestionMap}
+                <div className="right-align add-space">
+                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                </div>
               </form>
             </>
           </Col>
