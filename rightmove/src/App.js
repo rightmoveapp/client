@@ -29,15 +29,6 @@ class App extends React.Component {
     userName:""
   }
 
-  getUserInfo = () => {
-    API.getUserAccount()
-    .then(response => {
-      this.setState({ userProfile: response.data })
-      console.log(this.state.userProfile)
-    })
-  }
-  
-
   updateLogin = (force = null) => {
     if (force !== null) {
       this.setState({ loggedIn: force,  stateHasUpdated: true })
@@ -67,8 +58,8 @@ class App extends React.Component {
 
   componentWillMount(){
     this.updateLogin();
-    this.getUserInfo();
   }
+
   componentDidMount(){
     /* console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`) */
  }
@@ -113,17 +104,14 @@ class App extends React.Component {
                 component={Account}
                 render={(props) => <Account {...props} />}
               />
-              {<PrivateRoute
+              <PrivateRoute
                 path="/basicquestions"
                 loggedIn={this.state.loggedIn}
                 component={BasicQuestions}
                 render={(props) => <BasicQuestions {...props} />}
-              />}
+              />
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
-              {/* <Route exact path="/questions" component={Questions} />
-          <Route exact path="/job_detail" component={Job} />
-          <Route exact path="/current_state" component={CurrentState} /> */}
             </Switch>
           </Container>
           <div className="Site-content"></div>
