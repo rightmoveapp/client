@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
+import API from "../src/utils/API";
 import Footer from './components/Footer';
 import Container from './components/Container';
 import Landing from './pages/Landing';
@@ -20,14 +21,25 @@ import Job from './pages/Job';
 import CurrentState from './pages/CurrentState'; */
 import './App.css';
 import Cookies from 'universal-cookie';
+import BasicQuestions from './pages/BasicQuestions';
 
 const cookies = new Cookies();
 
 class App extends React.Component {
   state = {
     loggedIn: false,
-    stateHasUpdated: true
+    stateHasUpdated: true,
+    userProfile: [],
   }
+
+  getUserInfo = () => {
+    API.getUserAccount()
+    .then(response => {
+      this.setState({ userProfile: response.data })
+      console.log(this.state.userProfile)
+    })
+  }
+  
 
   updateLogin = (force = null) => {
     if (force !== null) {
@@ -35,14 +47,14 @@ class App extends React.Component {
     }
     else {
       const token_cookie = cookies.get("token", {path: "/"})
-      console.log(`token_cookie returned is ${token_cookie}`)
+    
       const token_is_undefined = typeof(token_cookie) === "undefined"
-      console.log(`token_is_undefined is ${token_is_undefined}`)
+      /* console.log(`token_is_undefined is ${token_is_undefined}`) */
       const token_is_empty = token_cookie === " "
-      console.log(`token_is_empty is ${token_is_empty}`)
-
+      /* console.log(`token_is_empty is ${token_is_empty}`)
+ */
       const loggedIn = !(token_is_undefined | token_is_empty)
-      console.log(`the loggedIn value will be set to ${loggedIn}`)
+      /* console.log(`the loggedIn value will be set to ${loggedIn}`) */
       this.setState({
         loggedIn: loggedIn,
         stateHasUpdated: true
@@ -51,11 +63,11 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    this.updateLogin()
-
+    this.updateLogin();
+    this.getUserInfo();
   }
   componentDidMount(){
-    console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`)
+    /* console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`) */
  }
 
 
@@ -98,12 +110,12 @@ class App extends React.Component {
                 component={Account}
                 render={(props) => <Account {...props} />}
               />
-              {/* <PrivateRoute
-                path="/job_detail"
+              {<PrivateRoute
+                path="/basicquestions"
                 loggedIn={this.state.loggedIn}
-                component={Job}
-                render={(props) => <Job {...props} />}
-              /> */}
+                component={BasicQuestions}
+                render={(props) => <BasicQuestions {...props} />}
+              />}
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
               {/* <Route exact path="/questions" component={Questions} />

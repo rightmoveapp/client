@@ -91,7 +91,7 @@ class JobQuestions extends Component {
         <Row>
           <Col size="s12 m12 l12">
             <>
-              <h4 className="heading">Give us the deets on this gig 🤑</h4>
+              <h4 className="heading">Give us the deets on this gig <span>🤑</span></h4>
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 <label className="question">Company name</label>
                 <input

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API"
+import API from "../../utils/API";
 import Col from '../../components/Col';
 import Row from '../../components/Row';
 import JobList from '../../components/JobList';
@@ -49,7 +49,7 @@ render() {
         key={job.id}
         role={job.role}
         company_name={job.company_name}
-        score={job.score}
+        score={this.percentage(job.score)}
       />
     );
   });
