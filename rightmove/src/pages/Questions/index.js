@@ -12,14 +12,12 @@ import "./style.css";
 class Questions extends Component {
     constructor(props) {
         super(props)
-
         this.handleInputChange = this.handleInputChange.bind(this)
-
     }
 
     state = {
         questionsChoices: [],
-        currentQuestion:{},
+        currentQuestion:[],
         answeredQuestions: [],
         skippedQuestions: [],
         questionType:[],
@@ -34,7 +32,6 @@ class Questions extends Component {
         API.getUserAttrQuestions()
             .then(response => {
                 this.setState({ questionsChoices: response.data.questionsAndChoices })
-                console.log(response.data.questionsAndChoices)
                 this.getRandomQuestion()
             }
             )
@@ -53,67 +50,8 @@ class Questions extends Component {
         })
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
-        console.log(randomQuestion.input_type, "hi")
+        
         // TODO: figure out how to fix this
-        if (randomQuestion.input_type === "radio") {
-            console.log("I am a radio question",randomQuestion)
-            this.setState({
-                questionType:
-                <RadioQuestions
-                    key={randomQuestion.id}
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionChoices={[randomQuestion.choices]}
-                    getRandomQuestion={this.getRandomQuestion}
-                    setAnsweredQuestion={this.setAnsweredQuestion}
-                />
-            })
-
-        }
-        else if (randomQuestion.input_type === "date") {
-            this.setState({
-                questionType:
-                <DateQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionPlaceholder={randomQuestion.placeholder}
-                    getRandomQuestion={this.getRandomQuestion}
-                    setAnsweredQuestion={this.setAnsweredQuestion}
-                />
-            })
-        }
-        else if (randomQuestion.input_type === "checkbox") {
-            this.setState({
-                questionType:
-                <CheckboxQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    key={randomQuestion.id}
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionChoices={[randomQuestion.choices]}
-                    getRandomQuestion={this.getRandomQuestion}
-                    setAnsweredQuestion={this.setAnsweredQuestion}
-                />
-            })
-        }
-        else {
-            this.setState({
-                questionType:
-                <TextQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionPlaceholder={randomQuestion.placeholder}
-                    getRandomQuestion={this.getRandomQuestion}
-                    setAnsweredQuestion={this.setAnsweredQuestion}
-                />
-            })
-        }
         this.setState({currentQuestion:randomQuestion})
     }
 
@@ -139,7 +77,65 @@ class Questions extends Component {
 
 
     render(){
-        if(this.state.currentQuestion.length < 1 && this.state.questionType.length < 1){
+        // const userQuestionMap = this.state.currentQuestion.map((question) => {
+            let currentQuestion = this.state.currentQuestion
+            console.log(currentQuestion)
+            let currentquestionType
+            if (currentQuestion.input_type === "radio") {
+                console.log("I am a radio question",currentQuestion)
+                currentquestionType =
+                    <RadioQuestions
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                    />
+                }
+            else if (currentQuestion.input_type === "date") {
+                currentquestionType =
+                    <DateQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionPlaceholder={currentQuestion.placeholder}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                    />
+            }
+            else if (currentQuestion.input_type === "checkbox") {
+                currentquestionType =
+                    <CheckboxQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                    />
+            }
+            else {
+                currentquestionType =
+                    <TextQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionPlaceholder={currentQuestion.placeholder}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                    />
+            }
+
+
+        if(this.state.currentQuestion.length < 1 /*&& this.state.questionType.length < 1*/){
         return (<></>);
         }else{
 
@@ -147,7 +143,7 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                        { this.state.isFinished ? <Finished /> :  this.state.questionType }
+                        { this.state.isFinished ? <Finished /> :  currentquestionType}
                     </Col>
                 </Row>
             </>
