@@ -51,6 +51,7 @@ class LinkedinAuth extends Component {
         const loading = this.state.loading
 
         if(loading){
+          debugger
             return ( 
               <LoadingGif />
             )

@@ -1,10 +1,14 @@
 .center {
     display: flex;
     justify-content: center;
-    margin-top: 15%;
+    margin-top: 16%;
 }
 
 .preloader-wrapper.big {
     width: 100px;
     height: 100px;
+}
+
+.spinner-red, .spinner-red-only {
+    border-color: #ff4038;
 }
