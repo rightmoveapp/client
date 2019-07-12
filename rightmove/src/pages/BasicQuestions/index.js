@@ -7,24 +7,71 @@ import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import basicQuestions from "../../basicQuestions.json";
+import YellowButton from "../../components/YellowButton";
 import "./style.css";
 
 class BasicQuestions extends Component {
   constructor(props) {
     super(props)
 
-    /* this.handleInputChange = this.handleInputChange.bind(this) */
-
   }
 
   state = {
-    basicQuestions
+    basicQuestions,
+    question:[],
+    choice:[],
   };
 
-  /* componentDidMount() {
 
-  } */
-  
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleChange = event => {
+    console.log(this.state.currentQuestion)
+    this.setState({
+      choice: event.target.value,
+      question: this.state.currentQuestion.id
+    });
+  };
+
+  handleCheckBoxChange = (event) => {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+      choice: [...this.state.choice, name],
+      question: this.state.currentQuestion.id
+    });
+  }
+
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("clicked")
+    /* API.postUserAttrAnswers({
+      question: this.state.question,
+      answer: this.state.choice,
+    })
+      .then(response => {
+        this.setAnsweredQuestion(this.state.question)
+        this.getRandomQuestion()
+      }
+      )
+      .catch(err => console.log(err)); */
+
+    console.log('You have selected:', this.state.selectedOption);
+  }
+
 
   render() {
     /* console.log(this.state.basicQuestions.questionsAndChoices); */
@@ -39,6 +86,8 @@ class BasicQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionChoices={[question.choices]}
+            handleChange={this.handleChange}
+            choiceState={this.state.choice}
           />
         )
       }
@@ -49,6 +98,8 @@ class BasicQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
+            handleChange={this.handleChange}
+            choiceState={this.state.choice}
           />
         )
       }
@@ -60,6 +111,8 @@ class BasicQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionChoices={[question.choices]}
+            handleCheckBoxChange={this.handleCheckBoxChange}
+            choiceState={this.state.choice}
           />
         )
       }
@@ -70,6 +123,8 @@ class BasicQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
+            handleChange={this.handleChange}
+            choiceState={this.state.choice}
           />
         )
       }
@@ -85,13 +140,9 @@ class BasicQuestions extends Component {
               <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 {basicQuestions}
-                {/* <DateQuestion questionText="Your Birthday" questionPlaceholder="01/01/1990"/>
-                <TextQuestion questionText="Zip code" questionPlaceholder="19103" />
-                <TextQuestion questionText="Area code (cell)" questionPlaceholder="310" /> */}
-                {/* <RadioQuestions /> */}
-                {/* {<CheckboxQuestion questionText="Ethnicity" key="5" questionType="checkbox" questionChoices={["White", "Hispanic/Latinx", "Black/African"]}/>} */}
-                {/* <input type="submit" value="Submit" /> */}
-               {/*  White,Hispanic/Latinx,Black/African,Asian,American Indian/Alaskan Native,Middle Eastern/North African,Native Hawaiian/Pacific Islander,Other (Open) */}
+                <div className="right-align">
+                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                </div>
               </form>
             </>
           </Col>
@@ -103,82 +154,3 @@ class BasicQuestions extends Component {
 }
 
 export default BasicQuestions;
-
-{/* <label className="question">Your Birthday</label>
-  <input
-    value={this.state.value}
-    onChange={this.handleChange}
-    name="firstName"
-    type="date"
-    className="validate"
-    placeholder="01/01/1990"
-    className="Rectangle"
-  />
-  <label className="question">Zip code</label>
-  <input
-    value={this.state.value}
-    onChange={this.handleChange}
-    name="firstName"
-    type="text"
-    className="validate"
-    placeholder="90210"
-    className="Rectangle"
-  />
-  <label className="question">Area code (cell)</label>
-  <input
-    value={this.state.value}
-    onChange={this.handleChange}
-    name="firstName"
-    type="text"
-    className="validate"
-    placeholder="310"
-    className="Rectangle"
-  />
-  <label className="question">Gender</label>
-  <input
-    value={this.state.value}
-    onChange={this.handleChange}
-    name="firstName"
-    type="radio"
-    className="validate"
-  />
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span className="-Input-Text">She/Hers</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span className="-Input-Text">He/Him</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span className="-Input-Text">They/Them</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span className="-Input-Text">Zir/Zer</span>
-    </label>
-  </p>
-  <p>
-    <label>
-      <input name="group1" type="radio" />
-      <span className="-Input-Text">I do not identify with any of the above</span>
-    </label>
-  </p>
-  <label className="question">Ethnicity</label>
-  <input
-    value={this.state.value}
-    onChange={this.handleChange}
-    name="firstName"
-    type="text"
-    className="validate"
-    placeholder="310"
-    className="Rectangle"
-  /> */}
