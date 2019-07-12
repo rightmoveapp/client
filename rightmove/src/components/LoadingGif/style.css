@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+}
+
+.preloader-wrapper.big {
+    width: 100px;
+    height: 100px;
+}

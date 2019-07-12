@@ -63,16 +63,18 @@ render() {
                 <span className="Add-Space-Left Remove-Bold"><YellowUnderline to="/questions" text="Answer Questions" /></span>
             </p>
           </div>
-          <CurrentJob
-            company_name={this.state.currentJob.company_name}
-            role={this.state.currentJob.role}
-            score={this.percentage(this.state.currentJob.score)}
-          />
-          <div className="WhiteRectangle-Jobs">
-            <h4 className="Top-Gigs">Top Gigs</h4>
-            {possibleJobsMap}
-            <div className="right-align Make-Font-Smaller">
-              <YellowUnderline text="See All" to="/jobs" />
+          <div>
+            <CurrentJob
+              company_name={this.state.currentJob.company_name}
+              role={this.state.currentJob.role}
+              score={this.percentage(this.state.currentJob.score)}
+            />
+            <div className="WhiteRectangle-Jobs">
+              <h4 className="Top-Gigs">Top Gigs</h4>
+              {possibleJobsMap}
+              <div className="right-align Make-Font-Smaller">
+                <YellowUnderline text="See All" to="/jobs" />
+              </div>
             </div>
           </div>
         </Col>

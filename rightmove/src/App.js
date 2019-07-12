@@ -16,9 +16,6 @@ import ReturnLogin from './pages/ReturnLogin';
 import Questions from './pages/Questions';
 import PrivacyPage from './pages/PrivacyPolicy';
 import WelcomePage from './pages/WelcomePage';
-/*
-import Job from './pages/Job';
-import CurrentState from './pages/CurrentState'; */
 import './App.css';
 import Cookies from 'universal-cookie';
 import BasicQuestions from './pages/BasicQuestions';
@@ -51,8 +48,7 @@ class App extends React.Component {
       const token_is_undefined = typeof(token_cookie) === "undefined"
       /* console.log(`token_is_undefined is ${token_is_undefined}`) */
       const token_is_empty = token_cookie === " "
-      /* console.log(`token_is_empty is ${token_is_empty}`)
- */
+      /* console.log(`token_is_empty is ${token_is_empty}`) */
       const loggedIn = !(token_is_undefined | token_is_empty)
       /* console.log(`the loggedIn value will be set to ${loggedIn}`) */
       this.setState({

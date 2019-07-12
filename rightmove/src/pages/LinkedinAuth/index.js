@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom'
 import queryString from 'query-string'
 import Cookies from 'universal-cookie';
 import axios from 'axios';
+import LoadingGif from "../../components/LoadingGif";
 
 const cookies = new Cookies();
 const apiUrl = "http://localhost:8000/v1/login"
@@ -50,7 +51,9 @@ class LinkedinAuth extends Component {
         const loading = this.state.loading
 
         if(loading){
-            return ( <p>Processing Authentication...</p>)
+            return ( 
+              <LoadingGif />
+            )
         }
         else{
 

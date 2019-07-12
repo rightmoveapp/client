@@ -9,7 +9,7 @@ const WelcomePage = () => {
 		<>
 			<Row>
 				<Col size="s12 m12 l12">
-					<h4 className="heading">Welcome, User! <span role="img" aria-label="wave">👋</span></h4>
+					<h4 className="heading">Welcome! <span role="img" aria-label="wave">👋</span></h4>
 					<p>
 						We’re here to help you take control of your career.
           </p>
@@ -20,7 +20,7 @@ const WelcomePage = () => {
 			</Row>
 			<Row>
 				<Col size="s12 m12 l12 right-align">
-					<SmallYellowButton text="Continue →" to="/questions"/>
+					<SmallYellowButton text="Continue →" to="/basicquestions"/>
 				</Col>
 			</Row>
 		</>
