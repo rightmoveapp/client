@@ -77,7 +77,7 @@ class JobQuestions extends Component {
         <Row>
           <Col size="s12 m12 l12">
             <>
-              <h4 className="heading">Give us the deets on this gig <span>🤑</span></h4>
+              <h4 className="heading">Give us the deets on this gig <span role="img" aria-label="Smiley with money mouth">🤑</span></h4>
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 <label className="question">Company name</label>
                 <input
@@ -86,9 +86,8 @@ class JobQuestions extends Component {
                   /* name="firstName" */
                   id="22"
                   type="text"
-                  className="validate"
+                  className="validate Rectangle"
                   placeholder="Best place in the world"
-                  className="Rectangle"
                 />
                 <label className="question">Position title</label>
                 <input
@@ -97,9 +96,8 @@ class JobQuestions extends Component {
                   /* name="firstName" */
                   id="23"
                   type="text"
-                  className="validate"
+                  className="validate Rectangle"
                   placeholder="Web Developer"
-                  className="Rectangle"
                 />
                 <label className="question">Annual salary</label>
                 <input
@@ -108,9 +106,8 @@ class JobQuestions extends Component {
                   /* name="firstName" */
                   id="24"
                   type="text"
-                  className="validate"
+                  className="validate Rectangle"
                   placeholder="$80,000"
-                  className="Rectangle"
                 />
                 {/* <input type="submit" value="Submit" /> */}
                 {jobQuestionMap}

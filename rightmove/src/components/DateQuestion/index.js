@@ -53,9 +53,8 @@ class DateQuestion extends Component {
                         onChange={this.handleChange}
                         id={this.props.questionId}
                         type={this.props.questionType}
-                        className="validate"
+                        className="validate Rectangle"
                         placeholder={this.props.questionPlaceholder}
-                        className="Rectangle"
                     />
                     {/* <input type="submit" value="Submit" /> */}
                 </form>
