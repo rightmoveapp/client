@@ -20,7 +20,7 @@ const WelcomePage = (props) => {
 			</Row>
 			<Row>
 				<Col size="s12 m12 l12 right-align">
-					<SmallYellowButton text="Continue →" to="/questions"/>
+					<SmallYellowButton text="Continue →" to="/basicquestions"/>
 				</Col>
 			</Row>
 		</>

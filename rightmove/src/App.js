@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
+import API from "../src/utils/API";
 import Footer from './components/Footer';
 import Container from './components/Container';
 import Landing from './pages/Landing';
@@ -10,16 +11,14 @@ import PrivateRoute from './components/PrivateRoute';
 // const {PrivateRoute} = require("./PrivateRoute")
 import LogOut from './pages/LogOut'
 import Page404 from './pages/Page404';
-import Job from './pages/JobQuestions';
+import JobQuestions from './pages/JobQuestions';
 import ReturnLogin from './pages/ReturnLogin';
 import Questions from './pages/Questions';
 import PrivacyPage from './pages/PrivacyPolicy';
 import WelcomePage from './pages/WelcomePage';
-/*
-import Job from './pages/Job';
-import CurrentState from './pages/CurrentState'; */
 import './App.css';
 import Cookies from 'universal-cookie';
+import BasicQuestions from './pages/BasicQuestions';
 
 const cookies = new Cookies();
 
@@ -58,11 +57,11 @@ class App extends React.Component {
   }
 
   componentWillMount(){
-    this.updateLogin()
-
+    this.updateLogin();
   }
+
   componentDidMount(){
-    console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`)
+    /* console.log(`on request to page ${window.location.href} loggedIn is ${this.state.loggedIn}`) */
  }
 
 
@@ -73,6 +72,12 @@ class App extends React.Component {
           <Nav name={this.state.userName} loggedIn={this.state.loggedIn} />
           <Container>
             <Switch>
+              <PrivateRoute
+                path="/jobquestions"
+                loggedIn={this.state.loggedIn}
+                component={JobQuestions}
+                render={(props) => <JobQuestions {...props} /> }
+              />
              <PrivateRoute
                 path="/welcome"
                 loggedIn={this.state.loggedIn}
@@ -100,16 +105,13 @@ class App extends React.Component {
                 render={(props) => <Account {...props} />}
               />
               <PrivateRoute
-                path="/job_detail"
+                path="/basicquestions"
                 loggedIn={this.state.loggedIn}
-                component={Job}
-                render={(props) => <Job {...props} />}
+                component={BasicQuestions}
+                render={(props) => <BasicQuestions {...props} />}
               />
               <Route exact path="/" component={Landing} />
               <Route exact path="/*" component={Page404} />
-              {/* <Route exact path="/questions" component={Questions} />
-          <Route exact path="/job_detail" component={Job} />
-          <Route exact path="/current_state" component={CurrentState} /> */}
             </Switch>
           </Container>
           <div className="Site-content"></div>

@@ -10,7 +10,6 @@
 }
 
 .YellowRectangle {
-    max-width: 764px;
     border-radius: 8px;
     border: solid 1px #8f6105;
     background-color: #fff7c7;
@@ -18,7 +17,7 @@
 }
 
 .Add-Overall-Padding {
-    padding: 8px;
+    padding: 10px;
     margin: 0px;
 }
 

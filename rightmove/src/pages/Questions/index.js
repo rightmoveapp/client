@@ -40,7 +40,6 @@ class Questions extends Component {
                 this.getRandomQuestion()
             }
             )
-            // TODO: Handle if user has answered all questions
             .catch(err => console.log(err));
     };
 

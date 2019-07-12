@@ -28,6 +28,7 @@
     height: 48px;
     background-color: #ffffff !important;
     border-bottom: dotted 2px #637c92 !important;
+    padding-left: 8px !important;
 }
 
 input {

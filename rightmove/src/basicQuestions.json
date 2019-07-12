@@ -1,0 +1,113 @@
+{
+  "questionsAndChoices": [
+    {
+      "id": "1",
+      "question_text": "When is your birthday?",
+      "category": "Basic",
+      "input_type": "date",
+      "placeholder": "07/31/1980",
+      "choices": []
+    },
+    {
+      "id": "2",
+      "question_text": "What's your zip code?",
+      "category": "Basic",
+      "input_type": "text",
+      "placeholder": "19103",
+      "choices": []
+    },
+    {
+      "id": "3",
+      "question_text": "What's the area code of your cell phone number?",
+      "category": "Basic",
+      "input_type": "text",
+      "placeholder": "310",
+      "choices": []
+    },
+    {
+      "id": "4",
+      "question_text": "Which pronouns do you use?",
+      "category": "Basic",
+      "input_type": "radio",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "She/Her",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "He/Him",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "They/Them",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Ze/Zir",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "I don't identify with any of the above",
+          "input_type": "radio"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "question_text": "How do you identify?",
+      "category": "Basic",
+      "input_type": "checkbox",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "White",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "2",
+          "choice_text": "Hispanic/Latinx",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "3",
+          "choice_text": "Black/African",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "4",
+          "choice_text": "Asian",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "5",
+          "choice_text": "American Indian/Alaskan Native",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "6",
+          "choice_text": "Middle Eastern/North African",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "7",
+          "choice_text": "Native Hawaiian/Pacific Islander",
+          "input_type": "checkbox"
+        },
+        {
+          "id": "8",
+          "choice_text": "Other",
+          "input_type": "checkbox"
+        }
+      ]
+    }
+  ]
+}

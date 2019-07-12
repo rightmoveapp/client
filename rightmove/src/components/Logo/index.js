@@ -5,7 +5,7 @@ import "./style.css"
 
 const LogoContainer = () => {
     return (
-      <Link to="/" className="no-underline">
+      <Link to="/account" className="no-underline">
           <Logo />
       </Link>
     )
