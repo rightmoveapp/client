@@ -7,7 +7,7 @@ class DateQuestion extends Component {
         return (
             <>
                 {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
-                <form onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
+                {/* <form onSubmit={this.handleFormSubmit} size="col s12 m12 l12"> */}
                     <label className="question">{this.props.questionText}</label>
                     <input
                         value={this.props.choice}
@@ -18,7 +18,7 @@ class DateQuestion extends Component {
                         placeholder={this.props.questionPlaceholder}
                     />
                     {/* <input type="submit" value="Submit" /> */}
-                </form>
+                {/* </form> */}
             </>
         )
     }

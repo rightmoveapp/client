@@ -8,7 +8,7 @@ class CheckboxQuestions extends Component {
         return (
             <>
                 {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
-                <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
+                {/* <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12"> */}
                     <label id={this.props.questionId} className="question">{this.props.questionText}</label>
                     {this.props.questionChoices[0].map(questionChoice => (
                         <p>
@@ -26,7 +26,7 @@ class CheckboxQuestions extends Component {
                         </p>
 
                     ))}
-                </form>
+                {/* </form> */}
             </>
         )
     }

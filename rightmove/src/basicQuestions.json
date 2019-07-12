@@ -5,6 +5,7 @@
       "question_text": "When is your birthday?",
       "category": "Basic",
       "input_type": "date",
+      "name": "birthday",
       "placeholder": "07/31/1980",
       "choices": []
     },
@@ -13,6 +14,7 @@
       "question_text": "What's your zip code?",
       "category": "Basic",
       "input_type": "text",
+      "name": "zipcode",
       "placeholder": "19103",
       "choices": []
     },
@@ -21,6 +23,7 @@
       "question_text": "What's the area code of your cell phone number?",
       "category": "Basic",
       "input_type": "text",
+      "name": "areacode",
       "placeholder": "310",
       "choices": []
     },
@@ -29,6 +32,7 @@
       "question_text": "Which pronouns do you use?",
       "category": "Basic",
       "input_type": "radio",
+      "name": "pronouns",
       "placeholder": "",
       "explanation": "",
       "choices": [
@@ -64,6 +68,7 @@
       "question_text": "How do you identify?",
       "category": "Basic",
       "input_type": "checkbox",
+      "name": "race_ethnicity",
       "placeholder": "",
       "explanation": "",
       "choices": [
