@@ -157,10 +157,11 @@ class BasicQuestions extends Component {
         <Row>
           <Col size="s12 m12 l12" className="center-align">
             <>
-              <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
+              <h4 className="heading-questions">Here we go! Tell us a little about yourself.</h4>
+              <h5 className="subheading-questions">Just trying to get to know you.</h5>
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 {basicQuestions}
-                <div className="right-align">
+                <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
                 </div>
               </form>
