@@ -7,6 +7,8 @@ import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 import Finished from '../../components/Finished';
+import YellowButton from "../../components/YellowButton";
+import YellowUnderline from "../../components/YellowUnderline";
 import "./style.css";
 
 class Questions extends Component {
@@ -21,7 +23,9 @@ class Questions extends Component {
         answeredQuestions: [],
         skippedQuestions: [],
         questionType:[],
-        isFinished: false
+        isFinished: false,
+        question:[],
+        choice:[],
     };
 
     componentDidMount() {
@@ -70,19 +74,50 @@ class Questions extends Component {
         this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
     }
 
-    getNextQuestion(event) {
-        /* console.log("CLICK!!!!"); */
+    handleChange = choice => {
+        console.log(this.state.currentQuestion)
+        this.setState({
+            choice,
+            question: this.state.currentQuestion.id
+        });
+    };
+
+    handleCheckBoxChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+          [name]: value,
+          choice: [...this.state.choice, name],
+          question:this.props.questionId
+        });
+      }
+
+
+    handleFormSubmit = (event) => {
         event.preventDefault();
+        console.log("clicked")
+        API.postUserAttrAnswers({
+            question: this.state.question,
+            answer: this.state.choice,
+        })
+            .then(response => {
+                this.setAnsweredQuestion(this.state.question)
+                this.getRandomQuestion()
+            }
+            )
+            .catch(err => console.log(err));
+
+        console.log('You have selected:', this.state.selectedOption);
     }
 
 
     render(){
         // const userQuestionMap = this.state.currentQuestion.map((question) => {
             let currentQuestion = this.state.currentQuestion
-            console.log(currentQuestion)
             let currentquestionType
             if (currentQuestion.input_type === "radio") {
-                console.log("I am a radio question",currentQuestion)
                 currentquestionType =
                     <RadioQuestions
                         key={currentQuestion.id}
@@ -92,6 +127,8 @@ class Questions extends Component {
                         questionChoices={[currentQuestion.choices]}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
                     />
                 }
             else if (currentQuestion.input_type === "date") {
@@ -144,8 +181,13 @@ class Questions extends Component {
                 <Row>
                     <Col size="s12 m12 l12">
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
+                        <div className="right-align">
+                    <YellowUnderline to="/" text="Skip" space="32" />
+                    <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                </div>
                     </Col>
                 </Row>
+
             </>
         );
     }
