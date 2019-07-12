@@ -4,12 +4,12 @@ import Col from '../../components/Col';
 import SmallYellowButton from '../../components/SmallYellowButton';
 import "./style.css";
 
-const WelcomePage = () => {
+const WelcomePage = (props) => {
 	return (
 		<>
 			<Row>
 				<Col size="s12 m12 l12">
-					<h4 className="heading">Welcome, User! <span role="img" aria-label="wave">👋</span></h4>
+					<h4 className="heading">Welcome! <span role="img" aria-label="wave">👋</span></h4>
 					<p>
 						We’re here to help you take control of your career.
           </p>

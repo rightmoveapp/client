@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
+import { Link } from "react-router-dom";
 import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
@@ -7,23 +8,25 @@ import TextQuestion from '../../components/TextQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 import Finished from '../../components/Finished';
+import YellowButton from "../../components/YellowButton";
+import YellowUnderline from "../../components/YellowUnderline";
 import "./style.css";
 
 class Questions extends Component {
     constructor(props) {
         super(props)
-
         this.handleInputChange = this.handleInputChange.bind(this)
-
     }
 
     state = {
         questionsChoices: [],
-        currentQuestion:{},
+        currentQuestion:[],
         answeredQuestions: [],
         skippedQuestions: [],
         questionType:[],
-        isFinished: false
+        isFinished: false,
+        question:[],
+        choice:[],
     };
 
     componentDidMount() {
@@ -34,7 +37,6 @@ class Questions extends Component {
         API.getUserAttrQuestions()
             .then(response => {
                 this.setState({ questionsChoices: response.data.questionsAndChoices })
-                console.log(response.data.questionsAndChoices)
                 this.getRandomQuestion()
             }
             )
@@ -52,61 +54,7 @@ class Questions extends Component {
         })
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
-        console.log(randomQuestion.input_type, "hi")
         // TODO: figure out how to fix this
-        if (randomQuestion.input_type === "radio") {
-            console.log("I am a radio question",randomQuestion)
-            this.setState({
-                questionType:
-                <RadioQuestions
-                    key={randomQuestion.id}
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionChoices={[randomQuestion.choices]}
-                    getRandomQuestion={this.getRandomQuestion}
-                    setAnsweredQuestion={this.setAnsweredQuestion}
-                />
-            })
-
-        }
-        else if (randomQuestion.input_type === "date") {
-            this.setState({
-                questionType:
-                <DateQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionPlaceholder={randomQuestion.placeholder}
-                />
-            })
-        }
-        else if (randomQuestion.input_type === "checkbox") {
-            this.setState({
-                questionType:
-                <CheckboxQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    key={randomQuestion.id}
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionChoices={[randomQuestion.choices]}
-                />
-            })
-        }
-        else {
-            this.setState({
-                questionType:
-                <TextQuestion
-                    /* handleInputChange={this.handleInputChange} */
-                    questionId={randomQuestion.id}
-                    questionText={randomQuestion.question_text}
-                    questionType={randomQuestion.input_type}
-                    questionPlaceholder={randomQuestion.placeholder}
-                />
-            })
-        }
         this.setState({currentQuestion:randomQuestion})
     }
 
@@ -125,14 +73,111 @@ class Questions extends Component {
         this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
     }
 
-    getNextQuestion(event) {
-        /* console.log("CLICK!!!!"); */
+    handleChange = event => {
+        console.log(this.state.currentQuestion)
+        this.setState({
+            choice: event.target.value,
+            question: this.state.currentQuestion.id
+        });
+    };
+
+    handleCheckBoxChange= (event) =>{
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value,
+          choice: [...this.state.choice, name],
+          question: this.state.currentQuestion.id
+        });
+      }
+
+
+    handleFormSubmit = (event) => {
         event.preventDefault();
+        console.log("clicked")
+        API.postUserAttrAnswers({
+            question: this.state.question,
+            answer: this.state.choice,
+        })
+            .then(response => {
+                this.setAnsweredQuestion(this.state.question)
+                this.getRandomQuestion()
+            }
+            )
+            .catch(err => console.log(err));
+
+        console.log('You have selected:', this.state.selectedOption);
     }
 
 
     render(){
-        if(this.state.currentQuestion.length < 1 && this.state.questionType.length < 1){
+        // const userQuestionMap = this.state.currentQuestion.map((question) => {
+            let currentQuestion = this.state.currentQuestion
+            let currentquestionType
+            if (currentQuestion.input_type === "radio") {
+                currentquestionType =
+                    <RadioQuestions
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
+                    />
+                }
+            else if (currentQuestion.input_type === "date") {
+                currentquestionType =
+                    <DateQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionPlaceholder={currentQuestion.placeholder}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
+                    />
+            }
+            else if (currentQuestion.input_type === "checkbox") {
+                currentquestionType =
+                    <CheckboxQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleCheckBoxChange={this.handleCheckBoxChange}
+                        choiceState={this.state.choice}
+                    />
+            }
+            else {
+                currentquestionType =
+                    <TextQuestion
+                        /* handleInputChange={this.handleInputChange} */
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionPlaceholder={currentQuestion.placeholder}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
+                    />
+            }
+
+
+        if(this.state.currentQuestion.length < 1 /*&& this.state.questionType.length < 1*/){
         return (<></>);
         }else{
 
@@ -140,9 +185,16 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                        { this.state.isFinished ? <Finished /> :  this.state.questionType }
+                        { this.state.isFinished ? <Finished /> :  currentquestionType}
+                        <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+
+                    <div className="right-align">
+                    <YellowUnderline to="/" text="Skip" space="32" />
+                    <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                     </div>
                     </Col>
                 </Row>
+
             </>
         );
     }

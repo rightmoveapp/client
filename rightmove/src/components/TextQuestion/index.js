@@ -1,50 +1,24 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import YellowButton from "../YellowButton";
-import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 class TextQuestion extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {value: ''};
-    
-        this.handleChange = this.handleChange.bind(this);
-        /* this.handleSubmit = this.handleSubmit.bind(this); */
-      }
-    
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
-    
-      /* handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
-      } */
-    
+
       render(props) {
         return (
             <>
-              {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
-              <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
+              <h4 className="heading">Here we go! Tell us a little about yourself.</h4>
+              <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                 <label className="question">{this.props.questionText}</label>
                         <input
-                            value={this.state.value} 
-                            onChange={this.handleChange}
+                            value={this.props.choice}
+                            onChange={(event) => this.props.handleChange(event)}
                             /* name="firstName" */
                             id={this.props.questionId}
-                            type={this.props.questionType} 
-                            className="validate"
+                            type={this.props.questionType}
+                            className="validate Rectangle"
                             placeholder={this.props.questionPlaceholder}
-                            className="Rectangle"
                 />
-                {/* <input type="submit" value="Submit" /> */}
               </form>
-              <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-              <div className="right-align">
-                  <YellowUnderline to="/" text="Skip" space="32" />
-                  <YellowButton /* to="/" */ text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion} */ />
-              </div>
           </>
         )
       }

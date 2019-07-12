@@ -26,7 +26,7 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     stateHasUpdated: true,
-    userProfile: [],
+    userName:""
   }
 
   getUserInfo = () => {
@@ -44,18 +44,25 @@ class App extends React.Component {
     }
     else {
       const token_cookie = cookies.get("token", {path: "/"})
-    
+      // console.log(`token_cookie returned is ${token_cookie}`)
       const token_is_undefined = typeof(token_cookie) === "undefined"
-      /* console.log(`token_is_undefined is ${token_is_undefined}`) */
+      // console.log(`token_is_undefined is ${token_is_undefined}`)
       const token_is_empty = token_cookie === " "
-      /* console.log(`token_is_empty is ${token_is_empty}`) */
+      // console.log(`token_is_empty is ${token_is_empty}`)
+
       const loggedIn = !(token_is_undefined | token_is_empty)
-      /* console.log(`the loggedIn value will be set to ${loggedIn}`) */
+      // console.log(`the loggedIn value will be set to ${loggedIn}`)
       this.setState({
         loggedIn: loggedIn,
         stateHasUpdated: true
       })
     }
+  }
+
+  updateUserName  = name =>{
+    this.setState({
+      userName: name
+    })
   }
 
   componentWillMount(){
@@ -69,10 +76,9 @@ class App extends React.Component {
 
   render() {
     return (this.state.stateHasUpdated?
-      
       (<Router>
         <div className="Site">
-          <Nav name="Steve" loggedIn={this.state.loggedIn} />
+          <Nav name={this.state.userName} loggedIn={this.state.loggedIn} />
           <Container>
             <Switch>
               <PrivateRoute
@@ -84,8 +90,9 @@ class App extends React.Component {
              <PrivateRoute
                 path="/welcome"
                 loggedIn={this.state.loggedIn}
+              // TODO: Send name to say hi user
                 component={WelcomePage}
-                render={(props) => <WelcomePage {...props} /> }
+                render={(props) => <WelcomePage {...props}  /> }
               />
               <Route exact path="/privacy_policy" component={PrivacyPage} />
               <PrivateRoute
@@ -98,7 +105,7 @@ class App extends React.Component {
               <Route exact path="/logout" render={(props) => <LogOut updateLogin={this.updateLogin} />} />
               <Route
                 exact path="/linkedin_auth"
-                render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} />}
+                render={(props) => <LinkedinAuth {...props} updateLogin={this.updateLogin} updateUserName={this.updateUserName} />}
               />
               <PrivateRoute
                 path="/account"

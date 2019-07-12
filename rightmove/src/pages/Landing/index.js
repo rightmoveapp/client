@@ -2,7 +2,6 @@ import React, { Component } from "react";
 /* import API from '../../utils/API' */
 import Col from '../../components/Col';
 import Row from '../../components/Row';
-import RedButton from '../../components/RedButton';
 import './style.css';
 import RedButtonLinkedin from "../../components/RedButtonLinkedin";
 
