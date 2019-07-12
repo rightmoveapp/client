@@ -172,6 +172,8 @@ class Questions extends Component {
                         questionPlaceholder={currentQuestion.placeholder}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
                     />
             }
 
