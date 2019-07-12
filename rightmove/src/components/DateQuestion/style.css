@@ -31,3 +31,7 @@
     letter-spacing: normal;
     color: #637c92;
 }
+
+input[type=date]:not(.browser-default) {
+    margin: 12px 0 12px 0;
+}
