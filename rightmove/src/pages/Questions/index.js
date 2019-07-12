@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
+import { Link } from "react-router-dom";
 import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
@@ -54,7 +55,6 @@ class Questions extends Component {
         })
         this.setState({questionsChoices:filteredQuestions})
         const randomQuestion = filteredQuestions[Math.floor(Math.random() * filteredQuestions.length)];
-        
         // TODO: figure out how to fix this
         this.setState({currentQuestion:randomQuestion})
     }
@@ -187,10 +187,12 @@ class Questions extends Component {
                 <Row>
                     <Col size="s12 m12 l12">
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
-                        <div className="right-align">
+                        <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+
+                    <div className="right-align">
                     <YellowUnderline to="/" text="Skip" space="32" />
                     <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
-                </div>
+                     </div>
                     </Col>
                 </Row>
 

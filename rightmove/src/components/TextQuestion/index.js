@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./style.css";
 
 class TextQuestion extends Component {
@@ -20,7 +19,6 @@ class TextQuestion extends Component {
                             placeholder={this.props.questionPlaceholder}
                 />
               </form>
-              <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
           </>
         )
       }

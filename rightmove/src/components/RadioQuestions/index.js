@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import API from "../../utils/API"
-import YellowButton from "../YellowButton";
-import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
@@ -32,7 +28,6 @@ class RadioQuestions extends Component {
 
                     ))}
                 </form>
-                <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
             </>
         );
     }
