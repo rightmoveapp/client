@@ -49,8 +49,8 @@ class DateQuestion extends Component {
                 <form onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                     <label className="question">{this.props.questionText}</label>
                     <input
-                        value={this.state.choice}
-                        onChange={this.handleChange}
+                        value={this.props.choice}
+                        onChange={(event) => this.props.handleChange(event)}
                         id={this.props.questionId}
                         type={this.props.questionType}
                         className="validate Rectangle"
@@ -59,10 +59,6 @@ class DateQuestion extends Component {
                     {/* <input type="submit" value="Submit" /> */}
                 </form>
                 <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-                <div className="right-align">
-                    <YellowUnderline to="/" text="Skip" space="32" />
-                    <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion}  */ />
-                </div>
             </>
         )
     }

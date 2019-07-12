@@ -1,26 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import API from "../../utils/API"
-import YellowButton from "../YellowButton";
-import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 
 class CheckboxQuestions extends Component {
-
-    //   handleInputChange(event) {
-    //     const target = event.target;
-    //     const value = target.type === 'checkbox' ? target.checked : target.value;
-    //     const name = target.name;
-
-    //     this.setState({
-    //       [name]: value,
-    //       choice: [...this.state.choice, name],
-    //       question:this.props.questionId
-    //     });
-    //   }
-
-
 
     render(props) {
         return (
@@ -46,7 +29,6 @@ class CheckboxQuestions extends Component {
                     ))}
                 </form>
                 <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-                
             </>
         )
     }

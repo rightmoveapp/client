@@ -74,10 +74,10 @@ class Questions extends Component {
         this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
     }
 
-    handleChange = choice => {
+    handleChange = event => {
         console.log(this.state.currentQuestion)
         this.setState({
-            choice,
+            choice: event.target.value,
             question: this.state.currentQuestion.id
         });
     };
@@ -86,7 +86,6 @@ class Questions extends Component {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        
 
         this.setState({
             [name]: value,
@@ -94,18 +93,6 @@ class Questions extends Component {
           question: this.state.currentQuestion.id
         });
       }
-
-    //   handleInputChange(event) {
-    //         const target = event.target;
-    //         const value = target.type === 'checkbox' ? target.checked : target.value;
-    //         const name = target.name;
-    
-    //         this.setState({
-    //           [name]: value,
-    //           choice: [...this.state.choice, name],
-    //           question:this.props.questionId
-    //         });
-    //       }
 
 
     handleFormSubmit = (event) => {
@@ -155,6 +142,8 @@ class Questions extends Component {
                         questionPlaceholder={currentQuestion.placeholder}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
+                        choiceState={this.state.choice}
                     />
             }
             else if (currentQuestion.input_type === "checkbox") {

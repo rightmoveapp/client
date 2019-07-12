@@ -23,7 +23,8 @@ class RadioQuestions extends Component {
                                     value={questionChoice.choice_text}
                                     type={questionChoice.input_type}
                                     checked={this.props.choiceState === questionChoice.choice_text}
-                                    onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                                    // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                                    onChange={(event) => this.props.handleChange(event)}
                                 />
                                 <span className="-Input-Text">{questionChoice.choice_text}</span>
                             </label>
