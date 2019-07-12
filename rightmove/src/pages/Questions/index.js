@@ -82,17 +82,30 @@ class Questions extends Component {
         });
     };
 
-    handleCheckBoxChange(event) {
+    handleCheckBoxChange= (event) =>{
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
+        
 
         this.setState({
-          [name]: value,
+            [name]: value,
           choice: [...this.state.choice, name],
-          question:this.props.questionId
+          question: this.state.currentQuestion.id
         });
       }
+
+    //   handleInputChange(event) {
+    //         const target = event.target;
+    //         const value = target.type === 'checkbox' ? target.checked : target.value;
+    //         const name = target.name;
+    
+    //         this.setState({
+    //           [name]: value,
+    //           choice: [...this.state.choice, name],
+    //           question:this.props.questionId
+    //         });
+    //       }
 
 
     handleFormSubmit = (event) => {
@@ -155,6 +168,8 @@ class Questions extends Component {
                         questionChoices={[currentQuestion.choices]}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleCheckBoxChange={this.handleCheckBoxChange}
+                        choiceState={this.state.choice}
                     />
             }
             else {

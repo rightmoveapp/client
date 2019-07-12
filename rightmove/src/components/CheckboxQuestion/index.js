@@ -8,45 +8,18 @@ import "./style.css";
 
 class CheckboxQuestions extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-          active: false,
-          question:[],
-          choice:[],
-        };
+    //   handleInputChange(event) {
+    //     const target = event.target;
+    //     const value = target.type === 'checkbox' ? target.checked : target.value;
+    //     const name = target.name;
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-      }
+    //     this.setState({
+    //       [name]: value,
+    //       choice: [...this.state.choice, name],
+    //       question:this.props.questionId
+    //     });
+    //   }
 
-      handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
-
-        this.setState({
-          [name]: value,
-          choice: [...this.state.choice, name],
-          question:this.props.questionId
-        });
-      }
-
-      handleFormSubmit = (event) => {
-        event.preventDefault();
-        console.log("clicked")
-        API.postUserAttrAnswers({
-            question: this.state.question,
-            answer: this.state.choice,
-        })
-            .then(response => {
-                this.props.setAnsweredQuestion(this.state.question)
-                this.props.getRandomQuestion()
-            }
-            )
-            .catch(err => console.log(err));
-
-        console.log('You have selected:', this.state.selectedOption);
-    }
 
 
     render(props) {
@@ -62,8 +35,8 @@ class CheckboxQuestions extends Component {
                                     key={questionChoice.id}
                                     name={questionChoice.choice_text}
                                     type={questionChoice.input_type}
-                                    checked={this.state.centerCity}
-                                    onChange={this.handleInputChange}
+                                    // checked={this.props.choiceState}
+                                    onChange={(event) => this.props.handleCheckBoxChange(event)}
                                     className="filled-in"
                                 />
                                 <span className="-Input-Text">{questionChoice.choice_text}</span>
@@ -73,10 +46,7 @@ class CheckboxQuestions extends Component {
                     ))}
                 </form>
                 <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-                <div className="right-align">
-                    <YellowUnderline to="/" text="Skip" space="32" />
-                    <YellowButton /* to="/" */ type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" /* getNextQuestion={this.getNextQuestion} */ />
-                </div>
+                
             </>
         )
     }

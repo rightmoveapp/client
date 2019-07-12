@@ -8,30 +8,6 @@ import "./style.css";
 
 class RadioQuestions extends Component {
 
-    
-    // handleChange(event) {
-    //     console.log(event.target.value, 'choice value')
-    //     this.props.setStateOnChange(event.target.value)
-    //     };
-    
-
-    // handleFormSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log("clicked")
-    //     API.postUserAttrAnswers({
-    //         question: this.state.question,
-    //         answer: this.state.choice,
-    //     })
-    //         .then(response => {
-    //             this.props.setAnsweredQuestion(this.state.question)
-    //             this.props.getRandomQuestion()
-    //         }
-    //         )
-    //         .catch(err => console.log(err));
-
-    //     console.log('You have selected:', this.state.selectedOption);
-    // }
-
     render(props) {
         return (
             <>
@@ -56,10 +32,6 @@ class RadioQuestions extends Component {
                     ))}
                 </form>
                 <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-                {/* <div className="right-align">
-                    <YellowUnderline to="/" text="Skip" space="32" />
-                    <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
-                </div> */}
             </>
         );
     }
