@@ -17,7 +17,6 @@ const CheckboxQuestions = (props) => {
                             // checked={this.props.choiceState}
                             onChange={(event) => props.handleCheckBoxChange(event)}
                             className="filled-in"
-                            name={props.name}
                         />
                         <span className="-Input-Text">{questionChoice.choice_text}</span>
                     </label>
