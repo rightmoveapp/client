@@ -67,7 +67,7 @@
       "id": "5",
       "question_text": "How do you identify?",
       "category": "Basic",
-      "input_type": "checkbox",
+      "input_type": "radio",
       "name": "race_ethnicity",
       "placeholder": "",
       "explanation": "",
@@ -75,44 +75,209 @@
         {
           "id": "1",
           "choice_text": "White",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "2",
           "choice_text": "Hispanic/Latinx",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "3",
           "choice_text": "Black/African",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "4",
           "choice_text": "Asian",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "5",
           "choice_text": "American Indian/Alaskan Native",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "6",
           "choice_text": "Middle Eastern/North African",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "7",
           "choice_text": "Native Hawaiian/Pacific Islander",
-          "input_type": "checkbox"
+          "input_type": "radio"
         },
         {
           "id": "8",
           "choice_text": "Other",
-          "input_type": "checkbox"
+          "input_type": "radio"
         }
       ]
+    },
+    {
+      "id": "6",
+      "question_text": "What is your highest level of education?",
+      "category": "Basic",
+      "input_type": "radio",
+      "name": "education",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "Less than high school",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "High school diploma",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "GED",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Some college, no degree",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "Associate's degree",
+          "input_type": "radio"
+        },
+        {
+          "id": "6",
+          "choice_text": "Associate's degree",
+          "input_type": "radio"
+        },
+        {
+          "id": "7",
+          "choice_text": "Bachelor's degree",
+          "input_type": "radio"
+        },
+        {
+          "id": "8",
+          "choice_text": "Master's degree",
+          "input_type": "radio"
+        },
+        {
+          "id": "9",
+          "choice_text": "Doctoral or professional degree",
+          "input_type": "radio"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "question_text": "What's your current role?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "role",
+      "placeholder": "19103",
+      "choices": []
+    },
+    {
+      "id": "8",
+      "question_text": "What gender do you most identify with?",
+      "category": "Basic",
+      "input_type": "radio",
+      "name": "gender",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "Female",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "Male",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "Transgender",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Non-binary",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "Gender fluid",
+          "input_type": "radio"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "question_text": "What's your current role?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "role",
+      "placeholder": "Dark arts teacher",
+      "choices": []
+    },
+    {
+      "id": "10",
+      "question_text": "How many years of experience?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "years_experience",
+      "placeholder": "5",
+      "choices": []
+    },
+    {
+      "id": "11",
+      "question_text": "What is relationship status?",
+      "category": "Basic",
+      "input_type": "radio",
+      "name": "relationship_status",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "Single",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "Long term relationship",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "Married",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Divorced",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "Widower",
+          "input_type": "radio"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "question_text": "Number of dependents?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "num_dependents",
+      "placeholder": "1",
+      "choices": []
     }
+    
   ]
 }

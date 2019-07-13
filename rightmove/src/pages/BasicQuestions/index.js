@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-import CheckboxQuestion from '../../components/CheckboxQuestion';
+/* import CheckboxQuestion from '../../components/CheckboxQuestion'; */
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
@@ -13,22 +13,14 @@ import "./style.css";
 class BasicQuestions extends Component {
   state = {
     basicQuestions,
-    question:[],
-    choice:[],
+    question: [],
+    choice: [],
     birthday: "",
     zipcode: "",
     areacode: "",
     pronouns: "",
     race_ethnicity: [],
   };
-
-  /* handleChange = event => {
-    console.log(this.state.currentQuestion)
-    this.setState({
-      choice: event.target.value,
-      question: this.state.currentQuestion.id
-    });
-  }; */
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -43,17 +35,21 @@ class BasicQuestions extends Component {
     });
   };
 
-  handleCheckBoxChange= (event) =>{
+  /* TODO : Get checkboxes working -- difficultly is that this `[name]: value` 
+  sets the state high level and allows you to select and deselect 
+  because name is the checkbox answer and the value is a boolen 
+  when you push it into an array -- in this example race_ethnicity, it creates a new instance of 
+  the checkbox answer and the value as a boolen but does not update the already created one */
+  /* handleCheckBoxChange= (event) =>{
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
-        [name]: value,
-      choice: [...this.state.choice, name],
-      /* question: this.state.currentQuestion.id */
+      [name]: value,
+      race_ethnicity: [...this.state.race_ethnicity, {[name]: value}],
     });
-  }
+  } */
 
 
   handleFormSubmit = (event) => {
@@ -112,7 +108,7 @@ class BasicQuestions extends Component {
           />
         )
       }
-      else if (question.input_type === "checkbox") {
+      /* else if (question.input_type === "checkbox") {
         let questionName = question.name
         console.log(questionName)
         return (
@@ -128,7 +124,7 @@ class BasicQuestions extends Component {
             choiceState={this.state.choice}
           />
         )
-      }
+      } */
       else {
         let questionName = question.name
         console.log(questionName)
