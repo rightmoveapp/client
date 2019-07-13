@@ -55,27 +55,27 @@
       "explanation": "",
       "choices": [
         {
-          "id": "1",
+          "id": "6",
           "choice_text": "She/Her",
           "input_type": "radio"
         },
         {
-          "id": "2",
+          "id": "7",
           "choice_text": "He/Him",
           "input_type": "radio"
         },
         {
-          "id": "3",
+          "id": "8",
           "choice_text": "They/Them",
           "input_type": "radio"
         },
         {
-          "id": "4",
+          "id": "9",
           "choice_text": "Ze/Zir",
           "input_type": "radio"
         },
         {
-          "id": "5",
+          "id": "10",
           "choice_text": "I don't identify with any of the above",
           "input_type": "radio"
         }
@@ -91,42 +91,42 @@
       "explanation": "",
       "choices": [
         {
-          "id": "1",
+          "id": "11",
           "choice_text": "White",
           "input_type": "radio"
         },
         {
-          "id": "2",
+          "id": "12",
           "choice_text": "Hispanic/Latinx",
           "input_type": "radio"
         },
         {
-          "id": "3",
+          "id": "13",
           "choice_text": "Black/African",
           "input_type": "radio"
         },
         {
-          "id": "4",
+          "id": "14",
           "choice_text": "Asian",
           "input_type": "radio"
         },
         {
-          "id": "5",
+          "id": "15",
           "choice_text": "American Indian/Alaskan Native",
           "input_type": "radio"
         },
         {
-          "id": "6",
+          "id": "16",
           "choice_text": "Middle Eastern/North African",
           "input_type": "radio"
         },
         {
-          "id": "7",
+          "id": "17",
           "choice_text": "Native Hawaiian/Pacific Islander",
           "input_type": "radio"
         },
         {
-          "id": "8",
+          "id": "18",
           "choice_text": "Other",
           "input_type": "radio"
         }
@@ -142,27 +142,27 @@
       "explanation": "",
       "choices": [
         {
-          "id": "1",
+          "id": "19",
           "choice_text": "Single",
           "input_type": "radio"
         },
         {
-          "id": "2",
+          "id": "20",
           "choice_text": "Long term relationship",
           "input_type": "radio"
         },
         {
-          "id": "3",
+          "id": "21",
           "choice_text": "Married",
           "input_type": "radio"
         },
         {
-          "id": "4",
+          "id": "22",
           "choice_text": "Divorced",
           "input_type": "radio"
         },
         {
-          "id": "5",
+          "id": "23",
           "choice_text": "Widower",
           "input_type": "radio"
         }
@@ -205,47 +205,47 @@
       "explanation": "",
       "choices": [
         {
-          "id": "1",
+          "id": "24",
           "choice_text": "Less than high school",
           "input_type": "radio"
         },
         {
-          "id": "2",
+          "id": "25",
           "choice_text": "High school diploma",
           "input_type": "radio"
         },
         {
-          "id": "3",
+          "id": "26",
           "choice_text": "GED",
           "input_type": "radio"
         },
         {
-          "id": "4",
+          "id": "27",
           "choice_text": "Some college, no degree",
           "input_type": "radio"
         },
         {
-          "id": "5",
+          "id": "28",
           "choice_text": "Associate's degree",
           "input_type": "radio"
         },
         {
-          "id": "6",
+          "id": "29",
           "choice_text": "Associate's degree",
           "input_type": "radio"
         },
         {
-          "id": "7",
+          "id": "30",
           "choice_text": "Bachelor's degree",
           "input_type": "radio"
         },
         {
-          "id": "8",
+          "id": "31",
           "choice_text": "Master's degree",
           "input_type": "radio"
         },
         {
-          "id": "9",
+          "id": "32",
           "choice_text": "Doctoral or professional degree",
           "input_type": "radio"
         }

@@ -10,28 +10,43 @@ import basicQuestions from "../../basicQuestions.json";
 import YellowButton from "../../components/YellowButton";
 import "./style.css";
 
+// choice: [...this.state.choice, event.target.value],
+
 class BasicQuestions extends Component {
   state = {
     basicQuestions,
-    question: [],
-    choice: [],
-    birthday: "",
+    /* question: [], */
+    choices: {},
+    /* birthday: "",
+    gender: "",
     zipcode: "",
     areacode: "",
     pronouns: "",
-    race_ethnicity: [],
+    race_ethnicity: "",
+    relationship_status: "",
+    num_dependents: "",
+    education: "",
+    role: "",
+    years_experience: "" */
   };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
+    
 
-
+    // [...this.state.choice, event.target.value]
     // Updating the input's state
+    // let choicesArray = this.state.choices.filter(item => console.log(item)  )
+
+  
+    let choiceObj = {...this.state.choices};
+    choiceObj[name] = value;
+   
     this.setState({
-      [name]: value,
-      choice: event.target.value,
+      /* [name]: value, */
+      choices: choiceObj
     });
   };
 
@@ -55,16 +70,15 @@ class BasicQuestions extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("clicked")
-    /* API.postUserAttrAnswers({
+    API.postUserBasicAnswers({
       question: this.state.question,
       answer: this.state.choice,
     })
       .then(response => {
-        this.setAnsweredQuestion(this.state.question)
-        this.getRandomQuestion()
+        
       }
       )
-      .catch(err => console.log(err)); */
+      .catch(err => console.log(err));
 
     console.log('You have selected:', this.state.selectedOption);
   }
@@ -88,7 +102,8 @@ class BasicQuestions extends Component {
             name={questionName}
             value={this.state.questionName}
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
+
+            // choiceState={this.state.choice}
           />
         )
       }
