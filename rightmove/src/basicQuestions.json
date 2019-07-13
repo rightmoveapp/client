@@ -11,24 +11,42 @@
     },
     {
       "id": "2",
-      "question_text": "What's your zip code?",
+      "question_text": "What gender do you most identify with?",
       "category": "Basic",
-      "input_type": "text",
-      "name": "zipcode",
-      "placeholder": "19103",
-      "choices": []
+      "input_type": "radio",
+      "name": "gender",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "Female",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "Male",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "Transgender",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Non-binary",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "Gender fluid",
+          "input_type": "radio"
+        }
+      ]
     },
     {
       "id": "3",
-      "question_text": "What's the area code of your cell phone number?",
-      "category": "Basic",
-      "input_type": "text",
-      "name": "areacode",
-      "placeholder": "310",
-      "choices": []
-    },
-    {
-      "id": "4",
       "question_text": "Which pronouns do you use?",
       "category": "Basic",
       "input_type": "radio",
@@ -64,7 +82,7 @@
       ]
     },
     {
-      "id": "5",
+      "id": "4",
       "question_text": "How do you identify?",
       "category": "Basic",
       "input_type": "radio",
@@ -115,7 +133,70 @@
       ]
     },
     {
+      "id": "5",
+      "question_text": "What is relationship status?",
+      "category": "Basic",
+      "input_type": "radio",
+      "name": "relationship_status",
+      "placeholder": "",
+      "explanation": "",
+      "choices": [
+        {
+          "id": "1",
+          "choice_text": "Single",
+          "input_type": "radio"
+        },
+        {
+          "id": "2",
+          "choice_text": "Long term relationship",
+          "input_type": "radio"
+        },
+        {
+          "id": "3",
+          "choice_text": "Married",
+          "input_type": "radio"
+        },
+        {
+          "id": "4",
+          "choice_text": "Divorced",
+          "input_type": "radio"
+        },
+        {
+          "id": "5",
+          "choice_text": "Widower",
+          "input_type": "radio"
+        }
+      ]
+    },
+    {
       "id": "6",
+      "question_text": "Number of dependents?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "num_dependents",
+      "placeholder": "1",
+      "choices": []
+    },
+    {
+      "id": "7",
+      "question_text": "What's your zip code?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "zipcode",
+      "placeholder": "19103",
+      "choices": []
+    },
+    {
+      "id": "8",
+      "question_text": "What's the area code of your cell phone number?",
+      "category": "Basic",
+      "input_type": "text",
+      "name": "areacode",
+      "placeholder": "310",
+      "choices": []
+    },
+    {
+      "id": "9",
       "question_text": "What is your highest level of education?",
       "category": "Basic",
       "input_type": "radio",
@@ -171,52 +252,7 @@
       ]
     },
     {
-      "id": "7",
-      "question_text": "What's your current role?",
-      "category": "Basic",
-      "input_type": "text",
-      "name": "role",
-      "placeholder": "19103",
-      "choices": []
-    },
-    {
-      "id": "8",
-      "question_text": "What gender do you most identify with?",
-      "category": "Basic",
-      "input_type": "radio",
-      "name": "gender",
-      "placeholder": "",
-      "explanation": "",
-      "choices": [
-        {
-          "id": "1",
-          "choice_text": "Female",
-          "input_type": "radio"
-        },
-        {
-          "id": "2",
-          "choice_text": "Male",
-          "input_type": "radio"
-        },
-        {
-          "id": "3",
-          "choice_text": "Transgender",
-          "input_type": "radio"
-        },
-        {
-          "id": "4",
-          "choice_text": "Non-binary",
-          "input_type": "radio"
-        },
-        {
-          "id": "5",
-          "choice_text": "Gender fluid",
-          "input_type": "radio"
-        }
-      ]
-    },
-    {
-      "id": "9",
+      "id": "10",
       "question_text": "What's your current role?",
       "category": "Basic",
       "input_type": "text",
@@ -225,59 +261,13 @@
       "choices": []
     },
     {
-      "id": "10",
+      "id": "11",
       "question_text": "How many years of experience?",
       "category": "Basic",
       "input_type": "text",
       "name": "years_experience",
       "placeholder": "5",
       "choices": []
-    },
-    {
-      "id": "11",
-      "question_text": "What is relationship status?",
-      "category": "Basic",
-      "input_type": "radio",
-      "name": "relationship_status",
-      "placeholder": "",
-      "explanation": "",
-      "choices": [
-        {
-          "id": "1",
-          "choice_text": "Single",
-          "input_type": "radio"
-        },
-        {
-          "id": "2",
-          "choice_text": "Long term relationship",
-          "input_type": "radio"
-        },
-        {
-          "id": "3",
-          "choice_text": "Married",
-          "input_type": "radio"
-        },
-        {
-          "id": "4",
-          "choice_text": "Divorced",
-          "input_type": "radio"
-        },
-        {
-          "id": "5",
-          "choice_text": "Widower",
-          "input_type": "radio"
-        }
-      ]
-    },
-    {
-      "id": "12",
-      "question_text": "Number of dependents?",
-      "category": "Basic",
-      "input_type": "text",
-      "name": "num_dependents",
-      "placeholder": "1",
-      "choices": []
     }
-    
   ]
 }
