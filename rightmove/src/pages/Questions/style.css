@@ -24,6 +24,23 @@
 }
 */
 
+.heading-questions {
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #0a2f51;
+    margin-bottom: 4px;
+}
+
+.subheading-questions {
+    font-size: 18px;
+    margin: 0px 0px 15px;
+}
+
 .explainer {
     font-family: 'Inter';
     font-size: 12px;

@@ -13,10 +13,10 @@ import YellowUnderline from "../../components/YellowUnderline";
 import "./style.css";
 
 class Questions extends Component {
-    constructor(props) {
+    /* constructor(props) {
         super(props)
         this.handleInputChange = this.handleInputChange.bind(this)
-    }
+    } */
 
     state = {
         questionsChoices: [],
@@ -57,17 +57,6 @@ class Questions extends Component {
         // TODO: figure out how to fix this
         this.setState({currentQuestion:randomQuestion})
     }
-
-    handleInputChange = event => {
-        // Getting the value and name of the input which triggered the change
-        let value = event.target.value;
-        const name = event.target.name;
-
-        // Updating the input's state
-        this.setState({
-            [name]: value
-        });
-    };
 
     setAnsweredQuestion = question =>{
         this.setState({answeredQuestions: [...this.state.answeredQuestions, question]})
@@ -133,7 +122,6 @@ class Questions extends Component {
             else if (currentQuestion.input_type === "date") {
                 currentquestionType =
                     <DateQuestion
-                        /* handleInputChange={this.handleInputChange} */
                         key={currentQuestion.id}
                         questionId={currentQuestion.id}
                         questionText={currentQuestion.question_text}
@@ -148,7 +136,6 @@ class Questions extends Component {
             else if (currentQuestion.input_type === "checkbox") {
                 currentquestionType =
                     <CheckboxQuestion
-                        /* handleInputChange={this.handleInputChange} */
                         key={currentQuestion.id}
                         questionId={currentQuestion.id}
                         questionText={currentQuestion.question_text}
@@ -163,7 +150,6 @@ class Questions extends Component {
             else {
                 currentquestionType =
                     <TextQuestion
-                        /* handleInputChange={this.handleInputChange} */
                         key={currentQuestion.id}
                         questionId={currentQuestion.id}
                         questionText={currentQuestion.question_text}
@@ -185,10 +171,12 @@ class Questions extends Component {
             <>
                 <Row>
                     <Col size="s12 m12 l12">
-                    {/* <h4 className="heading">Here we go! Tell us a little about yourself.</h4> */}
+                    <h4 className="heading-questions">Have fun, but answer honestly!</h4>
+                    <h5 className="subheading-questions">The more information we have on you, the better our predictions will be <span role="img" aria-label="smile">😊</span></h5>
+                    <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
                         <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
-
+                    </form>
                     <div className="right-align">
                     <YellowUnderline to="/" text="Skip" space="32" />
                     <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />

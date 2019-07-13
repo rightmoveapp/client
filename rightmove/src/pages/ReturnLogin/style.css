@@ -24,7 +24,7 @@
 }
 
 .Rectangle {
-    max-width: 360px;
+    max-width: 380px;
     height: 48px;
     background-color: #ffffff !important;
     border-bottom: dotted 2px #637c92 !important;

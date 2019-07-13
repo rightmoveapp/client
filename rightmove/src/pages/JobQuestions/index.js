@@ -6,14 +6,46 @@ import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
+import YellowButton from '../../components/YellowButton';
 import "./style.css";
+
 class JobQuestions extends Component {
   state = {
-    jobQuestions: []
+    jobQuestions: [],
+    companyName: "",
+    title: "",
+    salary: "",
   };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+
+
+    // Updating the input's state
+    this.setState({
+      [name]: value,
+      choice: event.target.value,
+    });
+  };
+
+  handleCheckBoxChange = (event) => {
+    const target = event.target.id;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+      choice: [...this.state.choice, name],
+      /* question: this.state.currentQuestion.id */
+    });
+  };
+
   componentDidMount() {
     this.loadQuestions();
-  }
+  };
+
   loadQuestions = () => {
     API.getJobQuestions()
       .then(response => {
@@ -24,10 +56,13 @@ class JobQuestions extends Component {
       )
       .catch(err => console.log(err));
   };
+
   render() {
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
+        let questionName = question.name
+        console.log(questionName)
         return (
           <RadioQuestions
             key={question.id}
@@ -35,20 +70,32 @@ class JobQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionChoices={[question.choices]}
+            name={questionName}
+            value={this.state.questionName}
+            handleChange={this.handleInputChange}
+            choiceState={this.state.choice}
           />
         )
       }
       else if (question.input_type === "date") {
+        let questionName = question.name
+        console.log(questionName)
         return (
           <DateQuestion
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
+            name={questionName}
+            value={this.state.questionName}
+            handleChange={this.handleInputChange}
+            choiceState={this.state.choice}
           />
         )
       }
       else if (question.input_type === "checkbox") {
+        let questionName = question.name
+        console.log(questionName)
         return (
           <CheckboxQuestion
             key={question.id}
@@ -56,16 +103,26 @@ class JobQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionChoices={[question.choices]}
+            name={questionName}
+            value={this.state.questionName}
+            handleCheckBoxChange={this.handleCheckBoxChange}
+            choiceState={this.state.choice}
           />
         )
       }
       else {
+        let questionName = question.name
+        console.log(questionName)
         return (
           <TextQuestion
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
+            name={questionName}
+            value={this.state.questionName}
+            handleChange={this.handleInputChange}
+            choiceState={this.state.choice}
           />
         )
       }
@@ -81,9 +138,9 @@ class JobQuestions extends Component {
               <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
                 <label className="question">Company name</label>
                 <input
-                  /* value={this.state.value} */
-                  onChange={this.handleChange}
-                  /* name="firstName" */
+                  value={this.state.companyName}
+                  onChange={this.handleInputChange}
+                  name="companyName"
                   id="22"
                   type="text"
                   className="validate Rectangle"
@@ -91,9 +148,9 @@ class JobQuestions extends Component {
                 />
                 <label className="question">Position title</label>
                 <input
-                  /* value={this.state.value} */
-                  onChange={this.handleChange}
-                  /* name="firstName" */
+                  value={this.state.title}
+                  onChange={this.handleInputChange}
+                  name="title"
                   id="23"
                   type="text"
                   className="validate Rectangle"
@@ -101,16 +158,47 @@ class JobQuestions extends Component {
                 />
                 <label className="question">Annual salary</label>
                 <input
-                  /* value={this.state.value} */
-                  onChange={this.handleChange}
-                  /* name="firstName" */
+                  value={this.state.salary}
+                  onChange={this.handleInputChange}
+                  name="salary"
                   id="24"
                   type="text"
                   className="validate Rectangle"
                   placeholder="$80,000"
                 />
+                <label className="question">Is this your current job?</label>
+                <input id="25" type="radio" className="validate Rectangle" />
+                <p>
+                  <label>
+                    <input
+                      key="1"
+                      value="yes"
+                      type="radio"
+                      /* checked={this.props.choiceState === questionChoice.choice_text} */
+                      // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                      onChange={(event) => this.props.handleChange(event)}
+                    />
+                    <span className="-Input-Text">Yes</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input
+                      key="2"
+                      value="no"
+                      type="radio"
+                      /* checked={this.props.choiceState === questionChoice.choice_text} */
+                      // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                      onChange={(event) => this.props.handleChange(event)}
+                    />
+                    <span className="-Input-Text">No</span>
+                  </label>
+                </p>
                 {/* <input type="submit" value="Submit" /> */}
                 {jobQuestionMap}
+                <div className="right-align add-space">
+                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                </div>
               </form>
             </>
           </Col>

@@ -6,7 +6,9 @@ import JobList from '../../components/JobList';
 import './style.css';
 import YellowUnderline from "../../components/YellowUnderline";
 import CurrentJob from "../../components/CurrentJob";
-// import userProfile from '../../userProfile.json';
+//import userProfile from '../../userProfile.json';
+import fillerJobs from '../../fillerJobs.json';
+
 
 class Account extends Component {
   state = {
