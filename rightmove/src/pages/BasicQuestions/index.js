@@ -19,7 +19,7 @@ class BasicQuestions extends Component {
     zipcode: "",
     areacode: "",
     pronouns: "",
-    race_ethnicity: ""
+    race_ethnicity: [],
   };
 
   /* handleChange = event => {
@@ -38,7 +38,8 @@ class BasicQuestions extends Component {
 
     // Updating the input's state
     this.setState({
-      [name]: value
+      [name]: value,
+      choice: event.target.value,
     });
   };
 
@@ -97,18 +98,14 @@ class BasicQuestions extends Component {
       }
       else if (question.input_type === "date") {
         let questionName = question.name
-        let questionValue = this.state.questionName
-        console.log("--------------")
         console.log(questionName)
-        console.log(this.state.questionName)
-        console.log("--------------")
         return (
           <DateQuestion
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
-            name={question.name}
+            name={questionName}
             value={this.state.questionName}
             handleChange={this.handleInputChange}
             choiceState={this.state.choice}
