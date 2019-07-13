@@ -43,13 +43,13 @@ class BasicQuestions extends Component {
     });
   };
 
-  handleCheckBoxChange = (event) => {
-    const target = event.target.id;
+  handleCheckBoxChange= (event) =>{
+    const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
-      [name]: value,
+        [name]: value,
       choice: [...this.state.choice, name],
       /* question: this.state.currentQuestion.id */
     });
