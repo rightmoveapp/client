@@ -7,7 +7,7 @@ const RadioQuestions = (props) => {
             <label className="question">{props.questionText}</label>
             <input id={props.questionId} type={props.questionType} className="validate Rectangle" />
             {props.questionChoices[0].map(questionChoice => (
-                <p>
+                <p key={questionChoice.id}>
                     <label>
                         <input
                             key={questionChoice.id}
@@ -17,7 +17,7 @@ const RadioQuestions = (props) => {
                             // onChange={() => this.props.handleChange(questionChoice.choice_text)}
                             onChange={(event) => props.handleChange(event)}
                             name={props.name}
-                            questionId={props.questionId}
+                            questionid={props.questionId}
                         />
                         <span className="-Input-Text">{questionChoice.choice_text}</span>
                     </label>

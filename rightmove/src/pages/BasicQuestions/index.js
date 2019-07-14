@@ -94,6 +94,7 @@ class BasicQuestions extends Component {
         let questionName = question.name
         return (
           <DateQuestion
+            key={question.id}
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
@@ -105,7 +106,6 @@ class BasicQuestions extends Component {
         )
       }
       else if (question.input_type === "dropdown") {
-        let questionName = question.name
         return (
           <>
             <label className="question active">{question.question_text}</label>
@@ -136,6 +136,7 @@ class BasicQuestions extends Component {
         let questionName = question.name
         return (
           <TextQuestion
+            key={question.id}
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}

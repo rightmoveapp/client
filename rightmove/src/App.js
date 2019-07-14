@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Nav from "./components/Nav";
-import API from "../src/utils/API";
+/* import API from "../src/utils/API"; */
 import Footer from './components/Footer';
 import Container from './components/Container';
 import Landing from './pages/Landing';
