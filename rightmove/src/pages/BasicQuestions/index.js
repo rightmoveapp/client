@@ -11,12 +11,6 @@ import YellowButton from "../../components/YellowButton";
 import Select from 'react-select';
 import "./style.css";
 
-/* const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-] */
-
 class BasicQuestions extends Component {
   state = {
     basicQuestions,
@@ -58,22 +52,19 @@ class BasicQuestions extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("clicked")
+
     API.postUserBasicAnswers({
       questionsAndAnswers: this.state.choices,
     })
       .then(response => {
         console.log("sumbitted")
-      }
-      )
+      })
       .catch(err => console.log(err));
 
-    console.log('You have selected:', this.state.selectedOption);
   }
 
   handleDropdownChange = role_name => {
     this.setState({ role_name });
-    console.log(`Option selected:`, role_name);
   };
 
   render() {
@@ -82,13 +73,10 @@ class BasicQuestions extends Component {
         return { value: role.role_name, label: role.role_name }
     })
 
-    console.log(basicQuestionsJobs)
-
     const basicQuestions = this.state.basicQuestions.questionsAndChoices.map((question) => {
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
         let questionName = question.name
-        console.log(questionName)
         return (
           <RadioQuestions
             key={question.id}
@@ -103,7 +91,6 @@ class BasicQuestions extends Component {
       }
       else if (question.input_type === "date") {
         let questionName = question.name
-        console.log(questionName)
         return (
           <DateQuestion
             questionId={question.id}
@@ -118,7 +105,6 @@ class BasicQuestions extends Component {
       }
       else if (question.input_type === "dropdown") {
         let questionName = question.name
-        console.log(questionName)
         return (
           <>
             <label className="question active">{question.question_text}</label>
@@ -147,7 +133,6 @@ class BasicQuestions extends Component {
       } */
       else {
         let questionName = question.name
-        console.log(questionName)
         return (
           <TextQuestion
             questionId={question.id}
