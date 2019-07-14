@@ -11,6 +11,7 @@ import Finished from '../../components/Finished';
 import YellowButton from "../../components/YellowButton";
 import YellowUnderline from "../../components/YellowUnderline";
 import "./style.css";
+import Countdown from "../../components/Countdown";
 
 class Questions extends Component {
     /* constructor(props) {
@@ -27,6 +28,7 @@ class Questions extends Component {
         isFinished: false,
         question:[],
         choice:[],
+        count: 21,
     };
 
     componentDidMount() {
@@ -44,6 +46,9 @@ class Questions extends Component {
     };
 
     getRandomQuestion = () => {
+       let newCount = this.state.count - 1 
+       this.setState({ count: newCount })
+
         if (this.state.questionsChoices.length === 1) {
             this.setState({ isFinished: true });
         }
@@ -177,6 +182,7 @@ class Questions extends Component {
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
                         <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
                     </form>
+                    <Countdown count={this.state.count}/>
                     <div className="right-align">
                     <YellowUnderline to="/" text="Skip" space="32" />
                     <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />

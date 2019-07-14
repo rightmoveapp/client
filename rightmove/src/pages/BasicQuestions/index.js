@@ -8,6 +8,7 @@ import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import basicQuestions from "../../basicQuestions.json";
 import YellowButton from "../../components/YellowButton";
+import { Redirect } from "react-router-dom";
 import Select from 'react-select';
 import "./style.css";
 
@@ -16,6 +17,7 @@ class BasicQuestions extends Component {
     basicQuestions,
     choices: {},
     role_name: null,
+    isSubmitted: false,
   };
 
   // to get user input answers into the choices array
@@ -59,6 +61,7 @@ class BasicQuestions extends Component {
     })
       .then(response => {
         console.log("sumbitted")
+        this.setState({ isSubmitted: true });
       })
       .catch(err => console.log(err));
 
@@ -71,7 +74,7 @@ class BasicQuestions extends Component {
   render() {
     let basicQuestionsJobs = []
     basicQuestionsJobs = this.state.basicQuestions.role_names.map((role) => {
-        return { value: role.role_name, label: role.role_name }
+      return { value: role.role_name, label: role.role_name }
     })
 
     const basicQuestions = this.state.basicQuestions.questionsAndChoices.map((question) => {
@@ -150,25 +153,32 @@ class BasicQuestions extends Component {
 
     }
     );
-    return (
-      <>
-        <Row>
-          <Col size="s12 m12 l12" className="center-align">
-            <>
-              <h4 className="heading-questions">Here we go! Tell us a little about yourself.</h4>
-              <h5 className="subheading-questions">Just trying to get to know you.</h5>
-              <form size="col s12 m12 l12">
-                {basicQuestions}
-                <div className="right-align add-space">
-                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
-                </div>
-              </form>
-            </>
-          </Col>
-        </Row>
 
-      </>
-    )
+    if (!this.state.isSubmitted) {
+      return (
+        <>
+          <Row>
+            <Col size="s12 m12 l12" className="center-align">
+              <>
+                <h4 className="heading-questions">Here we go! Tell us a little about yourself.</h4>
+                <h5 className="subheading-questions">Just trying to get to know you.</h5>
+                <form size="col s12 m12 l12">
+                  {basicQuestions}
+                  <div className="right-align add-space">
+                    <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                  </div>
+                </form>
+              </>
+            </Col>
+          </Row>
+        </>
+      )
+    }
+    else {
+      return (
+        <Redirect to="/questions" />
+      )
+    }
   }
 }
 
