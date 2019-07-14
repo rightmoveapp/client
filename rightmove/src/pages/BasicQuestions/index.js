@@ -100,7 +100,6 @@ class BasicQuestions extends Component {
             questionType={question.input_type}
             questionChoices={[question.choices]}
             name={questionName}
-            value={this.state.questionName}
             handleChange={this.handleInputChange}
 
             // choiceState={this.state.choice}

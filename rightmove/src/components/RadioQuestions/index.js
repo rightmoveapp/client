@@ -1,5 +1,34 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
+
+const RadioQuestions = (props) => {
+    return (
+        <>
+            <label className="question">{props.questionText}</label>
+            <input id={props.questionId} type={props.questionType} className="validate Rectangle" />
+            {props.questionChoices[0].map(questionChoice => (
+                <p>
+                    <label>
+                        <input
+                            key={questionChoice.id}
+                            value={questionChoice.choice_text}
+                            type={questionChoice.input_type}
+                            
+                            // onChange={() => this.props.handleChange(questionChoice.choice_text)}
+                            onChange={(event) => props.handleChange(event)}
+                            name={props.name}
+                            questionId={props.questionId}
+                        />
+                        <span className="-Input-Text">{questionChoice.choice_text}</span>
+                    </label>
+                </p>
+
+            ))}
+        </>
+    );
+}
+
+export default RadioQuestions;
 
 
 
@@ -45,31 +74,3 @@ import "./style.css";
 //     }
 // }
 // props.choiceState.indexOf(questionChoice.choice_text) != -1
-
-const RadioQuestions = (props) => {
-    return (
-        <>
-            <label className="question">{props.questionText}</label>
-            <input id={props.questionId} type={props.questionType} className="validate Rectangle" />
-            {props.questionChoices[0].map(questionChoice => (
-                <p>
-                    <label>
-                        <input
-                            key={questionChoice.id}
-                            value={questionChoice.choice_text}
-                            type={questionChoice.input_type}
-                            
-                            // onChange={() => this.props.handleChange(questionChoice.choice_text)}
-                            onChange={(event) => props.handleChange(event)}
-                            name={props.name}
-                        />
-                        <span className="-Input-Text">{questionChoice.choice_text}</span>
-                    </label>
-                </p>
-
-            ))}
-        </>
-    );
-}
-
-export default RadioQuestions;
