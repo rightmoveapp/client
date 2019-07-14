@@ -6,6 +6,7 @@ import JobList from '../../components/JobList';
 import './style.css';
 import YellowUnderline from "../../components/YellowUnderline";
 import CurrentJob from "../../components/CurrentJob";
+import YellowAlert from "../../components/YellowAlert";
 //import userProfile from '../../userProfile.json';
 /* import fillerJobs from '../../fillerJobs.json'; */
 
@@ -59,12 +60,7 @@ render() {
     <>
       <Row>
         <Col size="s12 m12 l12">
-          <div className="There-are-new-questi YellowRectangle">
-            <p className="Add-Overall-Padding">
-              There are new questions for you to answer!
-                <span className="Add-Space-Left Remove-Bold"><YellowUnderline to="/questions" text="Answer Questions" /></span>
-            </p>
-          </div>
+          <YellowAlert />
           <div>
             <CurrentJob
               company_name={this.state.currentJob.company_name}

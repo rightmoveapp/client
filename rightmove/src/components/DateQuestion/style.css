@@ -21,7 +21,7 @@
     color: #0a2f51;
     display: block;
 }
-
+/* 
 .explainer {
     font-family: 'Inter';
     font-size: 12px;
@@ -31,7 +31,7 @@
     line-height: normal;
     letter-spacing: normal;
     color: #637c92;
-}
+} */
 
 input[type=date]:not(.browser-default) {
     margin: 12px 0 12px 0;

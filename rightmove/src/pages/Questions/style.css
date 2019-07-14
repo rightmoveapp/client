@@ -33,7 +33,7 @@
     line-height: 1.4;
     letter-spacing: normal;
     color: #0a2f51;
-    margin-bottom: 4px;
+    margin: 12px 0px 4px;
 }
 
 .subheading-questions {
@@ -51,5 +51,5 @@
     letter-spacing: normal;
     color: #637c92;
     text-decoration: underline;
-    margin-bottom: 50px;
+    margin-bottom: 34px;
 }
