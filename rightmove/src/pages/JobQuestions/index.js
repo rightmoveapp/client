@@ -17,13 +17,15 @@ class JobQuestions extends Component {
     title: "",
     salary: "",
     isCurrent: "",
+    zipcode: "",
+    city: "",
   };
 
   handleChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
-    
+
     // Updating the input's state
     this.setState({
       [name]: value
@@ -35,9 +37,9 @@ class JobQuestions extends Component {
     let value = event.target.value;
     const name = event.target.name;
 
-    let choiceObj = {...this.state.choices};
+    let choiceObj = { ...this.state.choices };
     choiceObj[name] = value;
-   
+
     this.setState({
       /* [name]: value, */
       choices: choiceObj
@@ -224,7 +226,27 @@ class JobQuestions extends Component {
                     <span className="-Input-Text">No</span>
                   </label>
                 </p>
-                {/* <input type="submit" value="Submit" /> */}
+                <label className="question">Zipcode</label>
+                <input
+                  value={this.state.zipcode}
+                  onChange={this.handleChange}
+                  name="zipcode"
+                  id="26"
+                  type="text"
+                  className="validate Rectangle"
+                  placeholder="19103"
+                />
+                <label className="question">City</label>
+                <input
+                  value={this.state.city}
+                  onChange={this.handleChange}
+                  name="city"
+                  id="27"
+                  type="text"
+                  className="validate Rectangle"
+                  placeholder="Philadelphia"
+                />
+                
                 {jobQuestionMap}
                 <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
