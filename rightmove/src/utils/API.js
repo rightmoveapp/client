@@ -12,37 +12,37 @@ getCookie();
 export default {
 // Gets all the landing page information
 getLandingPage: function() {
-  return axios.get("http://localhost:8000/api/landingpage");
+  return axios.get("https://api.redstapler.app/api/landingpage");
 },
 
 // Gets all questions
 getUserAttrQuestions: function() {
-  return axios.get(`http://localhost:8000/v1/userquestions`);
+  return axios.get(`https://api.redstapler.app/v1/userquestions`);
 },
 
 //Posts to suer attributes answers
 postUserAttrAnswers: function(userAnswers) {
-  return axios.post(`http://localhost:8000/v1/userattranswers`, userAnswers);
+  return axios.post(`https://api.redstapler.app/v1/userattranswers`, userAnswers);
 },
 
 // Gets all user account information
 getUserAccount: function() {
-  return axios.get(`http://localhost:8000/v1/account`);
+  return axios.get(`https://api.redstapler.app/v1/account`);
 },
 
 // Gets all job questions
 getJobQuestions: function() {
-  return axios.get(`http://localhost:8000/v1/jobquestions`);
+  return axios.get(`https://api.redstapler.app/v1/jobquestions`);
 },
 
 //Posts to user basic answers
 postUserBasicAnswers: function(userAnswers) {
-  return axios.post(`http://localhost:8000/v1/userbasicanswers`, userAnswers);
+  return axios.post(`https://api.redstapler.app/v1/userbasicanswers`, userAnswers);
 
 },
 
 postUserJobAnswers: function(jobAnswers) {
-  return axios.post(`http://localhost:8000/v1/userjobanswers`, jobAnswers);
+  return axios.post(`https://api.redstapler.app/v1/userjobanswers`, jobAnswers);
 
 },
 

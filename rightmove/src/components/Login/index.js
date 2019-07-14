@@ -3,7 +3,7 @@ import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 const Login = () => {
-  var callbackUri = "http://localhost:3000/linkedin_auth"
+  var callbackUri = "https://www.redstapler.app/linkedin_auth"
   var callbackState = "dovdvdsoibusobus"
   var clientId = "86cmhugfwi4259"
 

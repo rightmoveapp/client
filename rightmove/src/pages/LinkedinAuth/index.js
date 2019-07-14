@@ -5,8 +5,10 @@ import Cookies from 'universal-cookie';
 import axios from 'axios';
 import LoadingGif from "../../components/LoadingGif";
 
+const apiHost = "https://api.redstapler.app/"
+const clientHost = "https://www.redstapler.app/"
 const cookies = new Cookies();
-const apiUrl = "http://localhost:8000/v1/login"
+const apiUrl = apiHost + "v1/login"
 
 class LinkedinAuth extends Component {
     state = {
