@@ -121,7 +121,6 @@ class JobQuestions extends Component {
             name={question.id}
             /* value={this.state.questionName} */
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
           />
         )
       }
@@ -138,7 +137,6 @@ class JobQuestions extends Component {
             name={questionName}
             value={this.state.questionName}
             handleCheckBoxChange={this.handleCheckBoxChange}
-            choiceState={this.state.choice}
           />
         )
       } */
@@ -154,11 +152,9 @@ class JobQuestions extends Component {
             name={question.id}
             /* value={this.state.questionName} */
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
           />
         )
       }
-      /* this.setState({currentQuestion:randomQuestion}) */
     }
     );
     return (
@@ -167,7 +163,7 @@ class JobQuestions extends Component {
           <Col size="s12 m12 l12">
             <>
               <h4 className="heading">Give us the deets on this gig <span role="img" aria-label="Smiley with money mouth">🤑</span></h4>
-              <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
+              <form size="col s12 m12 l12">
                 <label className="question">Company name</label>
                 <input
                   value={this.state.companyName}
