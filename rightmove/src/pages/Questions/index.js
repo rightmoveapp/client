@@ -28,7 +28,7 @@ class Questions extends Component {
         isFinished: false,
         question:[],
         choice:[],
-        count: 21,
+        count: 5,
     };
 
     componentDidMount() {
