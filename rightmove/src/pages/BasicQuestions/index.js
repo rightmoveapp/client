@@ -105,7 +105,6 @@ class BasicQuestions extends Component {
         )
       }
       else if (question.input_type === "dropdown") {
-        let questionName = question.name
         return (
           <>
             <label className="question active">{question.question_text}</label>
