@@ -52,7 +52,6 @@ class JobQuestions extends Component {
   handleDropdownChange = role_name => {
     this.setState({ role_name });
     console.log(`Option selected:`, role_name);
-    console.log(`look here please ${this.state.role_name}`);
   };
 
   /* handleCheckBoxChange = (event) => {
@@ -75,28 +74,27 @@ class JobQuestions extends Component {
     API.getJobQuestions()
       .then(response => {
         this.setState({ jobQuestions: response.data.questionsAndChoices })
-      }
-      )
+      })
       .catch(err => console.log(err));
   };
 
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("clicked")
+    console.log(`look here please ${this.state.role_name}`);
     API.postUserJobAnswers({
       companyName: this.state.companyName,
-      title: this.state.title,
+      role_name: this.state.role_name.value,
       salary: this.state.salary,
       isCurrent: this.state.isCurrent,
-      questionsAndAnswers: this.state.choices,
+      zipcode: this.state.zipcode,
+      city: this.state.city,
+      questionsAndAnswers: this.state.choices, 
     })
       .then(response => {
-        console.log("sumbitted")
-      }
-      )
+        console.log("sumbitted");
+      })
       .catch(err => console.log(err));
-
-    console.log('You have selected:', this.state.role_name.value);
   }
 
   render() {

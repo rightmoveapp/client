@@ -52,22 +52,19 @@ class BasicQuestions extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("clicked")
+
     API.postUserBasicAnswers({
       questionsAndAnswers: this.state.choices,
     })
       .then(response => {
         console.log("sumbitted")
-      }
-      )
+      })
       .catch(err => console.log(err));
 
-    console.log('You have selected:', this.state.selectedOption);
   }
 
   handleDropdownChange = role_name => {
     this.setState({ role_name });
-    console.log(`Option selected:`, role_name);
   };
 
   render() {
@@ -75,8 +72,6 @@ class BasicQuestions extends Component {
     basicQuestionsJobs = this.state.basicQuestions.role_names.map((role) => {
         return { value: role.role_name, label: role.role_name }
     })
-
-    console.log(basicQuestionsJobs)
 
     const basicQuestions = this.state.basicQuestions.questionsAndChoices.map((question) => {
       // TODO: figure out how to fix this
