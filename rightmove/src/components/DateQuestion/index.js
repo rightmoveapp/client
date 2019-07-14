@@ -7,6 +7,7 @@ const DateQuestion = (props) => {
         <>
             <label className="question">{props.questionText}</label>
             <input
+                key={props.questionId}
                 value={props.choice}
                 onChange={(event) => props.handleChange(event)}
                 id={props.questionId}

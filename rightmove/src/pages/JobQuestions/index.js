@@ -122,6 +122,7 @@ class JobQuestions extends Component {
       else if (question.input_type === "date") {
         return (
           <DateQuestion
+            key={question.id}
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
@@ -148,6 +149,7 @@ class JobQuestions extends Component {
       else {
         return (
           <TextQuestion
+            key={question.id}
             questionId={question.id}
             questionText={question.question_text}
             questionType={question.input_type}
