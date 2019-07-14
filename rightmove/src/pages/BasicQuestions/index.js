@@ -71,11 +71,10 @@ class BasicQuestions extends Component {
     event.preventDefault();
     console.log("clicked")
     API.postUserBasicAnswers({
-      question: this.state.question,
-      answer: this.state.choice,
+      questionsAndAnswers: this.state.choices,
     })
       .then(response => {
-        
+        console.log("sumbitted")
       }
       )
       .catch(err => console.log(err));

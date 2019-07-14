@@ -71,6 +71,25 @@ class JobQuestions extends Component {
       .catch(err => console.log(err));
   };
 
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("clicked")
+    API.postUserJobAnswers({
+      companyName: this.state.companyName,
+      title: this.state.title,
+      salary: this.state.salary,
+      isCurrent: this.state.isCurrent,
+      questionsAndAnswers: this.state.choices,
+    })
+      .then(response => {
+        console.log("sumbitted")
+      }
+      )
+      .catch(err => console.log(err));
+
+    console.log('You have selected:', this.state.selectedOption);
+  }
+
   render() {
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
       // TODO: figure out how to fix this
