@@ -71,11 +71,10 @@ class BasicQuestions extends Component {
     event.preventDefault();
     console.log("clicked")
     API.postUserBasicAnswers({
-      question: this.state.question,
-      answer: this.state.choice,
+      questionsAndAnswers: this.state.choices,
     })
       .then(response => {
-        
+        console.log("sumbitted")
       }
       )
       .catch(err => console.log(err));
@@ -100,7 +99,6 @@ class BasicQuestions extends Component {
             questionType={question.input_type}
             questionChoices={[question.choices]}
             name={questionName}
-            value={this.state.questionName}
             handleChange={this.handleInputChange}
 
             // choiceState={this.state.choice}

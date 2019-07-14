@@ -41,5 +41,10 @@ postUserBasicAnswers: function(userAnswers) {
 
 },
 
+postUserJobAnswers: function(jobAnswers) {
+  return axios.post(`http://localhost:8000/v1/userjobanswers`, jobAnswers);
+
+},
+
 
 }

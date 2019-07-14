@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-import CheckboxQuestion from '../../components/CheckboxQuestion';
+// import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
@@ -12,9 +12,22 @@ import "./style.css";
 class JobQuestions extends Component {
   state = {
     jobQuestions: [],
+    choices: {},
     companyName: "",
     title: "",
     salary: "",
+    isCurrent: "",
+  };
+
+  handleChange = event => {
+    // Getting the value and name of the input which triggered the change
+    let value = event.target.value;
+    const name = event.target.name;
+    
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
   };
 
   handleInputChange = event => {
@@ -22,15 +35,16 @@ class JobQuestions extends Component {
     let value = event.target.value;
     const name = event.target.name;
 
-
-    // Updating the input's state
+    let choiceObj = {...this.state.choices};
+    choiceObj[name] = value;
+   
     this.setState({
-      [name]: value,
-      choice: event.target.value,
+      /* [name]: value, */
+      choices: choiceObj
     });
   };
 
-  handleCheckBoxChange = (event) => {
+  /* handleCheckBoxChange = (event) => {
     const target = event.target.id;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -38,9 +52,9 @@ class JobQuestions extends Component {
     this.setState({
       [name]: value,
       choice: [...this.state.choice, name],
-      /* question: this.state.currentQuestion.id */
+      question: this.state.currentQuestion.id
     });
-  };
+  }; */
 
   componentDidMount() {
     this.loadQuestions();
@@ -57,6 +71,25 @@ class JobQuestions extends Component {
       .catch(err => console.log(err));
   };
 
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("clicked")
+    API.postUserJobAnswers({
+      companyName: this.state.companyName,
+      title: this.state.title,
+      salary: this.state.salary,
+      isCurrent: this.state.isCurrent,
+      questionsAndAnswers: this.state.choices,
+    })
+      .then(response => {
+        console.log("sumbitted")
+      }
+      )
+      .catch(err => console.log(err));
+
+    console.log('You have selected:', this.state.selectedOption);
+  }
+
   render() {
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
       // TODO: figure out how to fix this
@@ -70,10 +103,9 @@ class JobQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionChoices={[question.choices]}
-            name={questionName}
-            value={this.state.questionName}
+            name={question.id}
+            /* value={this.state.questionId} */
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
           />
         )
       }
@@ -86,14 +118,14 @@ class JobQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
-            name={questionName}
-            value={this.state.questionName}
+            name={question.id}
+            /* value={this.state.questionName} */
             handleChange={this.handleInputChange}
             choiceState={this.state.choice}
           />
         )
       }
-      else if (question.input_type === "checkbox") {
+      /* else if (question.input_type === "checkbox") {
         let questionName = question.name
         console.log(questionName)
         return (
@@ -109,7 +141,7 @@ class JobQuestions extends Component {
             choiceState={this.state.choice}
           />
         )
-      }
+      } */
       else {
         let questionName = question.name
         console.log(questionName)
@@ -119,8 +151,8 @@ class JobQuestions extends Component {
             questionText={question.question_text}
             questionType={question.input_type}
             questionPlaceholder={question.placeholder}
-            name={questionName}
-            value={this.state.questionName}
+            name={question.id}
+            /* value={this.state.questionName} */
             handleChange={this.handleInputChange}
             choiceState={this.state.choice}
           />
@@ -139,7 +171,7 @@ class JobQuestions extends Component {
                 <label className="question">Company name</label>
                 <input
                   value={this.state.companyName}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleChange}
                   name="companyName"
                   id="22"
                   type="text"
@@ -149,7 +181,7 @@ class JobQuestions extends Component {
                 <label className="question">Position title</label>
                 <input
                   value={this.state.title}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleChange}
                   name="title"
                   id="23"
                   type="text"
@@ -159,7 +191,7 @@ class JobQuestions extends Component {
                 <label className="question">Annual salary</label>
                 <input
                   value={this.state.salary}
-                  onChange={this.handleInputChange}
+                  onChange={this.handleChange}
                   name="salary"
                   id="24"
                   type="text"
@@ -173,10 +205,11 @@ class JobQuestions extends Component {
                     <input
                       key="1"
                       value="yes"
+                      name="isCurrent"
                       type="radio"
                       /* checked={this.props.choiceState === questionChoice.choice_text} */
                       // onChange={() => this.props.handleChange(questionChoice.choice_text)}
-                      onChange={(event) => this.props.handleChange(event)}
+                      onChange={this.handleChange}
                     />
                     <span className="-Input-Text">Yes</span>
                   </label>
@@ -186,10 +219,11 @@ class JobQuestions extends Component {
                     <input
                       key="2"
                       value="no"
+                      name="isCurrent"
                       type="radio"
                       /* checked={this.props.choiceState === questionChoice.choice_text} */
                       // onChange={() => this.props.handleChange(questionChoice.choice_text)}
-                      onChange={(event) => this.props.handleChange(event)}
+                      onChange={this.handleChange}
                     />
                     <span className="-Input-Text">No</span>
                   </label>
