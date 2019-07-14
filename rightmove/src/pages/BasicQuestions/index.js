@@ -55,6 +55,7 @@ class BasicQuestions extends Component {
 
     API.postUserBasicAnswers({
       questionsAndAnswers: this.state.choices,
+      role_name: this.state.role_name.value,
     })
       .then(response => {
         console.log("sumbitted")
