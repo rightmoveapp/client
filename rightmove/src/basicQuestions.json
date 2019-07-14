@@ -255,9 +255,9 @@
       "id": "10",
       "question_text": "What's your current role?",
       "category": "Basic",
-      "input_type": "text",
+      "input_type": "dropdown",
       "name": "role",
-      "placeholder": "Dark arts teacher",
+      "placeholder": "",
       "choices": []
     },
     {
@@ -268,6 +268,467 @@
       "name": "years_experience",
       "placeholder": "5",
       "choices": []
+    }
+  ],
+  "role_names": [
+    {
+      "role_name": "software architect"
+    },
+    {
+      "role_name": "copywriter"
+    },
+    {
+      "role_name": "user interface designer"
+    },
+    {
+      "role_name": "data quality manager"
+    },
+    {
+      "role_name": "management information systems director"
+    },
+    {
+      "role_name": "lead email specialist"
+    },
+    {
+      "role_name": "it support manager"
+    },
+    {
+      "role_name": "junior data engineer"
+    },
+    {
+      "role_name": "email specialist"
+    },
+    {
+      "role_name": "analytics manager"
+    },
+    {
+      "role_name": "systems designer"
+    },
+    {
+      "role_name": "javascript engineer"
+    },
+    {
+      "role_name": "it technician"
+    },
+    {
+      "role_name": "graphic art manager"
+    },
+    {
+      "role_name": "senior data engineer"
+    },
+    {
+      "role_name": "computer systems manager"
+    },
+    {
+      "role_name": "business analyst"
+    },
+    {
+      "role_name": "product manager"
+    },
+    {
+      "role_name": "it director"
+    },
+    {
+      "role_name": "application support analyst"
+    },
+    {
+      "role_name": "lead database administrator"
+    },
+    {
+      "role_name": "help desk technician"
+    },
+    {
+      "role_name": "associate project manager"
+    },
+    {
+      "role_name": "project manager"
+    },
+    {
+      "role_name": "junior project manager"
+    },
+    {
+      "role_name": "java developer"
+    },
+    {
+      "role_name": "package designer"
+    },
+    {
+      "role_name": "junior email specialist"
+    },
+    {
+      "role_name": "user experience designer"
+    },
+    {
+      "role_name": "javascript developer"
+    },
+    {
+      "role_name": "applications engineer"
+    },
+    {
+      "role_name": "customer support administrator"
+    },
+    {
+      "role_name": "computer information research scientist"
+    },
+    {
+      "role_name": "content strategist"
+    },
+    {
+      "role_name": "associate data engineer"
+    },
+    {
+      "role_name": "software developer"
+    },
+    {
+      "role_name": "logo designer"
+    },
+    {
+      "role_name": "lead visual designer"
+    },
+    {
+      "role_name": "content developer"
+    },
+    {
+      "role_name": "junior database administrator"
+    },
+    {
+      "role_name": "developer"
+    },
+    {
+      "role_name": "senior visual designer"
+    },
+    {
+      "role_name": "computer programmer"
+    },
+    {
+      "role_name": "associate dev ops engineer"
+    },
+    {
+      "role_name": "customer support specialist"
+    },
+    {
+      "role_name": "lead project manager"
+    },
+    {
+      "role_name": "desktop support specialist"
+    },
+    {
+      "role_name": "web designer"
+    },
+    {
+      "role_name": "chief information officer (cio)"
+    },
+    {
+      "role_name": "systems administrator"
+    },
+    {
+      "role_name": "senior site reliability engineer"
+    },
+    {
+      "role_name": "lead site reliability engineer"
+    },
+    {
+      "role_name": "webmaster"
+    },
+    {
+      "role_name": "customer service representative"
+    },
+    {
+      "role_name": "network computer systems administrator"
+    },
+    {
+      "role_name": "programmer"
+    },
+    {
+      "role_name": "data analyst"
+    },
+    {
+      "role_name": "editor"
+    },
+    {
+      "role_name": "lead software engineer"
+    },
+    {
+      "role_name": "it manager"
+    },
+    {
+      "role_name": "senior email specialist"
+    },
+    {
+      "role_name": "data architect"
+    },
+    {
+      "role_name": "dev ops engineer"
+    },
+    {
+      "role_name": "junior user experience designer"
+    },
+    {
+      "role_name": "associate site reliability engineer"
+    },
+    {
+      "role_name": "it analyst"
+    },
+    {
+      "role_name": "technical support specialist"
+    },
+    {
+      "role_name": "cloud system administrator"
+    },
+    {
+      "role_name": "lead dev ops engineer"
+    },
+    {
+      "role_name": "it systems administrator"
+    },
+    {
+      "role_name": "junior visual designer"
+    },
+    {
+      "role_name": "technical operations officer"
+    },
+    {
+      "role_name": "systems architect"
+    },
+    {
+      "role_name": "computer information systems manager"
+    },
+    {
+      "role_name": "technical specialist"
+    },
+    {
+      "role_name": "programmer analyst"
+    },
+    {
+      "role_name": "broadcast designers"
+    },
+    {
+      "role_name": "network architect"
+    },
+    {
+      "role_name": "systems analyst"
+    },
+    {
+      "role_name": "lead user experience designer"
+    },
+    {
+      "role_name": "web application developer"
+    },
+    {
+      "role_name": "art production manager"
+    },
+    {
+      "role_name": "seo specialist"
+    },
+    {
+      "role_name": "cloud services developer"
+    },
+    {
+      "role_name": "system designer"
+    },
+    {
+      "role_name": "user interface developer"
+    },
+    {
+      "role_name": "visual image developer"
+    },
+    {
+      "role_name": "multimedia developer"
+    },
+    {
+      "role_name": "associate email specialist"
+    },
+    {
+      "role_name": "technical support engineer"
+    },
+    {
+      "role_name": "data engineer"
+    },
+    {
+      "role_name": "front end developer"
+    },
+    {
+      "role_name": "desktop support manager"
+    },
+    {
+      "role_name": "brand identity developer"
+    },
+    {
+      "role_name": "it coordinator"
+    },
+    {
+      "role_name": "creative director"
+    },
+    {
+      "role_name": "director of project management"
+    },
+    {
+      "role_name": "security specialist"
+    },
+    {
+      "role_name": "associate software engineer"
+    },
+    {
+      "role_name": "information architect"
+    },
+    {
+      "role_name": "associate visual designer"
+    },
+    {
+      "role_name": "art director"
+    },
+    {
+      "role_name": "network engineer"
+    },
+    {
+      "role_name": "network administrator"
+    },
+    {
+      "role_name": "support specialist"
+    },
+    {
+      "role_name": "cloud systems engineer"
+    },
+    {
+      "role_name": "it support specialist"
+    },
+    {
+      "role_name": "back end developer"
+    },
+    {
+      "role_name": "associate user experience designer"
+    },
+    {
+      "role_name": "network systems administrator"
+    },
+    {
+      "role_name": "design director"
+    },
+    {
+      "role_name": "chief technology officer (cto)"
+    },
+    {
+      "role_name": "junior dev ops engineer"
+    },
+    {
+      "role_name": "senior database administrator"
+    },
+    {
+      "role_name": "interaction designer"
+    },
+    {
+      "role_name": "interface designer"
+    },
+    {
+      "role_name": "senior user experience designer"
+    },
+    {
+      "role_name": "writer"
+    },
+    {
+      "role_name": "cloud product manager"
+    },
+    {
+      "role_name": "cloud consultant"
+    },
+    {
+      "role_name": "illustrator"
+    },
+    {
+      "role_name": "software engineer"
+    },
+    {
+      "role_name": "senior dev ops engineer"
+    },
+    {
+      "role_name": "visual journalist"
+    },
+    {
+      "role_name": "statistician"
+    },
+    {
+      "role_name": "graphic designer"
+    },
+    {
+      "role_name": "cloud architect"
+    },
+    {
+      "role_name": "full stack developer"
+    },
+    {
+      "role_name": "crm email specialist"
+    },
+    {
+      "role_name": "visual designer"
+    },
+    {
+      "role_name": "computer systems analyst"
+    },
+    {
+      "role_name": "data center support specialist"
+    },
+    {
+      "role_name": "associate database administrator"
+    },
+    {
+      "role_name": "senior software engineer"
+    },
+    {
+      "role_name": "lead data engineer"
+    },
+    {
+      "role_name": "application developer"
+    },
+    {
+      "role_name": "systems software engineer"
+    },
+    {
+      "role_name": "software quality assurance analyst"
+    },
+    {
+      "role_name": "system analyst"
+    },
+    {
+      "role_name": "junior site reliability engineer"
+    },
+    {
+      "role_name": "web developer"
+    },
+    {
+      "role_name": "web administrator"
+    },
+    {
+      "role_name": "help desk specialist"
+    },
+    {
+      "role_name": "information security engineer"
+    },
+    {
+      "role_name": "web programmer"
+    },
+    {
+      "role_name": "junior software engineer"
+    },
+    {
+      "role_name": "network system administrator"
+    },
+    {
+      "role_name": "director of technology"
+    },
+    {
+      "role_name": "layout artist"
+    },
+    {
+      "role_name": "telecommunications specialist"
+    },
+    {
+      "role_name": "computer network architect"
+    },
+    {
+      "role_name": "senior project manager"
+    },
+    {
+      "role_name": "database administrator"
     }
   ]
 }
