@@ -8,42 +8,31 @@ import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import basicQuestions from "../../basicQuestions.json";
 import YellowButton from "../../components/YellowButton";
+import Select from 'react-select';
 import "./style.css";
 
-// choice: [...this.state.choice, event.target.value],
+const options = [
+  { value: 'chocolate', label: 'Chocolate' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' }
+]
 
 class BasicQuestions extends Component {
   state = {
     basicQuestions,
-    /* question: [], */
     choices: {},
-    /* birthday: "",
-    gender: "",
-    zipcode: "",
-    areacode: "",
-    pronouns: "",
-    race_ethnicity: "",
-    relationship_status: "",
-    num_dependents: "",
-    education: "",
-    role: "",
-    years_experience: "" */
+    selectedOption: null,
   };
 
+  // to get user input answers into the choices array
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
-    
 
-    // [...this.state.choice, event.target.value]
-    // Updating the input's state
-    // let choicesArray = this.state.choices.filter(item => console.log(item)  )
-
-  
-    let choiceObj = {...this.state.choices};
+    let choiceObj = { ...this.state.choices };
     choiceObj[name] = value;
-   
+
     this.setState({
       /* [name]: value, */
       choices: choiceObj
@@ -82,10 +71,15 @@ class BasicQuestions extends Component {
     console.log('You have selected:', this.state.selectedOption);
   }
 
+  handleDropdownChange = selectedOption => {
+    this.setState({ selectedOption });
+    console.log(`Option selected:`, selectedOption);
+  };
 
   render() {
-    /* console.log(this.state.basicQuestions.questionsAndChoices); */
-
+    //for dropdown menu
+    const { selectedOption } = this.state;
+    
     const basicQuestions = this.state.basicQuestions.questionsAndChoices.map((question) => {
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
@@ -100,8 +94,6 @@ class BasicQuestions extends Component {
             questionChoices={[question.choices]}
             name={questionName}
             handleChange={this.handleInputChange}
-
-            // choiceState={this.state.choice}
           />
         )
       }
@@ -117,7 +109,6 @@ class BasicQuestions extends Component {
             name={questionName}
             value={this.state.questionName}
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
           />
         )
       }
@@ -134,7 +125,6 @@ class BasicQuestions extends Component {
             name={questionName}
             value={this.state.questionName}
             handleCheckBoxChange={this.handleCheckBoxChange}
-            choiceState={this.state.choice}
           />
         )
       } */
@@ -150,11 +140,9 @@ class BasicQuestions extends Component {
             name={questionName}
             value={this.state.questionName}
             handleChange={this.handleInputChange}
-            choiceState={this.state.choice}
           />
         )
       }
-      /* this.setState({currentQuestion:randomQuestion}) */
 
     }
     );
@@ -165,8 +153,13 @@ class BasicQuestions extends Component {
             <>
               <h4 className="heading-questions">Here we go! Tell us a little about yourself.</h4>
               <h5 className="subheading-questions">Just trying to get to know you.</h5>
-              <form /* onSubmit={this.handleSubmit} */ size="col s12 m12 l12">
+              <form size="col s12 m12 l12">
                 {basicQuestions}
+                <Select
+                  value={selectedOption}
+                  onChange={this.handleDropdownChange}
+                  options={options}
+                />
                 <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
                 </div>
