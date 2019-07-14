@@ -11,17 +11,17 @@ import YellowButton from "../../components/YellowButton";
 import Select from 'react-select';
 import "./style.css";
 
-const options = [
+/* const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' }
-]
+] */
 
 class BasicQuestions extends Component {
   state = {
     basicQuestions,
     choices: {},
-    selectedOption: null,
+    role_name: null,
   };
 
   // to get user input answers into the choices array
@@ -71,15 +71,19 @@ class BasicQuestions extends Component {
     console.log('You have selected:', this.state.selectedOption);
   }
 
-  handleDropdownChange = selectedOption => {
-    this.setState({ selectedOption });
-    console.log(`Option selected:`, selectedOption);
+  handleDropdownChange = role_name => {
+    this.setState({ role_name });
+    console.log(`Option selected:`, role_name);
   };
 
   render() {
-    //for dropdown menu
-    const { selectedOption } = this.state;
-    
+    let basicQuestionsJobs = []
+    basicQuestionsJobs = this.state.basicQuestions.role_names.map((role) => {
+        return { value: role.role_name, label: role.role_name }
+    })
+
+    console.log(basicQuestionsJobs)
+
     const basicQuestions = this.state.basicQuestions.questionsAndChoices.map((question) => {
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
@@ -155,10 +159,10 @@ class BasicQuestions extends Component {
               <h5 className="subheading-questions">Just trying to get to know you.</h5>
               <form size="col s12 m12 l12">
                 {basicQuestions}
+                <label className="question active">What's your current role?</label>
                 <Select
-                  value={selectedOption}
                   onChange={this.handleDropdownChange}
-                  options={options}
+                  options={basicQuestionsJobs}
                 />
                 <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
