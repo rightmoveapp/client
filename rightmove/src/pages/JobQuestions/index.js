@@ -7,18 +7,21 @@ import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
 import YellowButton from '../../components/YellowButton';
+import basicQuestions from "../../basicQuestions.json";
+import Select from 'react-select';
 import "./style.css";
 
 class JobQuestions extends Component {
   state = {
+    basicQuestions,
     jobQuestions: [],
     choices: {},
     companyName: "",
-    title: "",
     salary: "",
     isCurrent: "",
     zipcode: "",
     city: "",
+    role_name: null,
   };
 
   handleChange = event => {
@@ -44,6 +47,11 @@ class JobQuestions extends Component {
       /* [name]: value, */
       choices: choiceObj
     });
+  };
+
+  handleDropdownChange = role_name => {
+    this.setState({ role_name });
+    console.log(`Option selected:`, role_name);
   };
 
   /* handleCheckBoxChange = (event) => {
@@ -93,6 +101,14 @@ class JobQuestions extends Component {
   }
 
   render() {
+    // TODO : put the job options in the database and make a get request for this info
+    let jobQuestionsJobs = []
+    jobQuestionsJobs = this.state.basicQuestions.role_names.map((role) => {
+      return { value: role.role_name, label: role.role_name }
+    })
+
+    console.log(jobQuestionsJobs)
+
     const jobQuestionMap = this.state.jobQuestions.map((question) => {
       // TODO: figure out how to fix this
       if (question.input_type === "radio") {
@@ -176,7 +192,7 @@ class JobQuestions extends Component {
                   className="validate Rectangle"
                   placeholder="Best place in the world"
                 />
-                <label className="question">Position title</label>
+                {/* <label className="question">Position title</label>
                 <input
                   value={this.state.title}
                   onChange={this.handleChange}
@@ -185,6 +201,11 @@ class JobQuestions extends Component {
                   type="text"
                   className="validate Rectangle"
                   placeholder="Web Developer"
+                /> */}
+                <label className="question active">Position title</label>
+                <Select
+                  onChange={this.handleDropdownChange}
+                  options={jobQuestionsJobs}
                 />
                 <label className="question">Annual salary</label>
                 <input
@@ -246,7 +267,7 @@ class JobQuestions extends Component {
                   className="validate Rectangle"
                   placeholder="Philadelphia"
                 />
-                
+
                 {jobQuestionMap}
                 <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
