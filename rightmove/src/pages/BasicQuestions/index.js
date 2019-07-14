@@ -116,6 +116,19 @@ class BasicQuestions extends Component {
           />
         )
       }
+      else if (question.input_type === "dropdown") {
+        let questionName = question.name
+        console.log(questionName)
+        return (
+          <>
+            <label className="question active">{question.question_text}</label>
+            <Select
+              onChange={this.handleDropdownChange}
+              options={basicQuestionsJobs}
+            />
+          </>
+        )
+      }
       /* else if (question.input_type === "checkbox") {
         let questionName = question.name
         console.log(questionName)
@@ -159,11 +172,6 @@ class BasicQuestions extends Component {
               <h5 className="subheading-questions">Just trying to get to know you.</h5>
               <form size="col s12 m12 l12">
                 {basicQuestions}
-                <label className="question active">What's your current role?</label>
-                <Select
-                  onChange={this.handleDropdownChange}
-                  options={basicQuestionsJobs}
-                />
                 <div className="right-align add-space">
                   <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
                 </div>

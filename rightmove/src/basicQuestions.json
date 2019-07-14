@@ -255,9 +255,9 @@
       "id": "10",
       "question_text": "What's your current role?",
       "category": "Basic",
-      "input_type": "text",
+      "input_type": "dropdown",
       "name": "role",
-      "placeholder": "Dark arts teacher",
+      "placeholder": "",
       "choices": []
     },
     {
