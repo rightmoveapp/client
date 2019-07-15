@@ -26,7 +26,7 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     stateHasUpdated: true,
-    userName:""
+    userName: localStorage.getItem('username') || ""
   }
 
   updateLogin = (force = null) => {
@@ -51,7 +51,7 @@ class App extends React.Component {
   }
 
   updateUserName  = name =>{
-    localStorage.setItem( 'Username', name );
+    localStorage.setItem( 'username', name );
     this.setState({
       userName: name
     })
