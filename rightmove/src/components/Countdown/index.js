@@ -3,7 +3,7 @@ import YellowUnderline from "../YellowUnderline";
 import "./style.css";
 
 const Countdown = (props) => {
-    if (props.count === 0) {
+    if (props.count === 0 || props.count < 0) {
         return (
             <>
                 <div className="There-are-new-questi">
@@ -26,7 +26,7 @@ const Countdown = (props) => {
             </>
         );
     }
-    
+
 }
 
 export default Countdown;
