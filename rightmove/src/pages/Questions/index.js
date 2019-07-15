@@ -117,9 +117,6 @@ class Questions extends Component {
 
 
     render(){
-        if (this.state.questionsChoices.length === 1) {
-            this.setState({ isFinished: true });
-        }
 
         // const userQuestionMap = this.state.currentQuestion.map((question) => {
             let currentQuestion = this.state.currentQuestion
@@ -199,6 +196,7 @@ class Questions extends Component {
         if(this.state.currentQuestion.length < 1 /*&& this.state.questionType.length < 1*/){
         return (<></>);
         }else{
+        
 
         return (
             <>

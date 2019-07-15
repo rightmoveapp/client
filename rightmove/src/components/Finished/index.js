@@ -15,7 +15,7 @@ const Finished = () => {
         </Row>
         <Row>
           <Col>
-            <RedButton text='Go To Jobs →' to="/jobs"/>
+            <RedButton text='Go To Job Questions →' to="/jobquestions"/>
           </Col>
         </Row>
       </>
