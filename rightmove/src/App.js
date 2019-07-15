@@ -51,6 +51,7 @@ class App extends React.Component {
   }
 
   updateUserName  = name =>{
+    localStorage.setItem( 'Username', name );
     this.setState({
       userName: name
     })
