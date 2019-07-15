@@ -7,6 +7,7 @@
     line-height: 1.4;
     letter-spacing: normal;
     color: #0a2f51;
+    margin-top: 20px;
 }
 
 .Looks-like-someone-s {
@@ -18,10 +19,11 @@
     line-height: 1.5;
     letter-spacing: normal;
     color: #0a2f51;
+    margin: 15px 0px 40px;
 }
 
 .gif {
-    margin-bottom: 64px;
+    margin-bottom: 40px;
     width: 100%;
     max-width: 328px;
 }
