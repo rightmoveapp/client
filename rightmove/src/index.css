@@ -5,9 +5,7 @@ html { font-family: 'Inter var', sans-serif; }
 }
 
 html, body {
+  font-family: "Inter";
   height: 100%;
   margin: 0;
 }
-
-
-
