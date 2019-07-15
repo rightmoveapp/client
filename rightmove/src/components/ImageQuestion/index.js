@@ -9,14 +9,18 @@ const ImageQuestion = (props) => {
                 <div>
                     {props.questionChoices[0].map(questionChoice => (
                         <label key={questionChoice.id}>
-                            <img
+                           <input
+                            /* <img */
                                 src={questionChoice.choice_text}
-                                key={questionChoice.id}
+                                key={questionChoice.choice_text}
                                 value={questionChoice.choice_text}
                                 type={questionChoice.input_type}
-                                onClick={(event) => props.handleChange(event)}
+                                onChange={(event) => props.handleChange(event)}
                                 alt="alt"
                                 className="crop"
+                                name={props.name}
+                                questionid={props.questionId}
+                            /* /> */
                             />
                         </label>
                     ))}

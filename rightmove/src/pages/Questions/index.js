@@ -103,7 +103,7 @@ class Questions extends Component {
             )
             .catch(err => console.log(err));
 
-        console.log('You have selected:', this.state.selectedOption);
+        console.log('You have selected:', this.state.choice);
     }
 
 
