@@ -27,9 +27,9 @@ class Questions extends Component {
         skippedQuestions: [],
         questionType: [],
         isFinished: false,
-        question: [],
-        choice: [],
-        count: 21,
+        question:[],
+        choice:[],
+        count: localStorage.getItem('questionCount') || 20,
     };
 
     componentDidMount() {
@@ -47,8 +47,6 @@ class Questions extends Component {
     };
 
     getRandomQuestion = () => {
-        let newCount = this.state.count - 1
-        this.setState({ count: newCount })
 
         if (this.state.questionsChoices.length === 1) {
             this.setState({ isFinished: true });
@@ -107,6 +105,9 @@ class Questions extends Component {
         })
             .then(response => {
                 this.setAnsweredQuestion(this.state.question)
+                let newCount = this.state.count - 1 
+                localStorage.setItem( 'questionCount', newCount );
+                this.setState({ count: newCount })
                 this.getRandomQuestion()
             }
             )
