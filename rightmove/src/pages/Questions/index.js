@@ -76,7 +76,7 @@ class Questions extends Component {
         });
     };
 
-    handleCheckBoxChange= (event) =>{
+    /* handleCheckBoxChange= (event) =>{
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -86,7 +86,7 @@ class Questions extends Component {
           choice: [...this.state.choice, name],
           question: this.state.currentQuestion.id
         });
-      }
+      } */
 
 
     handleFormSubmit = (event) => {

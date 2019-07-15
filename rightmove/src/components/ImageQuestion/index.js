@@ -1,34 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import "./style.css";
 
 
-class ImageQuestion extends Component {
-
-    render(props) {
+const ImageQuestion = (props) => {
         return (
             <>
-                <label className="question">{this.props.questionText}</label>
+                <label className="question">{props.questionText}</label>
                 <div>
-                    {this.props.questionChoices[0].map(questionChoice => (
-                        <label>
+                    {props.questionChoices[0].map(questionChoice => (
+                        <label key={questionChoice.id}>
                             <img
                                 src={questionChoice.choice_text}
                                 key={questionChoice.id}
                                 value={questionChoice.choice_text}
                                 type={questionChoice.input_type}
-                                checked={this.props.choiceState === questionChoice.choice_text}
-                                // onChange={() => this.props.handleChange(questionChoice.choice_text)}
                                 onChange={(event) => this.props.handleChange(event)}
                                 alt="alt"
                                 className="crop"
                             />
-                            {/* <span className="-Input-Text">{questionChoice.choice_text}</span> */}
                         </label>
                     ))}
                 </div>
             </>
         );
-    }
+
 
 
 }
