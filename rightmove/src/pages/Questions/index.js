@@ -120,7 +120,7 @@ class Questions extends Component {
         if (this.state.questionsChoices.length === 1) {
             this.setState({ isFinished: true });
         }
-        
+
         // const userQuestionMap = this.state.currentQuestion.map((question) => {
             let currentQuestion = this.state.currentQuestion
             let currentquestionType
@@ -208,7 +208,7 @@ class Questions extends Component {
                     <h5 className="subheading-questions">The more information we have on you, the better our predictions will be <span role="img" aria-label="smile">😊</span></h5>
                     <form method="post" onSubmit={this.handleFormSubmit} size="col s12 m12 l12">
                         { this.state.isFinished ? <Finished /> :  currentquestionType}
-                        <Link to="/privacy_policy" target="_blank"><h5 className="explainer">Why do we need this?</h5></Link>
+                        <h5 className="explainer"><Link to="/privacy_policy" target="_blank">Why do we need this?</Link></h5>
                     </form>
                     <Countdown count={this.state.count}/>
                     <div className="right-align">
