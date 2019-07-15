@@ -76,6 +76,15 @@ class Questions extends Component {
         });
     };
 
+    handleImageChange = event => {
+        event.preventDefault();
+        console.log(this.state.currentQuestion)
+        this.setState({
+            choice: event.target.value,
+            question: this.state.currentQuestion.id
+        });
+    };
+
     /* handleCheckBoxChange= (event) =>{
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -103,7 +112,7 @@ class Questions extends Component {
             )
             .catch(err => console.log(err));
 
-        console.log('You have selected:', this.state.selectedOption);
+        console.log('You have selected:', this.state.choice);
     }
 
 
@@ -163,7 +172,7 @@ class Questions extends Component {
                         questionChoices={[currentQuestion.choices]}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
-                        handleChange={this.handleChange}
+                        handleImageChange={this.handleImageChange}
                         choiceState={this.state.choice}
                     />
             }

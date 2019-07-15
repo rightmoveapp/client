@@ -15,7 +15,8 @@ const ImageQuestion = (props) => {
                                 key={questionChoice.choice_text}
                                 value={questionChoice.choice_text}
                                 type={questionChoice.input_type}
-                                onChange={(event) => props.handleChange(event)}
+                                // checked={props.choiceState === questionChoice.choice_text}
+                                onClick={(event) => props.handleImageChange(event)}
                                 alt="alt"
                                 className="crop"
                                 name={props.name}

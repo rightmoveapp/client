@@ -110,7 +110,11 @@ class App extends React.Component {
                 component={BasicQuestions}
                 render={(props) => <BasicQuestions {...props} />}
               />
-              <Route exact path="/" component={Landing} />
+              <Route
+                exact path="/"
+                render={(props) => <Landing {...props} loggedIn={this.state.loggedIn} />}
+                />
+
               <Route exact path="/*" component={Page404} />
             </Switch>
           </Container>
