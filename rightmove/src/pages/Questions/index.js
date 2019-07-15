@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
-import CheckboxQuestion from '../../components/CheckboxQuestion';
+/* import CheckboxQuestion from '../../components/CheckboxQuestion'; */
 import DateQuestion from '../../components/DateQuestion';
-import RadioQuestions from '../../components/RadioQuestions';
+import RadioQuestionsChecked from '../../components/RadioQuestionsChecked';
 import TextQuestion from '../../components/TextQuestion';
+import ImageQuestion from '../../components/ImageQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 import Finished from '../../components/Finished';
@@ -75,7 +76,7 @@ class Questions extends Component {
         });
     };
 
-    handleCheckBoxChange= (event) =>{
+    /* handleCheckBoxChange= (event) =>{
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -85,7 +86,7 @@ class Questions extends Component {
           choice: [...this.state.choice, name],
           question: this.state.currentQuestion.id
         });
-      }
+      } */
 
 
     handleFormSubmit = (event) => {
@@ -112,7 +113,7 @@ class Questions extends Component {
             let currentquestionType
             if (currentQuestion.input_type === "radio") {
                 currentquestionType =
-                    <RadioQuestions
+                    <RadioQuestionsChecked
                         key={currentQuestion.id}
                         questionId={currentQuestion.id}
                         questionText={currentQuestion.question_text}
@@ -134,11 +135,11 @@ class Questions extends Component {
                         questionPlaceholder={currentQuestion.placeholder}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
-                        handleChange={this.handleChange}
+                        onClick={this.handleChange}
                         choiceState={this.state.choice}
                     />
             }
-            else if (currentQuestion.input_type === "checkbox") {
+            /* else if (currentQuestion.input_type === "checkbox") {
                 currentquestionType =
                     <CheckboxQuestion
                         key={currentQuestion.id}
@@ -149,6 +150,20 @@ class Questions extends Component {
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
                         handleCheckBoxChange={this.handleCheckBoxChange}
+                        choiceState={this.state.choice}
+                    />
+            } */
+            else if (currentQuestion.input_type === "image") {
+                currentquestionType =
+                    <ImageQuestion
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
                         choiceState={this.state.choice}
                     />
             }

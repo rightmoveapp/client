@@ -13,6 +13,7 @@ const RadioQuestions = (props) => {
                             key={questionChoice.id}
                             value={questionChoice.choice_text}
                             type={questionChoice.input_type}
+                            checked={props.choiceState === questionChoice.choice_text}
                             // onChange={() => this.props.handleChange(questionChoice.choice_text)}
                             onChange={(event) => props.handleChange(event)}
                             name={props.name}
