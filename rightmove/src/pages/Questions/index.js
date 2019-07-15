@@ -117,6 +117,10 @@ class Questions extends Component {
 
 
     render(){
+        if (this.state.questionsChoices.length === 1) {
+            this.setState({ isFinished: true });
+        }
+        
         // const userQuestionMap = this.state.currentQuestion.map((question) => {
             let currentQuestion = this.state.currentQuestion
             let currentquestionType

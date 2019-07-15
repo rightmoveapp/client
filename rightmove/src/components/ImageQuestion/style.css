@@ -14,8 +14,10 @@ img:active {
     border: 2px #fee07d solid;
 }
 
-img:focus {
-    border: 2px #fee07d solid;
+.crop input:focus {
+    outline: none;
+    border: 4px solid #fee07d;
+    color: #fee07d;
 }
 
 img:hover {

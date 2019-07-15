@@ -54,3 +54,6 @@
     margin-bottom: 34px;
 }
 
+label {
+    border: none !important;
+}
