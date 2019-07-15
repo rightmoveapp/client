@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
 import { Link } from "react-router-dom";
-import CheckboxQuestion from '../../components/CheckboxQuestion';
+/* import CheckboxQuestion from '../../components/CheckboxQuestion'; */
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
 import TextQuestion from '../../components/TextQuestion';
+import ImageQuestion from '../../components/ImageQuestion';
 import Row from '../../components/Row';
 import Col from '../../components/Col';
 import Finished from '../../components/Finished';
@@ -138,7 +139,7 @@ class Questions extends Component {
                         choiceState={this.state.choice}
                     />
             }
-            else if (currentQuestion.input_type === "checkbox") {
+            /* else if (currentQuestion.input_type === "checkbox") {
                 currentquestionType =
                     <CheckboxQuestion
                         key={currentQuestion.id}
@@ -149,6 +150,20 @@ class Questions extends Component {
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
                         handleCheckBoxChange={this.handleCheckBoxChange}
+                        choiceState={this.state.choice}
+                    />
+            } */
+            else if (currentQuestion.input_type === "image") {
+                currentquestionType =
+                    <ImageQuestion
+                        key={currentQuestion.id}
+                        questionId={currentQuestion.id}
+                        questionText={currentQuestion.question_text}
+                        questionType={currentQuestion.input_type}
+                        questionChoices={[currentQuestion.choices]}
+                        getRandomQuestion={this.getRandomQuestion}
+                        setAnsweredQuestion={this.setAnsweredQuestion}
+                        handleChange={this.handleChange}
                         choiceState={this.state.choice}
                     />
             }
