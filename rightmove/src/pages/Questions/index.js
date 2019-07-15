@@ -48,8 +48,9 @@ class Questions extends Component {
 
     getRandomQuestion = () => {
 
-        if (this.state.questionsChoices.length === 1) {
+        if (this.state.questionsChoices.length === 1 || this.state.questionsChoices.length < 1) {
             this.setState({ isFinished: true });
+            console.log("hello im trying to change to true");
         }
 
         const questionsChoices = this.state.questionsChoices;
@@ -108,6 +109,11 @@ class Questions extends Component {
                 let newCount = this.state.count - 1 
                 localStorage.setItem( 'questionCount', newCount );
                 this.setState({ count: newCount })
+                
+                /* if (this.state.questionsChoices.length < 1) {
+                    this.setState({ isFinished: true });
+                } */
+
                 this.getRandomQuestion()
             }
             )
@@ -118,7 +124,23 @@ class Questions extends Component {
 
 
     render() {
+        if ( this.state.isFinished ) {
+            return (
+                <>
+                    <Row>
+                        <Col size="s12 m12 l12">
 
+                            <Finished />
+
+                        </Col>
+                    </Row>
+
+                </>
+            );
+        }
+        else {
+
+        
         // const userQuestionMap = this.state.currentQuestion.map((question) => {
         let currentQuestion = this.state.currentQuestion
         let currentquestionType
@@ -197,8 +219,6 @@ class Questions extends Component {
         if (this.state.currentQuestion.length < 1 /*&& this.state.questionType.length < 1*/) {
             return (<></>);
         } else {
-
-            if (!this.state.isFinished) {
                 return (
                     <>
                         <Row>
@@ -219,21 +239,7 @@ class Questions extends Component {
 
                     </>
                 );
-            } else {
-                return (
-                    <>
-                        <Row>
-                            <Col size="s12 m12 l12">
-
-                                <Finished />
-
-                            </Col>
-                        </Row>
-
-                    </>
-                );
-
-            }
+            } 
 
         }
     }
