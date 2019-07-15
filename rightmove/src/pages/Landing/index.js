@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom'
 /* import API from '../../utils/API' */
 import Col from '../../components/Col';
 import Row from '../../components/Row';
@@ -7,26 +8,17 @@ import RedButtonLinkedin from "../../components/RedButtonLinkedin";
 
 
 class Landing extends Component {
-    /* state = {
-        landingPage_tagLine: "",
-        landingPage_description: "",
-        landingPage_howItWorks: "",
-    }
-
-    // // componentDidMount() {
-    // //     this.loadLandingPage();
-    // // }
-
-    loadLandingPage = () => {
-        API.getLandingPage()
-            .then(res =>
-                this.setState({ landingPage_tagLine: "", landingPage_description: "", landingPage_howItWorks: "" })
-            )
-            .catch(err => console.log(err));
-    }; */
 
     render() {
-        return (
+        const loggedIn = this.props.loggedIn
+
+        if(loggedIn){
+            return (
+                <Redirect to ="/account"/>
+            )
+        }
+        else{
+            return (
             <Row>
                 <Col size="s12 m12 l12">
                     <div className="Take-control-of-your">Take control of your career.</div>
@@ -35,7 +27,8 @@ class Landing extends Component {
                 <RedButtonLinkedin text="Sign Up →"/>
                 </Col>
             </Row>
-        )
+            )
+        }
     }
 }
 
