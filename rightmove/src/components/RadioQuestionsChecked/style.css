@@ -25,3 +25,8 @@
 p {
   margin: 12px 0px 12px 0px;
 }
+
+label:active {
+  color: #0a2f51;
+  border: dotted 2px  #0a2f51;
+}

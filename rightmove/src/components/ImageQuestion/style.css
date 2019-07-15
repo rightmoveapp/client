@@ -15,7 +15,7 @@ img {
     overflow: hidden;
 }
 
-.crop img {
+.crop input {
     height: auto;
     width: 300px;
 }
@@ -34,4 +34,8 @@ img:hover {
 
 img:checked {
     border: 2px #fee07d solid;
+}
+
+label:active {
+    color: #0a2f51;
 }

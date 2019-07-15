@@ -25,3 +25,7 @@
 p {
   margin: 12px 0px 12px 0px;
 }
+
+label:active {
+  color: #0a2f51;
+}

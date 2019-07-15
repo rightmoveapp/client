@@ -12,7 +12,7 @@ const DateQuestion = (props) => {
                 onChange={(event) => props.handleChange(event)}
                 id={props.questionId}
                 type={props.questionType}
-                className="validate Rectangle"
+                className="Rectangle"
                 placeholder={props.questionPlaceholder}
                 name={props.name}
             />
