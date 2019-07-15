@@ -19,3 +19,19 @@ img {
     height: auto;
     width: 300px;
 }
+
+img:active {
+    border: 2px #fee07d solid;
+}
+
+img:focus {
+    border: 2px #fee07d solid;
+}
+
+img:hover {
+    border: 2px #fee07d solid;
+}
+
+img:checked {
+    border: 2px #fee07d solid;
+}

@@ -3,7 +3,7 @@ import API from "../../utils/API"
 import { Link } from "react-router-dom";
 /* import CheckboxQuestion from '../../components/CheckboxQuestion'; */
 import DateQuestion from '../../components/DateQuestion';
-import RadioQuestions from '../../components/RadioQuestions';
+import RadioQuestionsChecked from '../../components/RadioQuestionsChecked';
 import TextQuestion from '../../components/TextQuestion';
 import ImageQuestion from '../../components/ImageQuestion';
 import Row from '../../components/Row';
@@ -113,7 +113,7 @@ class Questions extends Component {
             let currentquestionType
             if (currentQuestion.input_type === "radio") {
                 currentquestionType =
-                    <RadioQuestions
+                    <RadioQuestionsChecked
                         key={currentQuestion.id}
                         questionId={currentQuestion.id}
                         questionText={currentQuestion.question_text}
@@ -135,7 +135,7 @@ class Questions extends Component {
                         questionPlaceholder={currentQuestion.placeholder}
                         getRandomQuestion={this.getRandomQuestion}
                         setAnsweredQuestion={this.setAnsweredQuestion}
-                        handleChange={this.handleChange}
+                        onClick={this.handleChange}
                         choiceState={this.state.choice}
                     />
             }

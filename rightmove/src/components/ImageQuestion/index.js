@@ -14,7 +14,7 @@ const ImageQuestion = (props) => {
                                 key={questionChoice.id}
                                 value={questionChoice.choice_text}
                                 type={questionChoice.input_type}
-                                onChange={(event) => this.props.handleChange(event)}
+                                onClick={(event) => props.handleChange(event)}
                                 alt="alt"
                                 className="crop"
                             />

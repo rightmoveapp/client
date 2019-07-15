@@ -1,0 +1,27 @@
+.-Input-Text {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #0a2f51;
+}
+
+[type="radio"]:not(:checked)+span:before, [type="radio"]:not(:checked)+span:after {
+    border: dotted 2px  #0a2f51;
+}
+
+[type="radio"]:checked + span:after,
+ 
+[type="radio"].with-gap:checked + span:after {
+ 
+  background-color: #0a2f51;
+  border: dotted 2px  #0a2f51;
+  
+}
+
+p {
+  margin: 12px 0px 12px 0px;
+}
