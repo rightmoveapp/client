@@ -48,5 +48,9 @@ postUserJobAnswers: function(jobAnswers) {
 
 },
 
+getUserGraph: function() {
+  return axios.get(`http://localhost:8000/v1/usergraph`);
+},
+
 
 }

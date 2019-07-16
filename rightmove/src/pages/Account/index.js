@@ -7,6 +7,8 @@ import './style.css';
 import YellowUnderline from "../../components/YellowUnderline";
 import CurrentJob from "../../components/CurrentJob";
 import YellowAlert from "../../components/YellowAlert";
+/* import UserGraph from "../../components/UserGraph"; */
+/* import BasicSunburst from "../../components/Sunburst"; */
 //import userProfile from '../../userProfile.json';
 /* import fillerJobs from '../../fillerJobs.json'; */
 
@@ -24,6 +26,7 @@ class Account extends Component {
     API.getUserAccount()
       .then(response => {
         this.setState({ userProfile: response.data })
+        console.log(response.data)
         console.log(response.data.jobs)
 
         let jobs = [];
@@ -40,12 +43,19 @@ class Account extends Component {
         })
   };
 
+  makeGraph = () => {
+    API.getUserGraph()
+      .then(response => {
+        console.log(response.data)
+      })
+  }
   /* percentage = (number) => {
     let percentageFit = parseFloat(number) * 100
     return percentageFit
   } */
 
 render() {
+  this.makeGraph()
   const possibleJobsMap = this.state.possibleJobs.map((job) => {
     return (
       <JobList
@@ -75,6 +85,7 @@ render() {
               </div>
             </div>
           </div>
+          {/* <BasicSunburst /> */}
         </Col>
       </Row>
     </>
