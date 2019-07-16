@@ -5,7 +5,7 @@ const RadioQuestions = (props) => {
     return (
         <>
             <label className="question">{props.questionText}</label>
-            <input id={props.questionId} type={props.questionType} className="validate Rectangle" />
+            <input id={props.questionId} type={props.questionType} className="Rectangle" />
             {props.questionChoices[0].map(questionChoice => (
                 <p key={questionChoice.id}>
                     <label>

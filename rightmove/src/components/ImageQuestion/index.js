@@ -8,7 +8,7 @@ const ImageQuestion = (props) => {
                 <label className="question">{props.questionText}</label>
                 <div>
                     {props.questionChoices[0].map(questionChoice => (
-                        <label key={questionChoice.id}>
+                        <label key={questionChoice.id} className="no-border">
                            <input
                             /* <img */
                                 src={questionChoice.choice_text}

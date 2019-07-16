@@ -1,21 +1,11 @@
-/* img {
-    width:  300px;
-    height: 300px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-} */
-img {
-    margin: 15px 30px 15px 0px;
-}
-
 .crop {
     height: 200px;
     width: 300px;
     overflow: hidden;
+    margin: 10px 20px 10px 0px;
 }
 
-.crop img {
+.crop input {
     height: auto;
     width: 300px;
 }
@@ -24,8 +14,10 @@ img:active {
     border: 2px #fee07d solid;
 }
 
-img:focus {
-    border: 2px #fee07d solid;
+.crop input:focus {
+    outline: none;
+    border: 4px solid #fee07d;
+    color: #fee07d;
 }
 
 img:hover {
@@ -34,4 +26,12 @@ img:hover {
 
 img:checked {
     border: 2px #fee07d solid;
+}
+
+label:active {
+    color: #0a2f51;
+}
+
+.no-border {
+    border: none !important;
 }
