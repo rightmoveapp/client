@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import Row from '../../components/Row';
 import Col from '../../components/Col';
+import { Redirect } from "react-router-dom";
 // import CheckboxQuestion from '../../components/CheckboxQuestion';
 import DateQuestion from '../../components/DateQuestion';
 import RadioQuestions from '../../components/RadioQuestions';
@@ -22,6 +23,7 @@ class JobQuestions extends Component {
     zipcode: "",
     city: "",
     role_name: null,
+    submitted:false,
   };
 
   handleChange = event => {
@@ -89,15 +91,21 @@ class JobQuestions extends Component {
       isCurrent: this.state.isCurrent,
       zipcode: this.state.zipcode,
       city: this.state.city,
-      questionsAndAnswers: this.state.choices, 
+      questionsAndAnswers: this.state.choices,
     })
       .then(response => {
         console.log("sumbitted");
+        this.setState({submitted:true})
       })
       .catch(err => console.log(err));
   }
 
   render() {
+    if (this.state.submitted){
+      return (
+        <Redirect to="/account" />
+      )
+    }
     // TODO : put the job options in the database and make a get request for this info
     let jobQuestionsJobs = []
     jobQuestionsJobs = this.state.basicQuestions.role_names.map((role) => {
