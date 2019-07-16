@@ -1,33 +1,33 @@
-.SmallYellowButton {
-    width: 139px;
+.YellowButton {
+    width: 328px;
     height: 40px;
     border-radius: 4px;
     background-color: #fee07d;
     border-style: none;
 }
 
-.SmallYellowButton:link {
+.YellowButton:link {
     background-color: #fee07d;
 }
   
-.SmallYellowButton:visited {
+.YellowButton:visited {
     background-color: #fee07d;
 }
   
-.SmallYellowButton:hover {
+.YellowButton:hover {
     background-color: #fee07d;
 }
   
-.SmallYellowButton:active {
+.YellowButton:active {
     background-color: #fee07d;
 }
 
-.SmallYellowButton:focus {
+.YellowButton:focus {
     background-color: #fee07d;
 }
 
-.-SmallYellowButton-Text {
-    font-family: 'Inter';
+.-YellowButton-Text {
+    /* font-family: 'Inter'; */
     font-size: 16px;
     font-weight: bold;
     font-style: normal;

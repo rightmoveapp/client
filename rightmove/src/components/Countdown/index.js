@@ -7,7 +7,7 @@ const Countdown = (props) => {
         return (
             <>
                 <div className="There-are-new-questi">
-                    <p className="Add-Overall-Padding">
+                    <p className="Add-Padding">
                         <span className="Remove-Bold">Done answering questions?</span>
                         <span className="Add-Space-Left"><YellowUnderline to="/jobquestions" text="Add a job" /></span>
                     </p>

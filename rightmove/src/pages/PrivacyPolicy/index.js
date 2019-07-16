@@ -1,7 +1,6 @@
 import React from "react";
 import Row from '../../components/Row';
 import Col from '../../components/Col';
-import SmallYellowButton from '../../components/SmallYellowButton';
 import "./style.css";
 
 const PrivacyPage = () => {
@@ -15,11 +14,6 @@ const PrivacyPage = () => {
                     <p>While most questions are optional, just keep in mind that the more we know, the better your Snapshot will be. </p>
                 </Col>
             </Row>
-            <Row>
-				<Col size="s12 m12 l12 right-align">
-					<SmallYellowButton text="Got it!"/>
-				</Col>
-			</Row>
         </>
     )
 }
