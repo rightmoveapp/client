@@ -40,10 +40,10 @@ class Account extends Component {
         })
   };
 
-  percentage = (number) => {
+  /* percentage = (number) => {
     let percentageFit = parseFloat(number) * 100
     return percentageFit
-  }
+  } */
 
 render() {
   const possibleJobsMap = this.state.possibleJobs.map((job) => {
@@ -52,7 +52,7 @@ render() {
         key={job.id}
         role={job.role}
         company_name={job.company_name}
-        score={this.percentage(job.score)}
+        score={job.score}
       />
     );
   });
@@ -65,13 +65,13 @@ render() {
             <CurrentJob
               company_name={this.state.currentJob.company_name}
               role={this.state.currentJob.role}
-              score={this.percentage(this.state.currentJob.score)}
+              score={this.state.currentJob.score}
             />
             <div className="WhiteRectangle-Jobs">
               <h4 className="Top-Gigs">Top Gigs</h4>
               {possibleJobsMap}
               <div className="right-align Make-Font-Smaller">
-                <YellowUnderline text="See All" to="/jobs" />
+                <YellowUnderline text="Add Job" to="/jobquestions" />
               </div>
             </div>
           </div>
