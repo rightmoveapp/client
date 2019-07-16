@@ -50,7 +50,7 @@ class Questions extends Component {
 
         if (this.state.questionsChoices.length === 1 || this.state.questionsChoices.length < 1) {
             this.setState({ isFinished: true });
-            console.log("hello im trying to change to true");
+            /* console.log("hello im trying to change to true"); */
         }
 
         const questionsChoices = this.state.questionsChoices;
@@ -120,6 +120,19 @@ class Questions extends Component {
             .catch(err => console.log(err));
 
         console.log('You have selected:', this.state.choice);
+    }
+
+    handleSkip = (event) => {
+        console.log("hello in skip")
+        /* event.preventDefault(); */
+        
+        /* this.setAnsweredQuestion(this.state.question);
+        let newCount = this.state.count - 1;
+        
+        localStorage.setItem( 'questionCount', newCount );
+        this.setState({ count: newCount }); */
+
+        this.getRandomQuestion();
     }
 
 
@@ -231,7 +244,8 @@ class Questions extends Component {
                                 </form>
                                 <Countdown count={this.state.count} />
                                 <div className="right-align">
-                                    <YellowUnderline to="/" text="Skip" space="32" />
+                                    <a onClick={this.handleSkip} className="yellow-underline-styling">Skip</a>
+                                    {/* <YellowUnderline text="Skip" to="/questions" space="32" onClick={this.handleSkip}/> */}
                                     <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
                                 </div>
                             </Col>
