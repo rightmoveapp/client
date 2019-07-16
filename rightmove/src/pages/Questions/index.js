@@ -48,7 +48,7 @@ class Questions extends Component {
 
     getRandomQuestion = () => {
 
-        if (this.state.questionsChoices.length === 1 || this.state.questionsChoices.length < 1) {
+        if (this.state.questionsChoices.length < 1) {
             this.setState({ isFinished: true });
             /* console.log("hello im trying to change to true"); */
         }
