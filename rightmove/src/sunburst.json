@@ -1,10 +1,10 @@
 {
     "title": "flare",
-    "color": "#47375a",
     "children": [
         {
             "title": "Culture",
             "label": "Culture",
+            "color": "#47375a",
             "children": [
                 {
                     "title": "Company Size",
@@ -26,6 +26,7 @@
         {
             "title": "Commute",
             "label": "Commute",
+            "color": "#52507f",
             "children": [
                 {
                     "title": "Office Location",
@@ -47,6 +48,7 @@
         {
             "title": "Learning",
             "label": "Learning",
+            "color": "#647ea1",
             "children": [
                 {
                     "title": "Menteeship",
@@ -73,6 +75,7 @@
         {
             "title": "Growth",
             "label": "Growth",
+            "color": "#74b5c3",
             "children": [
                 {
                     "title": "Org Structure",
@@ -99,6 +102,7 @@
         {
             "title": "Wellness",
             "label": "Wellness",
+            "color": "#83e6d6",
             "children": [
                 {
                     "title": "Adversity to change",
@@ -119,7 +123,8 @@
         },
         {
             "title": "Compensation",
-            "label": "Compensation",
+            "label": "Comp",
+            "color": "#abe7d5",
             "children": [
                 {
                     "title": "Options",
@@ -136,6 +141,7 @@
         {
             "title": "Purpose",
             "label": "Purpose",
+            "color": "#cdecde",
             "children": [
                 {
                     "title": "Global Sense of Worth",
@@ -152,6 +158,7 @@
         {
             "title": "Workday",
             "label": "Workday",
+            "color": "#e8f4ed",
             "children": [
                 {
                     "title": "Workflow maturity",
