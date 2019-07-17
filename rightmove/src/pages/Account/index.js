@@ -15,6 +15,7 @@ import { Sunburst } from 'react-vis';
 
 
 class Account extends Component {
+  // TODO: make this better 
   state = {
     userProfile: [],
     currentJob: [],
@@ -66,6 +67,7 @@ class Account extends Component {
         const subcatergory_array = response.data.subcategories;
         console.log(subcatergory_array);
 
+        // TODO: make this better
         for (let i = 0; i < subcatergory_array.length; i++) {
           if (subcatergory_array[i].name === "Company Size") {
             this.setState({ company_size: subcatergory_array[i].value })
