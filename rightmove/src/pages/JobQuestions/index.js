@@ -261,7 +261,7 @@ class JobQuestions extends Component {
 
                 {jobQuestionMap}
                 <div className="right-align add-space">
-                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" size="139" />
+                  <YellowButton type="submit" onClick={this.handleFormSubmit} text="Continue  →" to="/account" size="139" />
                 </div>
               </form>
             </>
