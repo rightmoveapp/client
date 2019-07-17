@@ -18,7 +18,31 @@ class Account extends Component {
   state = {
     userProfile: [],
     currentJob: [],
-    possibleJobs: []
+    possibleJobs: [],
+    company_size: "0.02",
+    cultural_alignment: "0.04",
+    office_space: "0.02",
+    office_location: "0.01",
+    commute_distance: "0.03",
+    remote: "0.01",
+    menteeship: "0.04",
+    gaining_experience: "0.03",
+    acheivements: "0.02",
+    learn_new_things: "0.02",
+    org_structure: "0.01",
+    directing_architecting: "0.01",
+    mentorship: "0.07",
+    direct_reports: "0.01",
+    adversity: "0.02",
+    family_benefits: "0.02",
+    time_off: "0.07",
+    options: "0.05",
+    $$$$$: "0.25",
+    worth: "0.05",
+    company_mission: "0.05",
+    workflow_maturity: "0.03",
+    intensity: "0.06",
+    management: "0.06"
   }
   componentDidMount() {
     this.dividJobs();
@@ -57,184 +81,184 @@ class Account extends Component {
     const myData = {
       "title": "flare",
       "children": [
-          {
-              "title": "Culture",
-              "label": "Culture",
-              "color": "#47375a",
-              "children": [
-                  {
-                      "title": "Company Size",
-                      "color": "#6C5F7B",
-                      "size": 0.02
-                  },
-                  {
-                      "title": "Cultural Alignment",
-                      "color": "#6C5F7B",
-                      "size": 0.04
-                  },
-                  {
-                      "title": "Office Space",
-                      "color": "#6C5F7B",
-                      "size": 0.02
-                  }
-              ]
-          },
-          {
-              "title": "Commute",
-              "label": "Commute",
-              "color": "#52507f",
-              "children": [
-                  {
-                      "title": "Office Location",
-                      "color": "#757399",
-                      "size": 0.01
-                  },
-                  {
-                      "title": "Commute Distance",
-                      "color": "#918FAD",
-                      "size": 0.03
-                  },
-                  {
-                      "title": "Remote",
-                      "color": "#A7A5BD",
-                      "size": 0.01
-                  }
-              ]
-          },
-          {
-              "title": "Learning",
-              "label": "Learning",
-              "color": "#647ea1",
-              "children": [
-                  {
-                      "title": "Menteeship",
-                      "color": "#8398B4",
-                      "size": 0.04
-                  },
-                  {
-                      "title": "Gaining Experience",
-                      "color": "#9CADC3",
-                      "size": 0.03
-                  },
-                  {
-                      "title": "Acheivements",
-                      "color": "#B0BDCF",
-                      "size": 0.02
-                  },
-                  {
-                      "title": "Learn New Things",
-                      "color": "#C0CAD9",
-                      "size": 0.02
-                  }
-              ]
-          },
-          {
-              "title": "Growth",
-              "label": "Growth",
-              "color": "#74b5c3",
-              "children": [
-                  {
-                      "title": "Org Structure",
-                      "color": "#90C4CF",
-                      "size": 0.01
-                  },
-                  {
-                      "title": "Directing/Architecting",
-                      "color": "#A6D0D9",
-                      "size": 0.01
-                  },
-                  {
-                      "title": "Mentorship",
-                      "color": "#B8D9E1",
-                      "size": 0.07
-                  },
-                  {
-                      "title": "Direct Reports",
-                      "color": "#C6E1E7",
-                      "size": 0.01
-                  }
-              ]
-          },
-          {
-              "title": "Wellness",
-              "label": "Wellness",
-              "color": "#83e6d6",
-              "children": [
-                  {
-                      "title": "Adversity to change",
-                      "color": "#9CEBDE",
-                      "size": 0.02
-                  },
-                  {
-                      "title": "Family Benefits",
-                      "color": "#B0EFE5",
-                      "size": 0.02
-                  },
-                  {
-                      "title": "Time Off",
-                      "color": "#C0F2EA",
-                      "size": 0.07
-                  }
-              ]
-          },
-          {
-              "title": "Compensation",
-              "label": "Comp",
-              "color": "#abe7d5",
-              "children": [
-                  {
-                      "title": "Options",
-                      "color": "#BCECDD",
-                      "size": 0.05
-                  },
-                  {
-                      "title": "$$$$$",
-                      "color": "#C9F0E4",
-                      "size": 0.25
-                  }
-              ]
-          },
-          {
-              "title": "Purpose",
-              "label": "Purpose",
-              "color": "#cdecde",
-              "children": [
-                  {
-                      "title": "Global Sense of Worth",
-                      "color": "#D7F0E5",
-                      "size": 0.05
-                  },
-                  {
-                      "title": "Company Mission",
-                      "color": "#DFF3EA",
-                      "size": 0.05
-                  }
-              ]
-          },
-          {
-              "title": "Workday",
-              "label": "Workday",
-              "color": "#e8f4ed",
-              "children": [
-                  {
-                      "title": "Workflow maturity",
-                      "color": "#EDF6F1",
-                      "size": 0.03
-                  },
-                  {
-                      "title": "Intensity",
-                      "color": "#F1F8F4",
-                      "size": 0.06
-                  },
-                  {
-                      "title": "Management",
-                      "color": "#F4F9F6",
-                      "size": 0.06
-                  }
-              ]
-          }
+        {
+          "title": "Culture",
+          "label": "Culture",
+          "color": "#47375a",
+          "children": [
+            {
+              "title": "Company Size",
+              "color": "#6C5F7B",
+              size: this.state.company_size
+            },
+            {
+              "title": "Cultural Alignment",
+              "color": "#6C5F7B",
+              size: this.state.cultural_alignment
+            },
+            {
+              "title": "Office Space",
+              "color": "#6C5F7B",
+              size: this.state.office_space
+            }
+          ]
+        },
+        {
+          "title": "Commute",
+          "label": "Commute",
+          "color": "#52507f",
+          "children": [
+            {
+              "title": "Office Location",
+              "color": "#757399",
+              size: this.state.office_location
+            },
+            {
+              "title": "Commute Distance",
+              "color": "#918FAD",
+              size: this.state.commute_distance
+            },
+            {
+              "title": "Remote",
+              "color": "#A7A5BD",
+              size: this.state.remote
+            }
+          ]
+        },
+        {
+          "title": "Learning",
+          "label": "Learning",
+          "color": "#647ea1",
+          "children": [
+            {
+              "title": "Menteeship",
+              "color": "#8398B4",
+              size: this.state.menteeship
+            },
+            {
+              "title": "Gaining Experience",
+              "color": "#9CADC3",
+              size: this.state.gaining_experience
+            },
+            {
+              "title": "Acheivements",
+              "color": "#B0BDCF",
+              size: this.state.acheivements
+            },
+            {
+              "title": "Learn New Things",
+              "color": "#C0CAD9",
+              size: this.state.learn_new_things
+            }
+          ]
+        },
+        {
+          "title": "Growth",
+          "label": "Growth",
+          "color": "#74b5c3",
+          "children": [
+            {
+              "title": "Org Structure",
+              "color": "#90C4CF",
+              size: this.state.org_structure
+            },
+            {
+              "title": "Directing/Architecting",
+              "color": "#A6D0D9",
+              size: this.state.directing_architecting
+            },
+            {
+              "title": "Mentorship",
+              "color": "#B8D9E1",
+              size: this.state.mentorship
+            },
+            {
+              "title": "Direct Reports",
+              "color": "#C6E1E7",
+              size: this.state.direct_reports
+            }
+          ]
+        },
+        {
+          "title": "Wellness",
+          "label": "Wellness",
+          "color": "#83e6d6",
+          "children": [
+            {
+              "title": "Adversity to change",
+              "color": "#9CEBDE",
+              size: this.state.adversity
+            },
+            {
+              "title": "Family Benefits",
+              "color": "#B0EFE5",
+              size: this.state.family_benefits
+            },
+            {
+              "title": "Time Off",
+              "color": "#C0F2EA",
+              size: this.state.time_off
+            }
+          ]
+        },
+        {
+          "title": "Compensation",
+          "label": "Comp",
+          "color": "#abe7d5",
+          "children": [
+            {
+              "title": "Options",
+              "color": "#BCECDD",
+              size: this.state.options
+            },
+            {
+              "title": "$$$$$",
+              "color": "#C9F0E4",
+              size: this.state.$$$$$
+            }
+          ]
+        },
+        {
+          "title": "Purpose",
+          "label": "Purpose",
+          "color": "#cdecde",
+          "children": [
+            {
+              "title": "Global Sense of Worth",
+              "color": "#D7F0E5",
+              size: this.state.worth
+            },
+            {
+              "title": "Company Mission",
+              "color": "#DFF3EA",
+              size: this.state.company_mission
+            }
+          ]
+        },
+        {
+          "title": "Workday",
+          "label": "Workday",
+          "color": "#e8f4ed",
+          "children": [
+            {
+              "title": "Workflow maturity",
+              "color": "#EDF6F1",
+              size: this.state.workflow_maturity
+            },
+            {
+              "title": "Intensity",
+              "color": "#F1F8F4",
+              size: this.state.intensity
+            },
+            {
+              "title": "Management",
+              "color": "#F4F9F6",
+              size: this.state.management
+            }
+          ]
+        }
       ]
-  }
+    }
 
     this.makeGraph()
     const possibleJobsMap = this.state.possibleJobs.map((job) => {
@@ -252,6 +276,10 @@ class Account extends Component {
         <Row>
           <Col size="s12 m12 l12">
             <YellowAlert />
+          </Col>
+        </Row>
+        <Row>
+          <Col size="s12 m6 l6">
             <div>
               <CurrentJob
                 company_name={this.state.currentJob.company_name}
@@ -266,12 +294,15 @@ class Account extends Component {
                 </div>
               </div>
             </div>
+          </Col>
+          <Col size="s12 m6 l6" className="remove-all-padding">
             <Sunburst
               hideRootNode
               colorType="literal"
               data={myData}
-              height={400}
-              width={450} />
+              height={420}
+              width={470} />
+
           </Col>
         </Row>
       </>
