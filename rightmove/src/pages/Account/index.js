@@ -27,9 +27,6 @@ class Account extends Component {
     API.getUserAccount()
       .then(response => {
         this.setState({ userProfile: response.data })
-        console.log(response.data)
-        console.log(response.data.jobs)
-
         let jobs = [];
         for (let i = 0; i < this.state.userProfile.jobs.length; i++) {
           if (this.state.userProfile.jobs[i].is_current) {
