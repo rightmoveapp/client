@@ -165,21 +165,21 @@ class Account extends Component {
         {
           "title": "Culture",
           "label": "Culture",
-          "color": "#47375a",
+          "color": "#637C92",
           "children": [
             {
               "title": "Company Size",
-              "color": "#6C5F7B",
+              "color": "#8296A8",
               size: this.state.company_size
             },
             {
               "title": "Cultural Alignment",
-              "color": "#6C5F7B",
+              "color": "#9BABB9",
               size: this.state.cultural_alignment
             },
             {
               "title": "Office Space",
-              "color": "#6C5F7B",
+              "color": "#AFBCC7",
               size: this.state.office_space
             }
           ]
@@ -187,21 +187,21 @@ class Account extends Component {
         {
           "title": "Commute",
           "label": "Commute",
-          "color": "#52507f",
+          "color": "#fee07d",
           "children": [
             {
               "title": "Office Location",
-              "color": "#757399",
+              "color": "#FEE697",
               size: this.state.office_location
             },
             {
               "title": "Commute Distance",
-              "color": "#918FAD",
+              "color": "#FEEBAC",
               size: this.state.commute_distance
             },
             {
               "title": "Remote",
-              "color": "#A7A5BD",
+              "color": "#FEEFBD",
               size: this.state.remote
             }
           ]
@@ -209,26 +209,26 @@ class Account extends Component {
         {
           "title": "Learning",
           "label": "Learning",
-          "color": "#647ea1",
+          "color": "#ff4038",
           "children": [
             {
               "title": "Menteeship",
-              "color": "#8398B4",
+              "color": "#FF6660",
               size: this.state.menteeship
             },
             {
               "title": "Gaining Experience",
-              "color": "#9CADC3",
+              "color": "#FF8580",
               size: this.state.gaining_experience
             },
             {
               "title": "Acheivements",
-              "color": "#B0BDCF",
+              "color": "#FF9D99",
               size: this.state.acheivements
             },
             {
               "title": "Learn New Things",
-              "color": "#C0CAD9",
+              "color": "#FFB1AD",
               size: this.state.learn_new_things
             }
           ]
@@ -236,26 +236,26 @@ class Account extends Component {
         {
           "title": "Growth",
           "label": "Growth",
-          "color": "#74b5c3",
+          "color": "#3B5974",
           "children": [
             {
               "title": "Org Structure",
-              "color": "#90C4CF",
+              "color": "#627A90",
               size: this.state.org_structure
             },
             {
               "title": "Directing/Architecting",
-              "color": "#A6D0D9",
+              "color": "#8195A6",
               size: this.state.directing_architecting
             },
             {
               "title": "Mentorship",
-              "color": "#B8D9E1",
+              "color": "#9AAAB8",
               size: this.state.mentorship
             },
             {
               "title": "Direct Reports",
-              "color": "#C6E1E7",
+              "color": "#AEBBC6",
               size: this.state.direct_reports
             }
           ]
