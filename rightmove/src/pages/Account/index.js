@@ -64,17 +64,17 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Company Size",
-                      "color": "#47375a",
+                      "color": "#6C5F7B",
                       "size": 0.02
                   },
                   {
                       "title": "Cultural Alignment",
-                      "color": "#47375a",
+                      "color": "#6C5F7B",
                       "size": 0.04
                   },
                   {
                       "title": "Office Space",
-                      "color": "#47375a",
+                      "color": "#6C5F7B",
                       "size": 0.02
                   }
               ]
@@ -86,17 +86,17 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Office Location",
-                      "color": "#52507f",
+                      "color": "#757399",
                       "size": 0.01
                   },
                   {
                       "title": "Commute Distance",
-                      "color": "#52507f",
+                      "color": "#918FAD",
                       "size": 0.03
                   },
                   {
                       "title": "Remote",
-                      "color": "#52507f",
+                      "color": "#A7A5BD",
                       "size": 0.01
                   }
               ]
@@ -108,22 +108,22 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Menteeship",
-                      "color": "#647ea1",
+                      "color": "#8398B4",
                       "size": 0.04
                   },
                   {
                       "title": "Gaining Experience",
-                      "color": "#647ea1",
+                      "color": "#9CADC3",
                       "size": 0.03
                   },
                   {
                       "title": "Acheivements",
-                      "color": "#647ea1",
+                      "color": "#B0BDCF",
                       "size": 0.02
                   },
                   {
                       "title": "Learn New Things",
-                      "color": "#647ea1",
+                      "color": "#C0CAD9",
                       "size": 0.02
                   }
               ]
@@ -135,22 +135,22 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Org Structure",
-                      "color": "#74b5c3",
+                      "color": "#90C4CF",
                       "size": 0.01
                   },
                   {
                       "title": "Directing/Architecting",
-                      "color": "#74b5c3",
+                      "color": "#A6D0D9",
                       "size": 0.01
                   },
                   {
                       "title": "Mentorship",
-                      "color": "#74b5c3",
+                      "color": "#B8D9E1",
                       "size": 0.07
                   },
                   {
                       "title": "Direct Reports",
-                      "color": "#74b5c3",
+                      "color": "#C6E1E7",
                       "size": 0.01
                   }
               ]
@@ -162,17 +162,17 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Adversity to change",
-                      "color": "#83e6d6",
+                      "color": "#9CEBDE",
                       "size": 0.02
                   },
                   {
                       "title": "Family Benefits",
-                      "color": "#83e6d6",
+                      "color": "#B0EFE5",
                       "size": 0.02
                   },
                   {
                       "title": "Time Off",
-                      "color": "#83e6d6",
+                      "color": "#C0F2EA",
                       "size": 0.07
                   }
               ]
@@ -184,12 +184,12 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Options",
-                      "color": "#abe7d5",
+                      "color": "#BCECDD",
                       "size": 0.05
                   },
                   {
                       "title": "$$$$$",
-                      "color": "#abe7d5",
+                      "color": "#C9F0E4",
                       "size": 0.25
                   }
               ]
@@ -201,12 +201,12 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Global Sense of Worth",
-                      "color": "#cdecde",
+                      "color": "#D7F0E5",
                       "size": 0.05
                   },
                   {
                       "title": "Company Mission",
-                      "color": "#cdecde",
+                      "color": "#DFF3EA",
                       "size": 0.05
                   }
               ]
@@ -218,17 +218,17 @@ class Account extends Component {
               "children": [
                   {
                       "title": "Workflow maturity",
-                      "color": "#e8f4ed",
+                      "color": "#EDF6F1",
                       "size": 0.03
                   },
                   {
                       "title": "Intensity",
-                      "color": "#e8f4ed",
+                      "color": "#F1F8F4",
                       "size": 0.06
                   },
                   {
                       "title": "Management",
-                      "color": "#e8f4ed",
+                      "color": "#F4F9F6",
                       "size": 0.06
                   }
               ]
