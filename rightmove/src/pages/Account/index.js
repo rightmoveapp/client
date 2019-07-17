@@ -165,21 +165,21 @@ class Account extends Component {
         {
           "title": "Culture",
           "label": "Culture",
-          "color": "#637C92",
+          "color": "#ff716b",
           "children": [
             {
               "title": "Company Size",
-              "color": "#8296A8",
+              "color": "#FFA4A1",
               size: this.state.company_size
             },
             {
               "title": "Cultural Alignment",
-              "color": "#9BABB9",
+              "color": "#FFB6B4",
               size: this.state.cultural_alignment
             },
             {
               "title": "Office Space",
-              "color": "#AFBCC7",
+              "color": "#FFC5C3",
               size: this.state.office_space
             }
           ]
@@ -187,21 +187,21 @@ class Account extends Component {
         {
           "title": "Commute",
           "label": "Commute",
-          "color": "#fee07d",
+          "color": "#F2A378",
           "children": [
             {
               "title": "Office Location",
-              "color": "#FEE697",
+              "color": "#F5B593",
               size: this.state.office_location
             },
             {
               "title": "Commute Distance",
-              "color": "#FEEBAC",
+              "color": "#F7C4A9",
               size: this.state.commute_distance
             },
             {
               "title": "Remote",
-              "color": "#FEEFBD",
+              "color": "#F9D0BA",
               size: this.state.remote
             }
           ]
@@ -209,26 +209,26 @@ class Account extends Component {
         {
           "title": "Learning",
           "label": "Learning",
-          "color": "#ff4038",
+          "color": "#FEE07D",
           "children": [
             {
               "title": "Menteeship",
-              "color": "#FF6660",
+              "color": "#FEE697",
               size: this.state.menteeship
             },
             {
               "title": "Gaining Experience",
-              "color": "#FF8580",
+              "color": "#FEEBAC",
               size: this.state.gaining_experience
             },
             {
               "title": "Acheivements",
-              "color": "#FF9D99",
+              "color": "#FEEFBD",
               size: this.state.acheivements
             },
             {
               "title": "Learn New Things",
-              "color": "#FFB1AD",
+              "color": "#FEF7DD",
               size: this.state.learn_new_things
             }
           ]
@@ -236,26 +236,26 @@ class Account extends Component {
         {
           "title": "Growth",
           "label": "Growth",
-          "color": "#3B5974",
+          "color": "#36a6a4",
           "children": [
             {
               "title": "Org Structure",
-              "color": "#627A90",
+              "color": "#5EB8B6",
               size: this.state.org_structure
             },
             {
               "title": "Directing/Architecting",
-              "color": "#8195A6",
+              "color": "#7EC6C5",
               size: this.state.directing_architecting
             },
             {
               "title": "Mentorship",
-              "color": "#9AAAB8",
+              "color": "#98D1D1",
               size: this.state.mentorship
             },
             {
               "title": "Direct Reports",
-              "color": "#AEBBC6",
+              "color": "#ADDADA",
               size: this.state.direct_reports
             }
           ]
@@ -263,21 +263,21 @@ class Account extends Component {
         {
           "title": "Wellness",
           "label": "Wellness",
-          "color": "#83e6d6",
+          "color": "#75C3D8",
           "children": [
             {
               "title": "Adversity to change",
-              "color": "#9CEBDE",
+              "color": "#91CFE0",
               size: this.state.adversity
             },
             {
               "title": "Family Benefits",
-              "color": "#B0EFE5",
+              "color": "#B9E1EB",
               size: this.state.family_benefits
             },
             {
               "title": "Time Off",
-              "color": "#C0F2EA",
+              "color": "#D2ECF2",
               size: this.state.time_off
             }
           ]
@@ -285,16 +285,16 @@ class Account extends Component {
         {
           "title": "Compensation",
           "label": "Comp",
-          "color": "#abe7d5",
+          "color": "#a5d8ff",
           "children": [
             {
               "title": "Options",
-              "color": "#BCECDD",
+              "color": "#C5E6FF",
               size: this.state.options
             },
             {
               "title": "$$$$$",
-              "color": "#C9F0E4",
+              "color": "#DAEFFF",
               size: this.state.$$$$$
             }
           ]
@@ -302,16 +302,16 @@ class Account extends Component {
         {
           "title": "Purpose",
           "label": "Purpose",
-          "color": "#cdecde",
+          "color": "#889AAC",
           "children": [
             {
               "title": "Global Sense of Worth",
-              "color": "#D7F0E5",
+              "color": "#A0AEBD",
               size: this.state.worth
             },
             {
               "title": "Company Mission",
-              "color": "#DFF3EA",
+              "color": "#B3BECA",
               size: this.state.company_mission
             }
           ]
@@ -319,21 +319,21 @@ class Account extends Component {
         {
           "title": "Workday",
           "label": "Workday",
-          "color": "#e8f4ed",
+          "color": "#9D91C2",
           "children": [
             {
               "title": "Workflow maturity",
-              "color": "#EDF6F1",
+              "color": "#B1A7CE",
               size: this.state.workflow_maturity
             },
             {
               "title": "Intensity",
-              "color": "#F1F8F4",
+              "color": "#C1B9D8",
               size: this.state.intensity
             },
             {
               "title": "Management",
-              "color": "#F4F9F6",
+              "color": "#CDC7E0",
               size: this.state.management
             }
           ]
@@ -380,8 +380,8 @@ class Account extends Component {
               hideRootNode
               colorType="literal"
               data={myData}
-              height={420}
-              width={470} />
+              height={400}
+              width={450} />
 
           </Col>
         </Row>
