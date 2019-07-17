@@ -17,4 +17,12 @@
     color: #0a2f51;
     margin: 0px;
     padding-bottom: 10px;
-  }
+}
+
+/* .change-layout {
+    display: flex;
+} */
+
+.remove-all-padding {
+    padding: 0px !important;
+}
