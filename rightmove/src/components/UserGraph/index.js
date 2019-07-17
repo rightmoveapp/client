@@ -1,6 +1,6 @@
 import React from "react";
 import * as d3 from 'd3';
-console.log(d3)
+
 /* import {layout} from 'd3'; */
 import './style.css'
 
@@ -278,7 +278,7 @@ var arcs = burst_group.selectAll("path.ark")
 
             update_crumbs(d);
 
-            console.log(names[0]);
+            
 
             d3.select("#name")
                 .text(names[0]);

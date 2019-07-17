@@ -1,55 +1,130 @@
 {
-    "email":"harryp@hogwarts.com",
-    "first_name": "Harry",
-    "last_name":"Potter",
-    "birthday": "07/31/1980",
-    "questions_answered": "23",
-  
-    "userattributes": [
-      {
-        "category_name":"Financial Health",
-        "category_value": "20"
-      },
-      {
-        "category_name":"Investment at Home",
-        "category_value": "30"
-      },
-      {
-        "category_name":"Leadership Opportunity",
-        "category_value": "10"
-      },
-      {
-        "category_name":"Purpose",
-        "category_value": "5"
-      }
-    ],
-  
-    "jobs": [
-      {
-        "company_name": "Ministry of Magic",
-        "role": "Auror",
-        "score":"0.85",
-        "salary":"100",
-        "is_current":true,
-        "id": 1
-  
-      },
-      {
-        "company_name": "Hogwarts",
-        "role": "Professor",
-        "score":"0.65",
-        "salary":"100",
-        "is_current":false,
-        "id": 2
-  
-      },
-      {
-        "company_name": "Three Broomsticks",
-        "role": "Bartender",
-        "score":"0.23",
-        "salary":"100",
-        "is_current":false,
-        "id": 3
-      }
-    ]
+  "first_name": "kasie",
+  "last_name": "chaplick",
+  "email": "kchaplick92@gmail.com",
+  "birthday": "1986-07-17",
+  "subcategories": [
+    {
+      "name": "Intensity",
+      "value": 0.5
+    },
+    {
+      "name": "Management",
+      "value": 0.75
+    },
+    {
+      "name": "Office Location",
+      "value": 0.4375
+    },
+    {
+      "name": "Office Space",
+      "value": 0.6
+    },
+    {
+      "name": "Direct Reports",
+      "value": 0.5
+    },
+    {
+      "name": "Global Sense of Worth",
+      "value": 1.0
+    },
+    {
+      "name": "Family Benefits",
+      "value": 0.520833333333333
+    },
+    {
+      "name": "Org Structure",
+      "value": 0.5
+    },
+    {
+      "name": "Options",
+      "value": 0.5
+    },
+    {
+      "name": "$$$$$",
+      "value": 0.5
+    },
+    {
+      "name": "Gaining Experience",
+      "value": 0.4375
+    },
+    {
+      "name": "Directing/Architecting",
+      "value": 0.75
+    },
+    {
+      "name": "Remote",
+      "value": 0.465
+    },
+    {
+      "name": "Mentorship",
+      "value": 0.5
+    },
+    {
+      "name": "Company Mission",
+      "value": 0.5
+    },
+    {
+      "name": "Time Off",
+      "value": 0.4375
+    },
+    {
+      "name": "Cultural Alignment",
+      "value": 0.67
+    },
+    {
+      "name": "Company Size",
+      "value": 0.41
+    },
+    {
+      "name": "Adversity to change",
+      "value": 0.53125
+    },
+    {
+      "name": "Workflow maturity",
+      "value": 0.835
+    },
+    {
+      "name": "Menteeship",
+      "value": 0.5
+    },
+    {
+      "name": "Learn New Things",
+      "value": 0.75
+    },
+    {
+      "name": "Acheivements",
+      "value": 0.5
+    },
+    {
+      "name": "Commute Distance",
+      "value": 0.5
+    }
+  ],
+  "jobs": [
+    {
+      "id": 3,
+      "company_name": "lalala",
+      "score": 53.64,
+      "salary": 75000.0,
+      "is_current": false,
+      "role": "java developer"
+    },
+    {
+      "id": 2,
+      "company_name": "PromptWorks",
+      "score": 55.8,
+      "salary": 70000.0,
+      "is_current": false,
+      "role": "software developer"
+    },
+    {
+      "id": 1,
+      "company_name": "Dmi Partners",
+      "score": 55.8,
+      "salary": 30000.0,
+      "is_current": true,
+      "role": "senior email specialist"
+    }
+  ]
 }

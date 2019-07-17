@@ -65,7 +65,7 @@ class Account extends Component {
         this.setState({ possibleJobs: jobs })
 
         const subcatergory_array = response.data.subcategories;
-        console.log(subcatergory_array);
+        
 
         // TODO: make this better
         for (let i = 0; i < subcatergory_array.length; i++) {

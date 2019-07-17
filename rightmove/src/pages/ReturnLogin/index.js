@@ -8,7 +8,7 @@ import "./style.css";
  */
 
 const ReturnLogin = () => {
-  var callbackUri = "http://localhost:3000/linkedin_auth"
+  var callbackUri = "https://www.redstapler.app/linkedin_auth"
   var callbackState = "dovdvdsoibusobus"
   var clientId = "86cmhugfwi4259"
 
