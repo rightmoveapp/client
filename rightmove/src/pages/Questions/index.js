@@ -50,7 +50,6 @@ class Questions extends Component {
 
         if (this.state.questionsChoices.length < 1) {
             this.setState({ isFinished: true });
-            /* console.log("hello im trying to change to true"); */
         }
 
         const questionsChoices = this.state.questionsChoices;
@@ -68,7 +67,6 @@ class Questions extends Component {
     }
 
     handleChange = event => {
-        console.log(this.state.currentQuestion)
         this.setState({
             choice: event.target.value,
             question: this.state.currentQuestion.id
@@ -77,7 +75,6 @@ class Questions extends Component {
 
     handleImageChange = event => {
         event.preventDefault();
-        console.log(this.state.currentQuestion)
         this.setState({
             choice: event.target.value,
             question: this.state.currentQuestion.id
@@ -99,17 +96,15 @@ class Questions extends Component {
 
     handleFormSubmit = (event) => {
         event.preventDefault();
-        console.log("clicked")
         API.postUserAttrAnswers({
             question: this.state.question,
             answer: this.state.choice,
         })
             .then(response => {
                 this.setAnsweredQuestion(this.state.question)
-                let newCount = this.state.count - 1 
+                let newCount = this.state.count - 1
                 localStorage.setItem( 'questionCount', newCount );
                 this.setState({ count: newCount })
-                
                 /* if (this.state.questionsChoices.length < 1) {
                     this.setState({ isFinished: true });
                 } */
@@ -119,19 +114,9 @@ class Questions extends Component {
             )
             .catch(err => console.log(err));
 
-        console.log('You have selected:', this.state.choice);
     }
 
     handleSkip = (event) => {
-        console.log("hello in skip")
-        /* event.preventDefault(); */
-        
-        /* this.setAnsweredQuestion(this.state.question);
-        let newCount = this.state.count - 1;
-        
-        localStorage.setItem( 'questionCount', newCount );
-        this.setState({ count: newCount }); */
-
         this.getRandomQuestion();
     }
 
@@ -153,8 +138,6 @@ class Questions extends Component {
         }
         else {
 
-        
-        // const userQuestionMap = this.state.currentQuestion.map((question) => {
         let currentQuestion = this.state.currentQuestion
         let currentquestionType
         if (currentQuestion.input_type === "radio") {
@@ -253,7 +236,7 @@ class Questions extends Component {
 
                     </>
                 );
-            } 
+            }
 
         }
     }

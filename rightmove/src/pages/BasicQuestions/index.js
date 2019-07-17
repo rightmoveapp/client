@@ -60,7 +60,6 @@ class BasicQuestions extends Component {
       role_name: this.state.role_name.value,
     })
       .then(response => {
-        console.log("sumbitted")
         this.setState({ isSubmitted: true });
       })
       .catch(err => console.log(err));

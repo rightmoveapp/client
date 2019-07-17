@@ -37,13 +37,11 @@ getJobQuestions: function() {
 
 //Posts to user basic answers
 postUserBasicAnswers: function(userAnswers) {
-  console.log(userAnswers);
   return axios.post(`http://localhost:8000/v1/userbasicanswers`, userAnswers);
 
 },
 
 postUserJobAnswers: function(jobAnswers) {
-  console.log(jobAnswers);
   return axios.post(`http://localhost:8000/v1/userjobanswers`, jobAnswers);
 
 },
