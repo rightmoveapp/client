@@ -50,6 +50,7 @@ class Account extends Component {
   dividJobs = () => {
     API.getUserAccount()
       .then(response => {
+
         this.setState({ userProfile: response.data })
         let jobs = [];
         for (let i = 0; i < this.state.userProfile.jobs.length; i++) {
@@ -62,15 +63,93 @@ class Account extends Component {
         }
         this.setState({ possibleJobs: jobs })
 
+        const subcatergory_array = response.data.subcategories;
+        console.log(subcatergory_array);
+
+        for (let i = 0; i < subcatergory_array.length; i++) {
+          if (subcatergory_array[i].name === "Company Size") {
+            this.setState({ company_size: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Cultural Alignment") {
+            this.setState({ cultural_alignment: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Office Space") {
+            this.setState({ office_space: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Office Location") {
+            this.setState({ office_location: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Commute Distance") {
+            this.setState({ commute_distance: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Remote") {
+            this.setState({ remote: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Menteeship") {
+            this.setState({ menteeship: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Gaining Experience") {
+            this.setState({ gaining_experience: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Acheivements") {
+            this.setState({ acheivements: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Learn New Things") {
+            this.setState({ learn_new_things: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Org Structure") {
+            this.setState({ org_structure: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Directing/Architecting") {
+            this.setState({ directing_architecting: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Mentorship") {
+            this.setState({ mentorship: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Direct Reports") {
+            this.setState({ direct_reports: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Adversity to change") {
+            this.setState({ adversity: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Family Benefits") {
+            this.setState({ family_benefits: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Time Off") {
+            this.setState({ time_off: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Options") {
+            this.setState({ options: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "$$$$$") {
+            this.setState({ $$$$$: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Global Sense of Worth") {
+            this.setState({ worth: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Company Mission") {
+            this.setState({ company_mission: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Workflow maturity") {
+            this.setState({ workflow_maturity: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Intensity") {
+            this.setState({ intensity: subcatergory_array[i].value })
+          }
+          if (subcatergory_array[i].name === "Management") {
+            this.setState({ management: subcatergory_array[i].value })
+          }
+
+        }
       })
   };
 
-  makeGraph = () => {
+  /* makeGraph = () => {
     API.getUserGraph()
       .then(response => {
         console.log(response.data)
       })
-  }
+  } */
   /* percentage = (number) => {
     let percentageFit = parseFloat(number) * 100
     return percentageFit
@@ -260,7 +339,6 @@ class Account extends Component {
       ]
     }
 
-    this.makeGraph()
     const possibleJobsMap = this.state.possibleJobs.map((job) => {
       return (
         <JobList
